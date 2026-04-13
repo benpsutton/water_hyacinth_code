@@ -1,0 +1,79 @@
+{
+  "ND": {
+    "NDVI": ["B8", "B4"],
+    "NDWI": ["B3", "B8"],
+    "MNDWI": ["B3", "B11"],
+    "GNDVI": ["B8", "B3"],
+    "NDCI": ["B5", "B3"],
+    "NDMI": ["B8", "B11"],
+    "NDBI": ["B11", "B8"],
+    "NDAVI": ["B8", "B2"],
+    "RR1": ["B5", "B4"]
+  },
+  "FORMULA": {
+    "EVI": {
+      "bands": {
+        "NIR": "B8",
+        "RED": "B4",
+        "BLUE": "B2"
+      },
+      "expression": "2.5 * ((NIR - RED) / (1 + NIR + 6 * RED - 7.5 * BLUE))"
+    },
+    "SAVI": {
+      "bands": {
+        "NIR": "B8",
+        "RED": "B4"
+      },
+      "constants": {
+        "L": 0.5
+      },
+      "expression": "((NIR - RED) / (NIR + RED + L)) * (1 + L)"
+    },
+    "DVI": {
+      "bands": {
+        "NIR": "B8",
+        "GREEN": "B3"
+      },
+      "expression": "NIR - GREEN"
+    },
+    "OSAVI": {
+      "bands": {
+        "NIR": "B8",
+        "RED": "B4"
+      },
+      "constants": {
+        "Y": 0.16
+      },
+      "expression": "(NIR - RED) / (NIR + RED + Y)"
+    },
+    "AWEI": {
+      "bands": {
+        "BLUE": "B2",
+        "GREEN": "B3",
+        "NIR": "B8",
+        "SWIR1": "B11",
+        "SWIR2": "B12"
+      },
+      "expression": "BLUE + 2.5 * GREEN - 1.5 * (NIR - SWIR1) - 0.25 * SWIR2"
+    },
+    "SABI": {
+      "name": "Surface Algal Bloom Index",
+      "bands": {
+        "NIR": "B8",
+        "RED": "B4",
+        "GREEN": "B3",
+        "BLUE": "B2"
+      },
+      "expression": "(NIR - RED) / (GREEN + BLUE)"
+    },
+    "BSI": {
+      "bands": {
+        "SWIR1": "B11",
+        "RED": "B4",
+        "NIR": "B8",
+        "BLUE": "B2"
+      },
+      "expression": "((SWIR1 + RED) - (NIR + BLUE)) / ((SWIR1 + RED) + (NIR + BLUE))"
+    }
+  }
+}
