@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 - the files for labelled point must be stored in /cofigs/points_files/ as a .shpp with the name format location_points.shpp, where location matches the region name in the attribute
 
 the ee project name should be specified in an .env file as EE_PROJECT
@@ -68,3 +69,7 @@ For a research-facing codebase, useful documentation should explain not just wha
 - what assumptions are made about file naming and site configuration
 
 That style of documentation makes the workflow easier to reproduce, review, and defend in a methods chapter or appendix.
+=======
+# water_hyacinth_code
+Repository of code for MSc dissertation project 
+>>>>>>> 083346ae0783b35bc82029477c22eb44495fe78f
