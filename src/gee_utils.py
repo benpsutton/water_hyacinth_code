@@ -148,7 +148,7 @@ def create_image_collection(sites_file : str | Path,
                  "obs_date": date,
                  "location":location
             })
-            .clip(bbox_geom)
+            #.clip(bbox_geom) revisit if need this when not bringing the image out of GEE
            )
 
         image_list.append(image)
@@ -193,7 +193,7 @@ def create_images_for_all_locations(sites_file: str | Path, project_root: str | 
     merged_ic = ee.ImageCollection([])
 
     for location in locations_list:
-            points_file = project_root / "configs" / "points_files" / f"{location}_points.shp"
+            points_file = project_root / "configs" / "point_files" / f"{location}_points.shp"
 
             if not points_file.exists():
                 raise FileNotFoundError(f"Points file not found for {location}: {points_file}")
@@ -318,9 +318,9 @@ def subset_merged_fc_by_location(locations_ee_list,
     return samples_all_locations
 
 def get_samples(merged_ic,
-                sites_file,
-                project_root
-                ):
+                sites_file: str | Path,
+                project_root: str | Path
+                )-> pd.DataFrame:
     """Prepare labelled points for sampling and extract all samples.
 
     This function loads every site-specific point shapefile, validates the
@@ -354,7 +354,7 @@ def get_samples(merged_ic,
 
     for location in locations_list:
             location = location.lower()
-            points_file = project_root / "configs" / "points_files" / f"{location}_points.shp"
+            points_file = project_root / "configs" / "point_files" / f"{location}_points.shp"
 
             if not points_file.exists():
                 raise FileNotFoundError(f"Points file not found for {location}: {points_file}")
@@ -364,6 +364,16 @@ def get_samples(merged_ic,
             points_gdf = validate_points_columns(points_gdf, points_file)
 
             points_gdf = points_gdf.to_crs("EPSG:4326")
+
+            # Had issue with multipoint geometreis so small helper function
+            def multipoint_to_point(geom):
+                if geom.geom_type == "Point":
+                    return geom
+                if geom.geom_type == "MultiPoint" and len(geom.geoms) == 1:
+                    return geom.geoms[0]
+                raise ValueError(f"Expected Point or singleton MultiPoint, got {geom.geom_type}")
+
+            points_gdf["geometry"] = points_gdf.geometry.apply(multipoint_to_point)
 
             # Force a consistent join key between labels and the image collection.
             points_gdf["location"] = location
@@ -386,6 +396,8 @@ def get_samples(merged_ic,
          merged_fc
     )
 
-    return all_samples
+    all_samples_df = geemap.ee_to_df(all_samples)
+    
+    return all_samples_df
     
     
