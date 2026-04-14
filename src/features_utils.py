@@ -38,7 +38,11 @@ def add_indices(df: pd.DataFrame,
          #  { "BLUE": df["B2"],
         #  "L": 0.5, etc }  
 
-        df[index_name] = pd.eval(expression, {"__builtins__": {}}, namespace)
+        df[index_name] = pd.eval(
+            expression,
+            local_dict=namespace,
+            global_dict={"__builtins__": {}},
+        )
 
     return df
 
@@ -69,4 +73,3 @@ def correlation_matrix(df: pd.DataFrame,
     fig.savefig(save_path, dpi=300, bbox_inches='tight')
 
     return corr_matrix
-
