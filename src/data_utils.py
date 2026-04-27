@@ -188,36 +188,8 @@ def create_images_for_all_locations(sites_file: str | Path, project_root: str | 
 #  date = ee.Date.parse('yyyy-MM-dd', feature.get('obs_date'))
 
 
-#     points_feature = geemap.gdf_to_ee(points)
-
-# def export_image_to_drive(date,
-#                           location,
 
 
-   
-#     tasks = []
+     
+    
 
-#     for i in range(image_list.size().getInfo()):
-#         img = ee.Image(image_list.get(i))
-#         year = img.get("year").getInfo()
-#         nodata_val = -9999
-        
-#         unmasked_image = img.unmask(value=nodata_val, sameFootprint=False)
-#         # Use the "noData" key in the "formatOptions" parameter to set the nodata value
-#         # (GeoTIFF format only).
-
-#         task = ee.batch.Export.image.toDrive(
-#             image=unmasked_image,
-#             description=f'gebe_composite_{year}',
-#             folder='EORSS/CW',
-#             region=gebe,  # full image bounds
-#             scale=10,  # large scale for minimal demo
-#             crs=crs,
-#             fileFormat='GeoTIFF',
-#             formatOptions={
-#                 'noData': nodata_val
-#             }
-#         )
-#         task.start()
-#         tasks.append(task)
-        

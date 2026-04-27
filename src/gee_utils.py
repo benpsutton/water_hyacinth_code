@@ -237,10 +237,33 @@ def sample_points_from_image(point_fc_for_image,
      
     return samples
 
+def sample_patches_from_image(point_fc_for_image,
+                            image,
+                           ):
+    """
+    To create an image where each pixel is an array, then sample the arrays for the labelled pixels
+    """
+    kernel_radius = 7 # How many pixels either side of the labelled pixel e.g. radius of 7 gives 15x15
+    bands = ["B2", "B3", "B4", "B5", "B8", "B11", "B12"]
+
+    image = image.select(bands)
+    proj = image.select("B2").projection()
+
+    array_image = image.neighbourhoodToArray(kernel = ee.Kernel.square(kernel_radius))
+
+    sampled_patches = array_image.sampleRegions(collection = point_fc_for_image,
+                                                properties = ["lc", "obs_date", "location", "lon", "lat"],
+                                                scale = 10,
+                                                projection = proj,
+                                                geometries = False
+                                                )
+    return sampled_patches
+
 def sample_by_date(date,
                    location_fc,
                    merged_ic,
-                   location):
+                   location,
+                   points_or_patches):
     """Sample all labelled points for one date within one study location.
 
     Args:
@@ -263,14 +286,18 @@ def sample_by_date(date,
         .first()
     )
     
-    samples = sample_points_from_image(point_fc_for_image, image)
-    
+    if points_or_patches == "points":
+        samples = sample_points_from_image(point_fc_for_image, image)
+    elif points_or_patches == "patches":
+        samples = sample_patches_from_image(point_fc_for_image, image)
+
     return samples
      
 
 def sample_by_location(location,
                        merged_fc,
-                       merged_ic):
+                       merged_ic,
+                       points_or_patches):
     """Sample all labelled dates for a single study location.
 
     Args:
@@ -289,7 +316,7 @@ def sample_by_location(location,
     date_list = ee.List(location_fc.aggregate_array("obs_date")).distinct()
 
     def map_over_date(date):
-        return sample_by_date(date, location_fc, merged_ic, location)
+        return sample_by_date(date, location_fc, merged_ic, location, points_or_patches)
 
     samples_for_location = ee.FeatureCollection(date_list.map(map_over_date)
     ).flatten()
@@ -298,7 +325,8 @@ def sample_by_location(location,
 
 def subset_merged_fc_by_location(locations_ee_list,
                                  merged_ic,
-                                 merged_fc):
+                                 merged_fc,
+                                 points_or_patches):
     """Sample all configured locations and merge the results.
 
     Args:
@@ -311,7 +339,7 @@ def subset_merged_fc_by_location(locations_ee_list,
         location in ``locations_ee_list``.
     """
     def map_over_location(location):
-        return sample_by_location(location, merged_fc, merged_ic)
+        return sample_by_location(location, merged_fc, merged_ic, points_or_patches)
     
     samples_all_locations = ee.FeatureCollection(locations_ee_list.map(map_over_location)).flatten()
 
@@ -393,7 +421,8 @@ def get_samples(merged_ic,
     all_samples =  subset_merged_fc_by_location(
          locations_ee_list,
          merged_ic,
-         merged_fc
+         merged_fc,
+         points_or_patches= "points"
     )
 
     all_samples_df = geemap.ee_to_df(all_samples)
@@ -401,3 +430,63 @@ def get_samples(merged_ic,
     return all_samples_df
     
     
+def export_patches(merged_ic, sites_file: str | Path, project_root: str | Path):
+
+    project_root = Path(project_root)
+
+    with Path(sites_file).open("r", encoding="utf-8") as f:
+        sites = json.load(f)
+
+    locations_list = list(sites.get("sites", {}).keys())
+
+    for location in locations_list:
+            location = location.lower()
+            points_file = project_root / "configs" / "point_files" / f"{location}_points.shp"
+
+            if not points_file.exists():
+                raise FileNotFoundError(f"Points file not found for {location}: {points_file}")
+            
+            points_gdf = gpd.read_file(points_file)
+
+            points_gdf = validate_points_columns(points_gdf, points_file)
+
+            points_gdf = points_gdf.to_crs("EPSG:4326")
+
+            # Had issue with multipoint geometreis so small helper function
+            def multipoint_to_point(geom):
+                if geom.geom_type == "Point":
+                    return geom
+                if geom.geom_type == "MultiPoint" and len(geom.geoms) == 1:
+                    return geom.geoms[0]
+                raise ValueError(f"Expected Point or singleton MultiPoint, got {geom.geom_type}")
+
+            points_gdf["geometry"] = points_gdf.geometry.apply(multipoint_to_point)
+
+            # Force a consistent join key between labels and the image collection.
+            points_gdf["location"] = location
+            points_gdf["lon"] = points_gdf.geometry.x
+            points_gdf["lat"] = points_gdf.geometry.y
+
+            gdf_list.append(points_gdf)
+    
+    merged_gdf = pd.concat(gdf_list, ignore_index=True)
+
+    # Convert merged_gdf to ee.FeatureCollection
+
+    merged_fc = geemap.gdf_to_ee(merged_gdf)
+
+    locations_ee_list = merged_fc.aggregate_array("location").distinct()
+
+    all_samples =  subset_merged_fc_by_location(
+         locations_ee_list,
+         merged_ic,
+         merged_fc, 
+         points_or_patches= "patches"
+    )
+
+    task = ee.batch.Export.table.toDrive(
+                                        collection= all_samples,
+                                        description= 'sampled_patches_as_arrays',
+                                        folder= 'Dissertation',
+                                        fileFormat= 'GeoJSON'
+                                        )
