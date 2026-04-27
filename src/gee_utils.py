@@ -338,6 +338,12 @@ def subset_merged_fc_by_location(locations_ee_list,
         An ``ee.FeatureCollection`` containing sampled points from every
         location in ``locations_ee_list``.
     """
+
+    valid_points_or_patch_values = {"points", "patches"}
+
+    if points_or_patches not in valid_points_or_patch_values:
+        raise ValueError("points_or_patches argument must be either 'points' or 'patches'")
+                         
     def map_over_location(location):
         return sample_by_location(location, merged_fc, merged_ic, points_or_patches)
     
@@ -439,6 +445,8 @@ def export_patches(merged_ic, sites_file: str | Path, project_root: str | Path):
 
     locations_list = list(sites.get("sites", {}).keys())
 
+    gdf_list = []
+
     for location in locations_list:
             location = location.lower()
             points_file = project_root / "configs" / "point_files" / f"{location}_points.shp"
@@ -490,3 +498,7 @@ def export_patches(merged_ic, sites_file: str | Path, project_root: str | Path):
                                         folder= 'Dissertation',
                                         fileFormat= 'GeoJSON'
                                         )
+    
+    task.start() # check this
+
+    return print("Exporting sampled patches to drive/Dissertation")
