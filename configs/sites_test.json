@@ -36,8 +36,8 @@
                 },
              "crs": "EPSG:4326"
             },
-         "hartbeesport": {
-             "label" : "Hartbeesport Dam",
+         "hartbeespoort": {
+             "label" : "Hartbeespoort Dam",
              "geometry":{
                 "type": "Point",
                 "coordinates": [27.862991, -25.738262]

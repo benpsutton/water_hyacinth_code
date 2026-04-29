@@ -98,7 +98,7 @@ def create_image_collection(sites_file : str | Path,
     
     if not isinstance(location, str):
         raise TypeError(f"location must be a string, got {type(location).__name__}")
-    location = location.lower()
+    # location = location.lower() I previously had the location keys as lower case in the sites file
 
     with Path(sites_file).open("r", encoding = "utf-8") as s:
         sites = json.load(s)
@@ -136,13 +136,22 @@ def create_image_collection(sites_file : str | Path,
     for date in date_list:
         ee_date = ee.Date.parse('yyyy-MM-dd', date)
 
-    
-        image = (ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED")
+        daily_collection = (ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED")
             .filterBounds(point_geom)
             .filterDate(ee_date, ee_date.advance(1,"day"))
             .map(mask_clouds_SCL)
-            
             .select(['B2','B3','B4','B5','B6','B7','B8','B8A','B11','B12'])
+        )
+
+        # Skip observation dates that have no Sentinel-2 image so downstream
+        # sampling fails with a clear Python-side error instead of a null EE
+        # object deep in the call stack.
+        if daily_collection.size().getInfo() == 0:
+            raise ValueError(
+                f"No Sentinel-2 image found for location '{location}' on {date}."
+            )
+
+        image = (daily_collection
             .first()
             .set({
                  "obs_date": date,
@@ -229,7 +238,7 @@ def sample_points_from_image(point_fc_for_image,
 
     samples = image.sampleRegions(
         collection=point_fc_for_image,
-        properties=["lc", "obs_date", "location", "lon", "lat"],
+        properties=["lc", "binary", "obs_date", "location", "lon", "lat"],
         scale=10,
         projection=proj,    # <-- locks the CRS and avoids pyramid ambiguity
         geometries=False
@@ -249,10 +258,10 @@ def sample_patches_from_image(point_fc_for_image,
     image = image.select(bands)
     proj = image.select("B2").projection()
 
-    array_image = image.neighbourhoodToArray(kernel = ee.Kernel.square(kernel_radius))
+    array_image = image.neighborhoodToArray(kernel = ee.Kernel.square(kernel_radius), )
 
     sampled_patches = array_image.sampleRegions(collection = point_fc_for_image,
-                                                properties = ["lc", "obs_date", "location", "lon", "lat"],
+                                                properties = ["lc", "binary", "obs_date", "location", "lon", "lat"],
                                                 scale = 10,
                                                 projection = proj,
                                                 geometries = False
@@ -387,7 +396,6 @@ def get_samples(merged_ic,
     gdf_list = []
 
     for location in locations_list:
-            location = location.lower()
             points_file = project_root / "configs" / "point_files" / f"{location}_points.shp"
 
             if not points_file.exists():
@@ -448,7 +456,6 @@ def export_patches(merged_ic, sites_file: str | Path, project_root: str | Path):
     gdf_list = []
 
     for location in locations_list:
-            location = location.lower()
             points_file = project_root / "configs" / "point_files" / f"{location}_points.shp"
 
             if not points_file.exists():

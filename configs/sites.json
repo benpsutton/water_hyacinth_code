@@ -1,6 +1,6 @@
 {
     "sites" :{
-        "vembanad": {
+        "Vembanad": {
              "label" : "Vembanad Lake",
              "geometry":{
                 "type": "Point",
@@ -18,7 +18,7 @@
                 },
              "crs": "EPSG:4326"
             },
-        "winam": {
+        "Winam": {
              "label" : "Winam Gulf",
              "geometry":{
                 "type": "Point",
@@ -36,7 +36,7 @@
                 },
              "crs": "EPSG:4326"
             },
-         "inle": {
+         "Inle": {
              "label" : "Inle Lake",
              "geometry":{
                 "type": "Point",
@@ -54,8 +54,8 @@
                 },
              "crs": "EPSG:4326"
             },
-        "hartbeesport": {
-             "label" : "Hartbeesport Dam",
+        "Hartbeespoort": {
+             "label" : "Hartbeespoort Dam",
              "geometry":{
                 "type": "Point",
                 "coordinates": [27.862991, -25.738262]
@@ -72,7 +72,7 @@
                 },
              "crs": "EPSG:4326"
             },
-        "mula": {
+        "Mula": {
              "label" : "Mula River",
              "geometry":{
                 "type": "Point",
@@ -90,7 +90,7 @@
                 },
              "crs": "EPSG:4326"
             },
-        "rawapening": {
+        "RawaPening": {
              "label" : "Lake Rawa Pening",
              "geometry":{
                 "type": "Point",
@@ -108,7 +108,7 @@
                 },
              "crs": "EPSG:4326"
             },
-        "rodman": {
+        "Rodman": {
              "label" : "Rodman Reservoir",
              "geometry":{
                 "type": "Point",
@@ -126,7 +126,7 @@
                 },
              "crs": "EPSG:4326"
             },
-        "valsequillo": {
+        "Valsequillo": {
              "label" : "Valsequillo Lake",
              "geometry":{
                 "type": "Point",
