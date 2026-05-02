@@ -70,6 +70,7 @@ def validate_points_columns(points_gdf: gpd.GeoDataFrame, points_file: str| Path
 def create_image_collection(sites_file : str | Path,
                             points_file: str | Path,
                             location: str,
+                            clip: bool= False
                             ):
     """Build a Sentinel-2 image collection for one study location.
 
@@ -157,8 +158,11 @@ def create_image_collection(sites_file : str | Path,
                  "obs_date": date,
                  "location":location
             })
-            #.clip(bbox_geom) revisit if need this when not bringing the image out of GEE
-           )
+        )
+        
+        if clip:
+            image = image.clip(bbox_geom)
+        
 
         image_list.append(image)
     # ---------------------------------------------
@@ -170,7 +174,9 @@ def create_image_collection(sites_file : str | Path,
 
 
 
-def create_images_for_all_locations(sites_file: str | Path, project_root: str | Path):
+def create_images_for_all_locations(sites_file: str | Path, 
+                                    project_root: str | Path,
+                                    clip: bool = False):
     """Build a combined image collection for all configured study locations.
 
     This is a thin wrapper around :func:`create_image_collection`. It reads the
@@ -207,10 +213,11 @@ def create_images_for_all_locations(sites_file: str | Path, project_root: str | 
             if not points_file.exists():
                 raise FileNotFoundError(f"Points file not found for {location}: {points_file}")
     
-            ic = create_image_collection(sites_file = sites_file, points_file = points_file, location = location)
+            ic = create_image_collection(sites_file = sites_file, points_file = points_file, location = location, clip = clip)
             merged_ic = merged_ic.merge(ic)
             # Should i flatten this into one image collection and then select by obs_date and loaction in a later function?
     return merged_ic
+
 
 def sample_points_from_image(point_fc_for_image,
                              image,

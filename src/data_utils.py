@@ -60,7 +60,7 @@ def make_padded_bbox_all_location(sites_file: str | Path,
     with open(sites_fp, "w") as f:
         json.dump(sites, f, indent=4)
 
-    location_string = ",".join(location_list)
+    location_string = ", ".join(location_list)
 
     return print(f"Created padded bbox from the points files for {location_string}")
 
