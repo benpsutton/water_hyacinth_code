@@ -1,0 +1,117 @@
+{
+  "_comment": "Image catalog for the labelling app. Each site key matches sites.json. Each entry is one target image with its comparison images. Replace REPLACE_ME placeholders with real GEE image IDs found via the GEE Code Editor or the GEE Python API. s1_image_id can be null if no S1 coverage exists.",
+
+  "Vembanad": [
+    {
+      "entry_id": "Vembanad_20231115",
+      "location": "Vembanad",
+      "obs_date": "2023-11-15",
+      "display_label": "Vembanad Lake — 15 Nov 2023",
+      "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231115Txxxxxx",
+      "s2_comparison_images": [
+        {"date": "2023-08-01", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230801Txxxxxx"},
+        {"date": "2023-04-15", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230415Txxxxxx"}
+      ],
+      "s1_image_id": null
+    }
+  ],
+
+  "Winam": [
+    {
+      "entry_id": "Winam_20231201",
+      "location": "Winam",
+      "obs_date": "2023-12-01",
+      "display_label": "Winam Gulf — 01 Dec 2023",
+      "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231201Txxxxxx",
+      "s2_comparison_images": [
+        {"date": "2023-09-01", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230901Txxxxxx"},
+        {"date": "2023-06-01", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230601Txxxxxx"}
+      ],
+      "s1_image_id": null
+    }
+  ],
+
+  "Inle": [
+    {
+      "entry_id": "Inle_20231101",
+      "location": "Inle",
+      "obs_date": "2023-11-01",
+      "display_label": "Inle Lake — 01 Nov 2023",
+      "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231101Txxxxxx",
+      "s2_comparison_images": [
+        {"date": "2023-07-01", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230701Txxxxxx"}
+      ],
+      "s1_image_id": null
+    }
+  ],
+
+  "Hartbeespoort": [
+    {
+      "entry_id": "Hartbeespoort_20231115",
+      "location": "Hartbeespoort",
+      "obs_date": "2023-11-15",
+      "display_label": "Hartbeespoort Dam — 15 Nov 2023",
+      "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231115Txxxxxx",
+      "s2_comparison_images": [
+        {"date": "2023-08-15", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230815Txxxxxx"}
+      ],
+      "s1_image_id": null
+    }
+  ],
+
+  "Mula": [
+    {
+      "entry_id": "Mula_20231201",
+      "location": "Mula",
+      "obs_date": "2023-12-01",
+      "display_label": "Mula River — 01 Dec 2023",
+      "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231201Txxxxxx",
+      "s2_comparison_images": [
+        {"date": "2023-09-01", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230901Txxxxxx"}
+      ],
+      "s1_image_id": null
+    }
+  ],
+
+  "RawaPening": [
+    {
+      "entry_id": "RawaPening_20231115",
+      "location": "RawaPening",
+      "obs_date": "2023-11-15",
+      "display_label": "Lake Rawa Pening — 15 Nov 2023",
+      "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231115Txxxxxx",
+      "s2_comparison_images": [
+        {"date": "2023-07-15", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230715Txxxxxx"}
+      ],
+      "s1_image_id": null
+    }
+  ],
+
+  "Rodman": [
+    {
+      "entry_id": "Rodman_20231201",
+      "location": "Rodman",
+      "obs_date": "2023-12-01",
+      "display_label": "Rodman Reservoir — 01 Dec 2023",
+      "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231201Txxxxxx",
+      "s2_comparison_images": [
+        {"date": "2023-09-01", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230901Txxxxxx"}
+      ],
+      "s1_image_id": null
+    }
+  ],
+
+  "Valsequillo": [
+    {
+      "entry_id": "Valsequillo_20231201",
+      "location": "Valsequillo",
+      "obs_date": "2023-12-01",
+      "display_label": "Valsequillo Lake — 01 Dec 2023",
+      "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231201Txxxxxx",
+      "s2_comparison_images": [
+        {"date": "2023-08-01", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230801Txxxxxx"}
+      ],
+      "s1_image_id": null
+    }
+  ]
+}
