@@ -12,7 +12,7 @@ Requires-Dist: pandas
 Requires-Dist: seaborn
 
 <<<<<<< HEAD
-- the files for labelled point must be stored in /cofigs/points_files/ as a .shpp with the name format location_points.shpp, where location matches the region name in the attribute
+- the files for labelled point must be stored in /configs/points_files/ as a .shpp with the name format location_points.shpp, where location matches the region name in the attribute
 
 the ee project name should be specified in an .env file as EE_PROJECT
 
