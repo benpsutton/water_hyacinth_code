@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dissertation-utils"
+version = "0.1.0"
+description = "Reusable utilities for the dissertation Sentinel-2 and Earth Engine workflow."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "earthengine-api",
+    "geemap",
+    "geopandas",
+    "matplotlib",
+    "pandas",
+    "seaborn",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
