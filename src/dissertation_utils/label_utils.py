@@ -270,7 +270,7 @@ def get_s2_s1_matching_dates(location: str, site_fp: str | Path, project_root: s
 
     matching_dates_df.to_csv(dates_output_fp)
 
-    return matching_dates_fc
+    return matching_dates_df
 
 # Plotting the matching dates along with cloud percentage and season
 
@@ -320,3 +320,62 @@ def plot_dates(location: str,
 
     return fig
 
+## Function for writing image and comparison images detials to json for the labelling app. 
+   
+def image_details_to_json(comparison_df: pd.DataFrame,
+                           images_fp: str | Path):
+    
+    images_fp = Path(images_fp)
+
+    with open(images_fp, "r") as f:
+        Image_dict = json.load(f)
+
+
+    for _, row in comparison_df.iterrows():
+
+        location = row["location"]
+        alt_date = row['date'].strftime(format = "%Y%m%d")
+        entry_id = location + "_" + alt_date
+        obs_date = row['date'].strftime(format = "%Y-%m-%d")
+        display_label = location + " - " + row["date"].strftime(format = "%d %B %Y")
+        s2_target_image_id = row["S2_img_id"]
+        s1_target_image_id = row["S1_img_id"]
+
+        compar_list = []
+        count = int(row["comparison_count"])
+
+        for i in range(1, count+1):
+            img_col = f"comparison_{i}_s2_img_id"
+            date_col = f"comparison_{i}_date"
+
+            if img_col in comparison_df.columns and date_col in comparison_df.columns:
+                img = row[img_col]
+                date = row[date_col].strftime(format = "%Y-%m-%d")
+
+                if pd.notna(img) and pd.notna(date):
+                    comp_dict = {
+                        "date" : date, "image_id": img
+                        }
+                    
+                    compar_list.append(comp_dict)
+
+        Dict = {"entry_id": entry_id,
+                "location": location,
+                "obs_date": obs_date,
+                "display_label": display_label,
+                "s2_target_image_id": s2_target_image_id,
+                "s1_image_id": s1_target_image_id,
+                "s2_comparison_images": compar_list  
+                }
+        
+        # Each location key has a list of images as its value
+        if location in Image_dict:
+            Image_dict[location].append(Dict)
+        else: 
+            Image_dict[location] = []
+            Image_dict[location].append(Dict)
+
+    with open(images_fp, "w") as f:
+        json.dump(Image_dict, f, indent = 4)
+
+    return Image_dict
