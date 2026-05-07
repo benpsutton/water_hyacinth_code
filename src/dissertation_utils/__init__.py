@@ -18,6 +18,8 @@ from .label_utils import (
     create_s1_list_for_location,
     create_s2_list_for_location,
     get_s2_s1_matching_dates,
+    prepare_matching_dates_df,
+    select_prior_comparison_dates,
 )
 
 __all__ = [
@@ -32,10 +34,12 @@ __all__ = [
     "get_samples",
     "get_s2_s1_matching_dates",
     "make_padded_bbox_all_location",
+    "prepare_matching_dates_df",
     "sample_by_date",
     "sample_by_location",
     "sample_patches_from_image",
     "sample_points_from_image",
+    "select_prior_comparison_dates",
     "subset_merged_fc_by_location",
     "validate_points_columns",
 ]

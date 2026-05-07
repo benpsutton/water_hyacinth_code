@@ -1,117 +1,3937 @@
 {
-  "_comment": "Image catalog for the labelling app. Each site key matches sites.json. Each entry is one target image with its comparison images. Replace REPLACE_ME placeholders with real GEE image IDs found via the GEE Code Editor or the GEE Python API. s1_image_id can be null if no S1 coverage exists.",
-
-  "Vembanad": [
-    {
-      "entry_id": "Vembanad_20231115",
-      "location": "Vembanad",
-      "obs_date": "2023-11-15",
-      "display_label": "Vembanad Lake — 15 Nov 2023",
-      "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231115Txxxxxx",
-      "s2_comparison_images": [
-        {"date": "2023-08-01", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230801Txxxxxx"},
-        {"date": "2023-04-15", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230415Txxxxxx"}
-      ],
-      "s1_image_id": null
-    }
-  ],
-
-  "Winam": [
-    {
-      "entry_id": "Winam_20231201",
-      "location": "Winam",
-      "obs_date": "2023-12-01",
-      "display_label": "Winam Gulf — 01 Dec 2023",
-      "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231201Txxxxxx",
-      "s2_comparison_images": [
-        {"date": "2023-09-01", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230901Txxxxxx"},
-        {"date": "2023-06-01", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230601Txxxxxx"}
-      ],
-      "s1_image_id": null
-    }
-  ],
-
-  "Inle": [
-    {
-      "entry_id": "Inle_20231101",
-      "location": "Inle",
-      "obs_date": "2023-11-01",
-      "display_label": "Inle Lake — 01 Nov 2023",
-      "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231101Txxxxxx",
-      "s2_comparison_images": [
-        {"date": "2023-07-01", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230701Txxxxxx"}
-      ],
-      "s1_image_id": null
-    }
-  ],
-
-  "Hartbeespoort": [
-    {
-      "entry_id": "Hartbeespoort_20231115",
-      "location": "Hartbeespoort",
-      "obs_date": "2023-11-15",
-      "display_label": "Hartbeespoort Dam — 15 Nov 2023",
-      "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231115Txxxxxx",
-      "s2_comparison_images": [
-        {"date": "2023-08-15", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230815Txxxxxx"}
-      ],
-      "s1_image_id": null
-    }
-  ],
-
-  "Mula": [
-    {
-      "entry_id": "Mula_20231201",
-      "location": "Mula",
-      "obs_date": "2023-12-01",
-      "display_label": "Mula River — 01 Dec 2023",
-      "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231201Txxxxxx",
-      "s2_comparison_images": [
-        {"date": "2023-09-01", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230901Txxxxxx"}
-      ],
-      "s1_image_id": null
-    }
-  ],
-
-  "RawaPening": [
-    {
-      "entry_id": "RawaPening_20231115",
-      "location": "RawaPening",
-      "obs_date": "2023-11-15",
-      "display_label": "Lake Rawa Pening — 15 Nov 2023",
-      "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231115Txxxxxx",
-      "s2_comparison_images": [
-        {"date": "2023-07-15", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230715Txxxxxx"}
-      ],
-      "s1_image_id": null
-    }
-  ],
-
-  "Rodman": [
-    {
-      "entry_id": "Rodman_20231201",
-      "location": "Rodman",
-      "obs_date": "2023-12-01",
-      "display_label": "Rodman Reservoir — 01 Dec 2023",
-      "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231201Txxxxxx",
-      "s2_comparison_images": [
-        {"date": "2023-09-01", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230901Txxxxxx"}
-      ],
-      "s1_image_id": null
-    }
-  ],
-
-  "Valsequillo": [
-    {
-      "entry_id": "Valsequillo_20231201",
-      "location": "Valsequillo",
-      "obs_date": "2023-12-01",
-      "display_label": "Valsequillo Lake — 01 Dec 2023",
-      "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231201Txxxxxx",
-      "s2_comparison_images": [
-        {"date": "2023-08-01", "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230801Txxxxxx"}
-      ],
-      "s1_image_id": null
-    }
-  ]
+    "_comment": "Image catalog for the labelling app. Each site key matches sites.json. Each entry is one target image with its comparison images. Replace REPLACE_ME placeholders with real GEE image IDs found via the GEE Code Editor or the GEE Python API. s1_image_id can be null if no S1 coverage exists.",
+    "Vembanad": [
+        {
+            "entry_id": "Vembanad_20231115",
+            "location": "Vembanad",
+            "obs_date": "2023-11-15",
+            "display_label": "Vembanad Lake \u2014 15 Nov 2023",
+            "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231115Txxxxxx",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-08-01",
+                    "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230801Txxxxxx"
+                },
+                {
+                    "date": "2023-04-15",
+                    "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230415Txxxxxx"
+                }
+            ],
+            "s1_image_id": null
+        }
+    ],
+    "Winam": [
+        {
+            "entry_id": "Winam_20231201",
+            "location": "Winam",
+            "obs_date": "2023-12-01",
+            "display_label": "Winam Gulf \u2014 01 Dec 2023",
+            "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231201Txxxxxx",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-09-01",
+                    "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230901Txxxxxx"
+                },
+                {
+                    "date": "2023-06-01",
+                    "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230601Txxxxxx"
+                }
+            ],
+            "s1_image_id": null
+        }
+    ],
+    "Inle": [
+        {
+            "entry_id": "Inle_20231101",
+            "location": "Inle",
+            "obs_date": "2023-11-01",
+            "display_label": "Inle Lake \u2014 01 Nov 2023",
+            "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231101Txxxxxx",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-07-01",
+                    "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230701Txxxxxx"
+                }
+            ],
+            "s1_image_id": null
+        }
+    ],
+    "Hartbeespoort": [
+        {
+            "entry_id": "Hartbeespoort_20231115",
+            "location": "Hartbeespoort",
+            "obs_date": "2023-11-15",
+            "display_label": "Hartbeespoort Dam \u2014 15 Nov 2023",
+            "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231115Txxxxxx",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-08-15",
+                    "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230815Txxxxxx"
+                }
+            ],
+            "s1_image_id": null
+        }
+    ],
+    "Mula": [
+        {
+            "entry_id": "Mula_20231201",
+            "location": "Mula",
+            "obs_date": "2023-12-01",
+            "display_label": "Mula River \u2014 01 Dec 2023",
+            "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231201Txxxxxx",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-09-01",
+                    "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230901Txxxxxx"
+                }
+            ],
+            "s1_image_id": null
+        }
+    ],
+    "RawaPening": [
+        {
+            "entry_id": "RawaPening_20231115",
+            "location": "RawaPening",
+            "obs_date": "2023-11-15",
+            "display_label": "Lake Rawa Pening \u2014 15 Nov 2023",
+            "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231115Txxxxxx",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-07-15",
+                    "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230715Txxxxxx"
+                }
+            ],
+            "s1_image_id": null
+        }
+    ],
+    "Rodman": [
+        {
+            "entry_id": "Rodman_20231201",
+            "location": "Rodman",
+            "obs_date": "2023-12-01",
+            "display_label": "Rodman Reservoir \u2014 01 Dec 2023",
+            "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231201Txxxxxx",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-09-01",
+                    "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230901Txxxxxx"
+                }
+            ],
+            "s1_image_id": null
+        }
+    ],
+    "Valsequillo": [
+        {
+            "entry_id": "Valsequillo_20231201",
+            "location": "Valsequillo",
+            "obs_date": "2023-12-01",
+            "display_label": "Valsequillo Lake \u2014 01 Dec 2023",
+            "s2_target_image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20231201Txxxxxx",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-08-01",
+                    "image_id": "REPLACE_ME_COPERNICUS/S2_SR_HARMONIZED/20230801Txxxxxx"
+                }
+            ],
+            "s1_image_id": null
+        },
+        {
+            "entry_id": "Valsequillo_20190107",
+            "location": "Valsequillo",
+            "obs_date": "2019-01-07",
+            "display_label": "Valsequillo - 07 January 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190107T170701_20190107T171114_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190107T003913_20190107T003938_014381_01AC38_A553",
+            "s2_comparison_images": []
+        },
+        {
+            "entry_id": "Valsequillo_20190122",
+            "location": "Valsequillo",
+            "obs_date": "2019-01-22",
+            "display_label": "Valsequillo - 22 January 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190122T170619_20190122T171814_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190122T122609_20190122T122634_025590_02D711_6044",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-01-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190107T170701_20190107T171114_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190206",
+            "location": "Valsequillo",
+            "obs_date": "2019-02-06",
+            "display_label": "Valsequillo - 06 February 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190206T170501_20190206T170833_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190206T004010_20190206T004035_025802_02DEA5_4345",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-01-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190122T170619_20190122T171814_T14QNG"
+                },
+                {
+                    "date": "2019-01-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190107T170701_20190107T171114_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190221",
+            "location": "Valsequillo",
+            "obs_date": "2019-02-21",
+            "display_label": "Valsequillo - 21 February 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190221T170329_20190221T170828_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190221T122514_20190221T122539_015044_01C1C9_A9AE",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-01-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190122T170619_20190122T171814_T14QNG"
+                },
+                {
+                    "date": "2019-02-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190206T170501_20190206T170833_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190308",
+            "location": "Valsequillo",
+            "obs_date": "2019-03-08",
+            "display_label": "Valsequillo - 08 March 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190308T170131_20190308T171406_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190308T003911_20190308T003936_015256_01C8BA_6DE7",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-01-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190122T170619_20190122T171814_T14QNG"
+                },
+                {
+                    "date": "2019-01-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190107T170701_20190107T171114_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190323",
+            "location": "Valsequillo",
+            "obs_date": "2019-03-23",
+            "display_label": "Valsequillo - 23 March 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190323T165949_20190323T170554_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190323T122608_20190323T122633_026465_02F6AD_5CE7",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-02-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190206T170501_20190206T170833_T14QNF"
+                },
+                {
+                    "date": "2019-01-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190122T170619_20190122T171814_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190407",
+            "location": "Valsequillo",
+            "obs_date": "2019-04-07",
+            "display_label": "Valsequillo - 07 April 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190407T165851_20190407T171414_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190407T004011_20190407T004036_026677_02FE6A_AA39",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-03-08",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190308T170131_20190308T171406_T14QNF"
+                },
+                {
+                    "date": "2019-01-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190122T170619_20190122T171814_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190422",
+            "location": "Valsequillo",
+            "obs_date": "2019-04-22",
+            "display_label": "Valsequillo - 22 April 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190422T165849_20190422T170804_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190422T122515_20190422T122540_015919_01DE8A_FD0A",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-03-08",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190308T170131_20190308T171406_T14QNF"
+                },
+                {
+                    "date": "2019-01-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190122T170619_20190122T171814_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190507",
+            "location": "Valsequillo",
+            "obs_date": "2019-05-07",
+            "display_label": "Valsequillo - 07 May 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190507T165901_20190507T171141_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190507T003913_20190507T003938_016131_01E59C_1464",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-04-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190407T165851_20190407T171414_T14QNF"
+                },
+                {
+                    "date": "2019-03-08",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190308T170131_20190308T171406_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190621",
+            "location": "Valsequillo",
+            "obs_date": "2019-06-21",
+            "display_label": "Valsequillo - 21 June 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190621T165859_20190621T171322_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190621T122519_20190621T122544_016794_01F9B5_1F39",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-05-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190507T165901_20190507T171141_T14QNG"
+                },
+                {
+                    "date": "2019-04-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190407T165851_20190407T171414_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190706",
+            "location": "Valsequillo",
+            "obs_date": "2019-07-06",
+            "display_label": "Valsequillo - 06 July 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190706T003917_20190706T003942_017006_01FFEA_6032",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-06-21",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190621T165859_20190621T171322_T14QNG"
+                },
+                {
+                    "date": "2019-05-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190507T165901_20190507T171141_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190721",
+            "location": "Valsequillo",
+            "obs_date": "2019-07-21",
+            "display_label": "Valsequillo - 21 July 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190721T165859_20190721T171631_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190721T122614_20190721T122639_028215_032FF8_EB9A",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-07-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF"
+                },
+                {
+                    "date": "2019-05-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190507T165901_20190507T171141_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190805",
+            "location": "Valsequillo",
+            "obs_date": "2019-08-05",
+            "display_label": "Valsequillo - 05 August 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190805T165901_20190805T171352_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190805T004017_20190805T004042_028427_033657_4EFB",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-07-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF"
+                },
+                {
+                    "date": "2019-05-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190507T165901_20190507T171141_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190820",
+            "location": "Valsequillo",
+            "obs_date": "2019-08-20",
+            "display_label": "Valsequillo - 20 August 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190820T165849_20190820T171711_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190820T122522_20190820T122547_017669_0213DF_6726",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-07-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF"
+                },
+                {
+                    "date": "2019-06-21",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190621T165859_20190621T171322_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190919",
+            "location": "Valsequillo",
+            "obs_date": "2019-09-19",
+            "display_label": "Valsequillo - 19 September 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190919T165949_20190919T171109_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190919T122617_20190919T122642_029090_034D3D_73CA",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-08-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190820T165849_20190820T171711_T14QNG"
+                },
+                {
+                    "date": "2019-07-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20191004",
+            "location": "Valsequillo",
+            "obs_date": "2019-10-04",
+            "display_label": "Valsequillo - 04 October 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191004T170141_20191004T171309_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20191004T004020_20191004T004045_029302_03546D_EC11",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-08-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190820T165849_20190820T171711_T14QNG"
+                },
+                {
+                    "date": "2019-07-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20191019",
+            "location": "Valsequillo",
+            "obs_date": "2019-10-19",
+            "display_label": "Valsequillo - 19 October 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191019T170319_20191019T171034_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20191019T122524_20191019T122549_018544_022F11_61D5",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-10-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191004T170141_20191004T171309_T14QNF"
+                },
+                {
+                    "date": "2019-07-21",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190721T165859_20190721T171631_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20191103",
+            "location": "Valsequillo",
+            "obs_date": "2019-11-03",
+            "display_label": "Valsequillo - 03 November 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191103T170451_20191103T170811_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20191103T003921_20191103T003946_018756_0235A1_3245",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-10-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191004T170141_20191004T171309_T14QNF"
+                },
+                {
+                    "date": "2019-08-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190820T165849_20190820T171711_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20191118",
+            "location": "Valsequillo",
+            "obs_date": "2019-11-18",
+            "display_label": "Valsequillo - 18 November 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191118T170609_20191118T171457_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20191118T122617_20191118T122642_029965_036B8B_9EA8",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-10-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191004T170141_20191004T171309_T14QNF"
+                },
+                {
+                    "date": "2019-08-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190820T165849_20190820T171711_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20191203",
+            "location": "Valsequillo",
+            "obs_date": "2019-12-03",
+            "display_label": "Valsequillo - 03 December 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191203T170701_20191203T171100_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20191203T004019_20191203T004044_030177_0372CD_BFE5",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-11-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191118T170609_20191118T171457_T14QNF"
+                },
+                {
+                    "date": "2019-10-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191004T170141_20191004T171309_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20191218",
+            "location": "Valsequillo",
+            "obs_date": "2019-12-18",
+            "display_label": "Valsequillo - 18 December 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191218T170719_20191218T171139_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20191218T122523_20191218T122548_019419_024AF1_F356",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-12-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191203T170701_20191203T171100_T14QNF"
+                },
+                {
+                    "date": "2019-10-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191004T170141_20191004T171309_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200102",
+            "location": "Valsequillo",
+            "obs_date": "2020-01-02",
+            "display_label": "Valsequillo - 02 January 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200102T170711_20200102T171105_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200102T003919_20200102T003944_019631_02519C_B267",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-12-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191203T170701_20191203T171100_T14QNF"
+                },
+                {
+                    "date": "2019-10-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191004T170141_20191004T171309_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200117",
+            "location": "Valsequillo",
+            "obs_date": "2020-01-17",
+            "display_label": "Valsequillo - 17 January 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200117T170629_20200117T171145_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200117T122615_20200117T122640_030840_0389DE_0A78",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-12-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191203T170701_20191203T171100_T14QNF"
+                },
+                {
+                    "date": "2019-11-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191118T170609_20191118T171457_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200201",
+            "location": "Valsequillo",
+            "obs_date": "2020-02-01",
+            "display_label": "Valsequillo - 01 February 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200201T170521_20200201T171604_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200201T004017_20200201T004042_031052_039134_3933",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-01-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200117T170629_20200117T171145_T14QNG"
+                },
+                {
+                    "date": "2019-12-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191203T170701_20191203T171100_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200216",
+            "location": "Valsequillo",
+            "obs_date": "2020-02-16",
+            "display_label": "Valsequillo - 16 February 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200216T170359_20200216T171810_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200216T122521_20200216T122546_020294_0266F0_EC0C",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-01-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200117T170629_20200117T171145_T14QNG"
+                },
+                {
+                    "date": "2019-12-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191203T170701_20191203T171100_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200302",
+            "location": "Valsequillo",
+            "obs_date": "2020-03-02",
+            "display_label": "Valsequillo - 02 March 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200302T170211_20200302T171425_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200302T003917_20200302T003942_020506_026DB6_B62F",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-02-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200216T170359_20200216T171810_T14QNF"
+                },
+                {
+                    "date": "2019-12-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191203T170701_20191203T171100_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200317",
+            "location": "Valsequillo",
+            "obs_date": "2020-03-17",
+            "display_label": "Valsequillo - 17 March 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200317T165929_20200317T170929_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200317T122614_20200317T122639_031715_03A840_BDCF",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-02-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200216T170359_20200216T171810_T14QNF"
+                },
+                {
+                    "date": "2020-01-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200117T170629_20200117T171145_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200401",
+            "location": "Valsequillo",
+            "obs_date": "2020-04-01",
+            "display_label": "Valsequillo - 01 April 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200401T165851_20200401T171339_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200401T004017_20200401T004042_031927_03AFA8_B53B",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-02-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200216T170359_20200216T171810_T14QNF"
+                },
+                {
+                    "date": "2020-01-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200117T170629_20200117T171145_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200416",
+            "location": "Valsequillo",
+            "obs_date": "2020-04-16",
+            "display_label": "Valsequillo - 16 April 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200416T165839_20200416T171354_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200416T122521_20200416T122546_021169_0282BB_D934",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-03-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200302T170211_20200302T171425_T14QNF"
+                },
+                {
+                    "date": "2020-02-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200216T170359_20200216T171810_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200501",
+            "location": "Valsequillo",
+            "obs_date": "2020-05-01",
+            "display_label": "Valsequillo - 01 May 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200501T165901_20200501T171329_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200501T003919_20200501T003944_021381_028960_6BE3",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-04-01",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200401T165851_20200401T171339_T14QNF"
+                },
+                {
+                    "date": "2020-02-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200216T170359_20200216T171810_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200516",
+            "location": "Valsequillo",
+            "obs_date": "2020-05-16",
+            "display_label": "Valsequillo - 16 May 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T165849_20200516T171427_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200516T122617_20200516T122642_032590_03C657_2650",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-04-01",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200401T165851_20200401T171339_T14QNF"
+                },
+                {
+                    "date": "2020-02-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200216T170359_20200216T171810_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200531",
+            "location": "Valsequillo",
+            "obs_date": "2020-05-31",
+            "display_label": "Valsequillo - 31 May 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200531T165901_20200531T171419_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200531T004020_20200531T004045_032802_03CCAB_CB9F",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T165849_20200516T171427_T14QNF"
+                },
+                {
+                    "date": "2020-03-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200302T170211_20200302T171425_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200615",
+            "location": "Valsequillo",
+            "obs_date": "2020-06-15",
+            "display_label": "Valsequillo - 15 June 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200615T165849_20200615T171154_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200615T122525_20200615T122550_022044_029D64_C389",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T165849_20200516T171427_T14QNF"
+                },
+                {
+                    "date": "2020-04-01",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200401T165851_20200401T171339_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200630",
+            "location": "Valsequillo",
+            "obs_date": "2020-06-30",
+            "display_label": "Valsequillo - 30 June 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200630T165901_20200630T171425_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200630T003923_20200630T003948_022256_02A3D9_11F6",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T165849_20200516T171427_T14QNF"
+                },
+                {
+                    "date": "2020-04-01",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200401T165851_20200401T171339_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200715",
+            "location": "Valsequillo",
+            "obs_date": "2020-07-15",
+            "display_label": "Valsequillo - 15 July 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200715T165849_20200715T171429_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200715T122620_20200715T122645_033465_03E0BD_9811",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-05-31",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200531T165901_20200531T171419_T14QNF"
+                },
+                {
+                    "date": "2020-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T165849_20200516T171427_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200730",
+            "location": "Valsequillo",
+            "obs_date": "2020-07-30",
+            "display_label": "Valsequillo - 30 July 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200730T165901_20200730T171827_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200730T004023_20200730T004048_033677_03E72F_95FE",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-06-15",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200615T165849_20200615T171154_T14QNG"
+                },
+                {
+                    "date": "2020-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T165849_20200516T171427_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200814",
+            "location": "Valsequillo",
+            "obs_date": "2020-08-14",
+            "display_label": "Valsequillo - 14 August 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200814T122528_20200814T122553_022919_02B814_26A1",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-07-30",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200730T165901_20200730T171827_T14QNF"
+                },
+                {
+                    "date": "2020-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T165849_20200516T171427_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200829",
+            "location": "Valsequillo",
+            "obs_date": "2020-08-29",
+            "display_label": "Valsequillo - 29 August 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200829T165901_20200829T171526_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200829T003926_20200829T003951_023131_02BEB3_099C",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-08-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF"
+                },
+                {
+                    "date": "2020-05-31",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200531T165901_20200531T171419_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200913",
+            "location": "Valsequillo",
+            "obs_date": "2020-09-13",
+            "display_label": "Valsequillo - 13 September 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200913T165849_20200913T171512_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200913T122623_20200913T122648_034340_03FE19_129C",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-08-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF"
+                },
+                {
+                    "date": "2020-06-15",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200615T165849_20200615T171154_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200928",
+            "location": "Valsequillo",
+            "obs_date": "2020-09-28",
+            "display_label": "Valsequillo - 28 September 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200928T170111_20200928T171211_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200928T004026_20200928T004051_034552_040591_AECF",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-08-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF"
+                },
+                {
+                    "date": "2020-07-30",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200730T165901_20200730T171827_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20201013",
+            "location": "Valsequillo",
+            "obs_date": "2020-10-13",
+            "display_label": "Valsequillo - 13 October 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20201013T170159_20201013T171425_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20201013T122530_20201013T122555_023794_02D375_60C5",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-09-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200913T165849_20200913T171512_T14QNF"
+                },
+                {
+                    "date": "2020-08-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20201028",
+            "location": "Valsequillo",
+            "obs_date": "2020-10-28",
+            "display_label": "Valsequillo - 28 October 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20201028T170431_20201028T171606_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20201028T003927_20201028T003952_024006_02DA15_C9BE",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-09-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200913T165849_20200913T171512_T14QNF"
+                },
+                {
+                    "date": "2020-08-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20201112",
+            "location": "Valsequillo",
+            "obs_date": "2020-11-12",
+            "display_label": "Valsequillo - 12 November 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20201112T170539_20201112T171320_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20201112T122624_20201112T122649_035215_041C9D_D53B",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-10-28",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201028T170431_20201028T171606_T14QNF"
+                },
+                {
+                    "date": "2020-08-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20201127",
+            "location": "Valsequillo",
+            "obs_date": "2020-11-27",
+            "display_label": "Valsequillo - 27 November 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20201127T170641_20201127T171409_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20201127T004026_20201127T004051_035427_0423EF_5698",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-11-12",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201112T170539_20201112T171320_T14QNF"
+                },
+                {
+                    "date": "2020-09-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200913T165849_20200913T171512_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20201212",
+            "location": "Valsequillo",
+            "obs_date": "2020-12-12",
+            "display_label": "Valsequillo - 12 December 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20201212T170719_20201212T171503_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20201212T122529_20201212T122554_024669_02EF0C_AEB6",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-11-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201127T170641_20201127T171409_T14QNF"
+                },
+                {
+                    "date": "2020-09-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200913T165849_20200913T171512_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20201227",
+            "location": "Valsequillo",
+            "obs_date": "2020-12-27",
+            "display_label": "Valsequillo - 27 December 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20201227T170721_20201227T171445_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20201227T003926_20201227T003951_024881_02F5E3_6AC6",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-11-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201127T170641_20201127T171409_T14QNF"
+                },
+                {
+                    "date": "2020-10-28",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201028T170431_20201028T171606_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210126",
+            "location": "Valsequillo",
+            "obs_date": "2021-01-26",
+            "display_label": "Valsequillo - 26 January 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210126T170601_20210126T171307_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210126T004023_20210126T004048_036302_044253_6577",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-12-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201227T170721_20201227T171445_T14QNG"
+                },
+                {
+                    "date": "2020-11-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201127T170641_20201127T171409_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210210",
+            "location": "Valsequillo",
+            "obs_date": "2021-02-10",
+            "display_label": "Valsequillo - 10 February 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210210T170439_20210210T171435_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20210210T122527_20210210T122552_025544_030B38_D15E",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-01-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210126T170601_20210126T171307_T14QNF"
+                },
+                {
+                    "date": "2020-11-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201127T170641_20201127T171409_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210225",
+            "location": "Valsequillo",
+            "obs_date": "2021-02-25",
+            "display_label": "Valsequillo - 25 February 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210225T170251_20210225T171532_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20210225T003923_20210225T003948_025756_03121A_1C06",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-01-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210126T170601_20210126T171307_T14QNF"
+                },
+                {
+                    "date": "2020-11-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201127T170641_20201127T171409_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210312",
+            "location": "Valsequillo",
+            "obs_date": "2021-03-12",
+            "display_label": "Valsequillo - 12 March 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210312T170009_20210312T171117_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210312T122620_20210312T122645_036965_045961_3DED",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-01-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210126T170601_20210126T171307_T14QNF"
+                },
+                {
+                    "date": "2020-12-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201227T170721_20201227T171445_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210327",
+            "location": "Valsequillo",
+            "obs_date": "2021-03-27",
+            "display_label": "Valsequillo - 27 March 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210327T165921_20210327T170852_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210327T004023_20210327T004048_037177_0460B5_CC2A",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-02-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210225T170251_20210225T171532_T14QNF"
+                },
+                {
+                    "date": "2021-01-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210126T170601_20210126T171307_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210411",
+            "location": "Valsequillo",
+            "obs_date": "2021-04-11",
+            "display_label": "Valsequillo - 11 April 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210411T165839_20210411T171141_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20210411T122527_20210411T122552_026419_032766_927E",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-02-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210225T170251_20210225T171532_T14QNF"
+                },
+                {
+                    "date": "2021-01-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210126T170601_20210126T171307_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210426",
+            "location": "Valsequillo",
+            "obs_date": "2021-04-26",
+            "display_label": "Valsequillo - 26 April 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210426T165851_20210426T170638_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20210426T003925_20210426T003950_026631_032E2C_B894",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-03-12",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210312T170009_20210312T171117_T14QNF"
+                },
+                {
+                    "date": "2021-01-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210126T170601_20210126T171307_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210511",
+            "location": "Valsequillo",
+            "obs_date": "2021-05-11",
+            "display_label": "Valsequillo - 11 May 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210511T165849_20210511T171751_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210511T122622_20210511T122647_037840_047754_D54C",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-04-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210426T165851_20210426T170638_T14QNF"
+                },
+                {
+                    "date": "2021-02-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210225T170251_20210225T171532_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210526",
+            "location": "Valsequillo",
+            "obs_date": "2021-05-26",
+            "display_label": "Valsequillo - 26 May 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210526T165851_20210526T170700_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210526T004025_20210526T004050_038052_047DB0_04E0",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-04-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210426T165851_20210426T170638_T14QNF"
+                },
+                {
+                    "date": "2021-03-12",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210312T170009_20210312T171117_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210610",
+            "location": "Valsequillo",
+            "obs_date": "2021-06-10",
+            "display_label": "Valsequillo - 10 June 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210610T165849_20210610T171207_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20210610T122530_20210610T122555_027294_034293_47EB",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-04-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210426T165851_20210426T170638_T14QNF"
+                },
+                {
+                    "date": "2021-03-12",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210312T170009_20210312T171117_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210725",
+            "location": "Valsequillo",
+            "obs_date": "2021-07-25",
+            "display_label": "Valsequillo - 25 July 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210725T165901_20210725T171814_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210725T004029_20210725T004054_038927_0497DB_3228",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-06-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210610T165849_20210610T171207_T14QNG"
+                },
+                {
+                    "date": "2021-04-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210426T165851_20210426T170638_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210809",
+            "location": "Valsequillo",
+            "obs_date": "2021-08-09",
+            "display_label": "Valsequillo - 09 August 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210809T165849_20210809T171029_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20210809T122534_20210809T122559_028169_035C50_638D",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-07-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210725T165901_20210725T171814_T14QNG"
+                },
+                {
+                    "date": "2021-06-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210610T165849_20210610T171207_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210908",
+            "location": "Valsequillo",
+            "obs_date": "2021-09-08",
+            "display_label": "Valsequillo - 08 September 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210908T165839_20210908T171655_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210908T122629_20210908T122654_039590_04AE04_166C",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-07-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210725T165901_20210725T171814_T14QNG"
+                },
+                {
+                    "date": "2021-06-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210610T165849_20210610T171207_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210923",
+            "location": "Valsequillo",
+            "obs_date": "2021-09-23",
+            "display_label": "Valsequillo - 23 September 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210923T170031_20210923T171002_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210923T004032_20210923T004057_039802_04B530_F10A",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-08-09",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210809T165849_20210809T171029_T14QNG"
+                },
+                {
+                    "date": "2021-07-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210725T165901_20210725T171814_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20211008",
+            "location": "Valsequillo",
+            "obs_date": "2021-10-08",
+            "display_label": "Valsequillo - 08 October 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211008T170119_20211008T171734_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20211008T122536_20211008T122601_029044_03773B_B8E1",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-09-23",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210923T170031_20210923T171002_T14QNF"
+                },
+                {
+                    "date": "2021-07-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210725T165901_20210725T171814_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20211023",
+            "location": "Valsequillo",
+            "obs_date": "2021-10-23",
+            "display_label": "Valsequillo - 23 October 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211023T170351_20211023T171726_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20211023T003933_20211023T003958_029256_037DCC_D83C",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-09-23",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210923T170031_20210923T171002_T14QNF"
+                },
+                {
+                    "date": "2021-07-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210725T165901_20210725T171814_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20211107",
+            "location": "Valsequillo",
+            "obs_date": "2021-11-07",
+            "display_label": "Valsequillo - 07 November 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211107T170519_20211107T171601_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20211107T122629_20211107T122654_040465_04CC43_49FD",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-09-23",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210923T170031_20210923T171002_T14QNF"
+                },
+                {
+                    "date": "2021-08-09",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210809T165849_20210809T171029_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20211122",
+            "location": "Valsequillo",
+            "obs_date": "2021-11-22",
+            "display_label": "Valsequillo - 22 November 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211122T170621_20211122T171351_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20211122T004032_20211122T004057_040677_04D392_51DF",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-11-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211107T170519_20211107T171601_T14QNG"
+                },
+                {
+                    "date": "2021-09-23",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210923T170031_20210923T171002_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20211207",
+            "location": "Valsequillo",
+            "obs_date": "2021-12-07",
+            "display_label": "Valsequillo - 07 December 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211207T170659_20211207T171046_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20211207T122535_20211207T122600_029919_03925C_5508",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-11-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211107T170519_20211107T171601_T14QNG"
+                },
+                {
+                    "date": "2021-09-23",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210923T170031_20210923T171002_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20211222",
+            "location": "Valsequillo",
+            "obs_date": "2021-12-22",
+            "display_label": "Valsequillo - 22 December 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211222T170731_20211222T171452_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20211222T003931_20211222T003956_030131_03990E_D25A",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-12-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211207T170659_20211207T171046_T14QNF"
+                },
+                {
+                    "date": "2021-09-23",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210923T170031_20210923T171002_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20220106",
+            "location": "Valsequillo",
+            "obs_date": "2022-01-06",
+            "display_label": "Valsequillo - 06 January 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220106T170709_20220106T171047_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220106T122627_20220106T122652_041340_04EA25_6631",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-12-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211207T170659_20211207T171046_T14QNF"
+                },
+                {
+                    "date": "2021-11-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211107T170519_20211107T171601_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20220307",
+            "location": "Valsequillo",
+            "obs_date": "2022-03-07",
+            "display_label": "Valsequillo - 07 March 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220307T170049_20220307T170827_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220307T122626_20220307T122651_042215_0507EE_73EB",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-12-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211207T170659_20211207T171046_T14QNF"
+                },
+                {
+                    "date": "2021-12-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211222T170731_20211222T171452_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20220322",
+            "location": "Valsequillo",
+            "obs_date": "2022-03-22",
+            "display_label": "Valsequillo - 22 March 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220322T170001_20220322T170817_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220322T004028_20220322T004053_042427_050F21_01B5",
+            "s2_comparison_images": [
+                {
+                    "date": "2022-03-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220307T170049_20220307T170827_T14QNF"
+                },
+                {
+                    "date": "2021-12-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211222T170731_20211222T171452_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20220506",
+            "location": "Valsequillo",
+            "obs_date": "2022-05-06",
+            "display_label": "Valsequillo - 06 May 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220506T165839_20220506T171614_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220506T122627_20220506T122652_043090_052545_3751",
+            "s2_comparison_images": [
+                {
+                    "date": "2022-03-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220322T170001_20220322T170817_T14QNF"
+                },
+                {
+                    "date": "2022-03-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220307T170049_20220307T170827_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20220521",
+            "location": "Valsequillo",
+            "obs_date": "2022-05-21",
+            "display_label": "Valsequillo - 21 May 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220521T165851_20220521T171441_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220521T004031_20220521T004056_043302_052BCA_07B0",
+            "s2_comparison_images": [
+                {
+                    "date": "2022-05-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220506T165839_20220506T171614_T14QNF"
+                },
+                {
+                    "date": "2022-03-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220307T170049_20220307T170827_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20220720",
+            "location": "Valsequillo",
+            "obs_date": "2022-07-20",
+            "display_label": "Valsequillo - 20 July 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220720T165901_20220720T171004_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220720T004035_20220720T004100_044177_0545E1_FE4F",
+            "s2_comparison_images": [
+                {
+                    "date": "2022-05-21",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220521T165851_20220521T171441_T14QNF"
+                },
+                {
+                    "date": "2022-05-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220506T165839_20220506T171614_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20221117",
+            "location": "Valsequillo",
+            "obs_date": "2022-11-17",
+            "display_label": "Valsequillo - 17 November 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20221117T170601_20221117T171404_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20221117T004037_20221117T004102_045927_057ED0_3E52",
+            "s2_comparison_images": []
+        },
+        {
+            "entry_id": "Valsequillo_20230302",
+            "location": "Valsequillo",
+            "obs_date": "2023-03-02",
+            "display_label": "Valsequillo - 02 March 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230302T170219_20230302T171139_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230302T122632_20230302T122657_047465_05B2D3_CE68",
+            "s2_comparison_images": []
+        },
+        {
+            "entry_id": "Valsequillo_20230317",
+            "location": "Valsequillo",
+            "obs_date": "2023-03-17",
+            "display_label": "Valsequillo - 17 March 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230317T170031_20230317T171544_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230317T004034_20230317T004059_047677_05BA05_B61D",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-03-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230302T170219_20230302T171139_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20230516",
+            "location": "Valsequillo",
+            "obs_date": "2023-05-16",
+            "display_label": "Valsequillo - 16 May 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230516T165851_20230516T171315_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230516T004036_20230516T004101_048552_05D706_8494",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-03-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230302T170219_20230302T171139_T14QNG"
+                },
+                {
+                    "date": "2023-03-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230317T170031_20230317T171544_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20230715",
+            "location": "Valsequillo",
+            "obs_date": "2023-07-15",
+            "display_label": "Valsequillo - 15 July 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230715T165851_20230715T170556_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230715T004040_20230715T004105_049427_05F18D_CA94",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230516T165851_20230516T171315_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20230913",
+            "location": "Valsequillo",
+            "obs_date": "2023-09-13",
+            "display_label": "Valsequillo - 13 September 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230913T165921_20230913T171706_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230913T004043_20230913T004108_050302_060E50_ECD9",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-07-15",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230715T165851_20230715T170556_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20231028",
+            "location": "Valsequillo",
+            "obs_date": "2023-10-28",
+            "display_label": "Valsequillo - 28 October 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20231028T170419_20231028T171541_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20231028T122641_20231028T122706_050965_0624EA_E30B",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-09-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230913T165921_20230913T171706_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20231112",
+            "location": "Valsequillo",
+            "obs_date": "2023-11-12",
+            "display_label": "Valsequillo - 12 November 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20231112T170541_20231112T171411_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20231112T004043_20231112T004108_051177_062C3E_BCC5",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-10-28",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231028T170419_20231028T171541_T14QNG"
+                },
+                {
+                    "date": "2023-09-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230913T165921_20230913T171706_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20240111",
+            "location": "Valsequillo",
+            "obs_date": "2024-01-11",
+            "display_label": "Valsequillo - 11 January 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240111T170651_20240111T171759_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240111T004040_20240111T004105_052052_064A6D_2355",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-10-28",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231028T170419_20231028T171541_T14QNG"
+                },
+                {
+                    "date": "2023-11-12",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231112T170541_20231112T171411_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20240311",
+            "location": "Valsequillo",
+            "obs_date": "2024-03-11",
+            "display_label": "Valsequillo - 11 March 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240311T170111_20240311T171732_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240311T004039_20240311T004104_052927_06680C_2C24",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-01-11",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240111T170651_20240111T171759_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20240425",
+            "location": "Valsequillo",
+            "obs_date": "2024-04-25",
+            "display_label": "Valsequillo - 25 April 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240425T165849_20240425T171045_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240425T122638_20240425T122703_053590_06818E_ECC3",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-03-11",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240311T170111_20240311T171732_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20240510",
+            "location": "Valsequillo",
+            "obs_date": "2024-05-10",
+            "display_label": "Valsequillo - 10 May 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240510T165851_20240510T171606_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240510T004041_20240510T004106_053802_0689C7_B916",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-04-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240425T165849_20240425T171045_T14QNF"
+                },
+                {
+                    "date": "2024-03-11",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240311T170111_20240311T171732_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20240709",
+            "location": "Valsequillo",
+            "obs_date": "2024-07-09",
+            "display_label": "Valsequillo - 09 July 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240709T165901_20240709T171701_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240709T004038_20240709T004103_054677_06A813_5BA8",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-04-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240425T165849_20240425T171045_T14QNF"
+                },
+                {
+                    "date": "2024-05-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240510T165851_20240510T171606_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20241106",
+            "location": "Valsequillo",
+            "obs_date": "2024-11-06",
+            "display_label": "Valsequillo - 06 November 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20241106T170511_20241106T171612_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20241106T004039_20241106T004104_056427_06EA30_5A70",
+            "s2_comparison_images": []
+        },
+        {
+            "entry_id": "Valsequillo_20250306",
+            "location": "Valsequillo",
+            "obs_date": "2025-03-06",
+            "display_label": "Valsequillo - 06 March 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250306T170211_20250306T170836_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250306T004032_20250306T004057_058177_073005_8A32",
+            "s2_comparison_images": []
+        },
+        {
+            "entry_id": "Valsequillo_20250318",
+            "location": "Valsequillo",
+            "obs_date": "2025-03-18",
+            "display_label": "Valsequillo - 18 March 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250318T170711_20250318T170954_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250318T004032_20250318T004057_058352_0736EF_E44B",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-03-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250306T170211_20250306T170836_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250407",
+            "location": "Valsequillo",
+            "obs_date": "2025-04-07",
+            "display_label": "Valsequillo - 07 April 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250407T170711_20250407T171100_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_EW_GRDM_1SDV_20250407T123314_20250407T123341_001787_00338C_C573",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-03-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250318T170711_20250318T170954_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250420",
+            "location": "Valsequillo",
+            "obs_date": "2025-04-20",
+            "display_label": "Valsequillo - 20 April 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250420T165849_20250420T171251_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250420T122630_20250420T122655_058840_074AB5_C777",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-03-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250318T170711_20250318T170954_T14QNF"
+                },
+                {
+                    "date": "2025-04-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250407T170711_20250407T171100_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250505",
+            "location": "Valsequillo",
+            "obs_date": "2025-05-05",
+            "display_label": "Valsequillo - 05 May 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250505T004033_20250505T004058_059052_07533E_5EC7",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-04-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250420T165849_20250420T171251_T14QNG"
+                },
+                {
+                    "date": "2025-03-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250318T170711_20250318T170954_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250517",
+            "location": "Valsequillo",
+            "obs_date": "2025-05-17",
+            "display_label": "Valsequillo - 17 May 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250517T170711_20250517T171540_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250517T004032_20250517T004057_059227_07597B_A10B",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-05-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF"
+                },
+                {
+                    "date": "2025-03-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250318T170711_20250318T170954_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250520",
+            "location": "Valsequillo",
+            "obs_date": "2025-05-20",
+            "display_label": "Valsequillo - 20 May 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250520T165849_20250520T171609_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250520T122500_20250520T122525_002414_0050FB_72C7",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-05-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF"
+                },
+                {
+                    "date": "2025-03-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250318T170711_20250318T170954_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250604",
+            "location": "Valsequillo",
+            "obs_date": "2025-06-04",
+            "display_label": "Valsequillo - 04 June 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250604T165911_20250604T170831_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250604T003924_20250604T003949_002626_0056FE_856F",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-05-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF"
+                },
+                {
+                    "date": "2025-03-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250318T170711_20250318T170954_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250704",
+            "location": "Valsequillo",
+            "obs_date": "2025-07-04",
+            "display_label": "Valsequillo - 04 July 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250704T004030_20250704T004055_059927_0771B0_16CE",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-05-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250520T165849_20250520T171609_T14QNG"
+                },
+                {
+                    "date": "2025-05-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250716",
+            "location": "Valsequillo",
+            "obs_date": "2025-07-16",
+            "display_label": "Valsequillo - 16 July 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250716T170721_20250716T171808_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250716T004029_20250716T004054_060102_0777B4_7693",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-07-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG"
+                },
+                {
+                    "date": "2025-05-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250719",
+            "location": "Valsequillo",
+            "obs_date": "2025-07-19",
+            "display_label": "Valsequillo - 19 July 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250719T165849_20250719T171802_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250719T122504_20250719T122529_003289_006A2D_3264",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-07-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG"
+                },
+                {
+                    "date": "2025-05-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250803",
+            "location": "Valsequillo",
+            "obs_date": "2025-08-03",
+            "display_label": "Valsequillo - 03 August 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250803T165911_20250803T171635_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250803T003927_20250803T003952_003501_00705A_6ED9",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-07-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG"
+                },
+                {
+                    "date": "2025-05-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250818",
+            "location": "Valsequillo",
+            "obs_date": "2025-08-18",
+            "display_label": "Valsequillo - 18 August 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250818T165849_20250818T171222_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250818T122626_20250818T122651_060590_07895E_A946",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-07-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG"
+                },
+                {
+                    "date": "2025-05-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250520T165849_20250520T171609_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250902",
+            "location": "Valsequillo",
+            "obs_date": "2025-09-02",
+            "display_label": "Valsequillo - 02 September 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250902T165911_20250902T171205_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250902T004029_20250902T004054_060802_0791BA_54C2",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-08-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250803T165911_20250803T171635_T14QNF"
+                },
+                {
+                    "date": "2025-07-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250914",
+            "location": "Valsequillo",
+            "obs_date": "2025-09-14",
+            "display_label": "Valsequillo - 14 September 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250914T170711_20250914T171433_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250914T004029_20250914T004054_060977_0798BF_A5D3",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-08-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250803T165911_20250803T171635_T14QNF"
+                },
+                {
+                    "date": "2025-07-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250917",
+            "location": "Valsequillo",
+            "obs_date": "2025-09-17",
+            "display_label": "Valsequillo - 17 September 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250917T165849_20250917T171250_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250917T122507_20250917T122532_004164_008451_D5AD",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-08-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250803T165911_20250803T171635_T14QNF"
+                },
+                {
+                    "date": "2025-07-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251014",
+            "location": "Valsequillo",
+            "obs_date": "2025-10-14",
+            "display_label": "Valsequillo - 14 October 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20251014T003929_20251014T003954_004551_009010_7725",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-09-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250917T165849_20250917T171250_T14QNF"
+                },
+                {
+                    "date": "2025-07-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250716T170721_20250716T171808_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251017",
+            "location": "Valsequillo",
+            "obs_date": "2025-10-17",
+            "display_label": "Valsequillo - 17 October 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251017T170209_20251017T171047_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20251017T122628_20251017T122653_061465_07AC5A_8513",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-10-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF"
+                },
+                {
+                    "date": "2025-08-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250803T165911_20250803T171635_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251101",
+            "location": "Valsequillo",
+            "obs_date": "2025-11-01",
+            "display_label": "Valsequillo - 01 November 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251101T170501_20251101T170630_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20251101T004018_20251101T004043_061677_07B4E3_AC54",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-10-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF"
+                },
+                {
+                    "date": "2025-08-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250803T165911_20250803T171635_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251116",
+            "location": "Valsequillo",
+            "obs_date": "2025-11-16",
+            "display_label": "Valsequillo - 16 November 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251116T170509_20251116T171646_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20251116T122507_20251116T122532_005039_009FB3_B1F3",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-10-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF"
+                },
+                {
+                    "date": "2025-08-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250818T165849_20250818T171222_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251201",
+            "location": "Valsequillo",
+            "obs_date": "2025-12-01",
+            "display_label": "Valsequillo - 01 December 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251201T170701_20251201T170703_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20251201T003928_20251201T003953_005251_00A6C5_0367",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-11-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251116T170509_20251116T171646_T14QNG"
+                },
+                {
+                    "date": "2025-10-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251213",
+            "location": "Valsequillo",
+            "obs_date": "2025-12-13",
+            "display_label": "Valsequillo - 13 December 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251213T170731_20251213T170733_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20251213T003928_20251213T003953_005426_00ACCC_94A3",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-11-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251116T170509_20251116T171646_T14QNG"
+                },
+                {
+                    "date": "2025-10-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251216",
+            "location": "Valsequillo",
+            "obs_date": "2025-12-16",
+            "display_label": "Valsequillo - 16 December 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251216T170629_20251216T171819_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20251216T122624_20251216T122649_062340_07CEB1_CAC4",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-11-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251116T170509_20251116T171646_T14QNG"
+                },
+                {
+                    "date": "2025-10-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251231",
+            "location": "Valsequillo",
+            "obs_date": "2025-12-31",
+            "display_label": "Valsequillo - 31 December 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251231T170731_20251231T170726_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20251231T004013_20251231T004038_062552_07D6E3_E2E9",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-11-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251116T170509_20251116T171646_T14QNG"
+                },
+                {
+                    "date": "2025-10-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190107",
+            "location": "Valsequillo",
+            "obs_date": "2019-01-07",
+            "display_label": "Valsequillo - 07 January 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190107T170701_20190107T171114_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190107T003913_20190107T003938_014381_01AC38_A553",
+            "s2_comparison_images": []
+        },
+        {
+            "entry_id": "Valsequillo_20190122",
+            "location": "Valsequillo",
+            "obs_date": "2019-01-22",
+            "display_label": "Valsequillo - 22 January 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190122T170619_20190122T171814_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190122T122609_20190122T122634_025590_02D711_6044",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-01-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190107T170701_20190107T171114_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190206",
+            "location": "Valsequillo",
+            "obs_date": "2019-02-06",
+            "display_label": "Valsequillo - 06 February 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190206T170501_20190206T170833_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190206T004010_20190206T004035_025802_02DEA5_4345",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-01-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190122T170619_20190122T171814_T14QNG"
+                },
+                {
+                    "date": "2019-01-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190107T170701_20190107T171114_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190221",
+            "location": "Valsequillo",
+            "obs_date": "2019-02-21",
+            "display_label": "Valsequillo - 21 February 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190221T170329_20190221T170828_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190221T122514_20190221T122539_015044_01C1C9_A9AE",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-01-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190122T170619_20190122T171814_T14QNG"
+                },
+                {
+                    "date": "2019-02-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190206T170501_20190206T170833_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190308",
+            "location": "Valsequillo",
+            "obs_date": "2019-03-08",
+            "display_label": "Valsequillo - 08 March 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190308T170131_20190308T171406_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190308T003911_20190308T003936_015256_01C8BA_6DE7",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-01-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190122T170619_20190122T171814_T14QNG"
+                },
+                {
+                    "date": "2019-01-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190107T170701_20190107T171114_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190323",
+            "location": "Valsequillo",
+            "obs_date": "2019-03-23",
+            "display_label": "Valsequillo - 23 March 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190323T165949_20190323T170554_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190323T122608_20190323T122633_026465_02F6AD_5CE7",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-02-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190206T170501_20190206T170833_T14QNF"
+                },
+                {
+                    "date": "2019-01-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190122T170619_20190122T171814_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190407",
+            "location": "Valsequillo",
+            "obs_date": "2019-04-07",
+            "display_label": "Valsequillo - 07 April 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190407T165851_20190407T171414_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190407T004011_20190407T004036_026677_02FE6A_AA39",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-03-08",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190308T170131_20190308T171406_T14QNF"
+                },
+                {
+                    "date": "2019-01-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190122T170619_20190122T171814_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190422",
+            "location": "Valsequillo",
+            "obs_date": "2019-04-22",
+            "display_label": "Valsequillo - 22 April 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190422T165849_20190422T170804_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190422T122515_20190422T122540_015919_01DE8A_FD0A",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-03-08",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190308T170131_20190308T171406_T14QNF"
+                },
+                {
+                    "date": "2019-01-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190122T170619_20190122T171814_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190507",
+            "location": "Valsequillo",
+            "obs_date": "2019-05-07",
+            "display_label": "Valsequillo - 07 May 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190507T165901_20190507T171141_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190507T003913_20190507T003938_016131_01E59C_1464",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-04-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190407T165851_20190407T171414_T14QNF"
+                },
+                {
+                    "date": "2019-03-08",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190308T170131_20190308T171406_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190621",
+            "location": "Valsequillo",
+            "obs_date": "2019-06-21",
+            "display_label": "Valsequillo - 21 June 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190621T165859_20190621T171322_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190621T122519_20190621T122544_016794_01F9B5_1F39",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-05-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190507T165901_20190507T171141_T14QNG"
+                },
+                {
+                    "date": "2019-04-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190407T165851_20190407T171414_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190706",
+            "location": "Valsequillo",
+            "obs_date": "2019-07-06",
+            "display_label": "Valsequillo - 06 July 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190706T003917_20190706T003942_017006_01FFEA_6032",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-06-21",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190621T165859_20190621T171322_T14QNG"
+                },
+                {
+                    "date": "2019-05-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190507T165901_20190507T171141_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190721",
+            "location": "Valsequillo",
+            "obs_date": "2019-07-21",
+            "display_label": "Valsequillo - 21 July 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190721T165859_20190721T171631_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190721T122614_20190721T122639_028215_032FF8_EB9A",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-07-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF"
+                },
+                {
+                    "date": "2019-05-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190507T165901_20190507T171141_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190805",
+            "location": "Valsequillo",
+            "obs_date": "2019-08-05",
+            "display_label": "Valsequillo - 05 August 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190805T165901_20190805T171352_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190805T004017_20190805T004042_028427_033657_4EFB",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-07-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF"
+                },
+                {
+                    "date": "2019-05-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190507T165901_20190507T171141_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190820",
+            "location": "Valsequillo",
+            "obs_date": "2019-08-20",
+            "display_label": "Valsequillo - 20 August 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190820T165849_20190820T171711_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190820T122522_20190820T122547_017669_0213DF_6726",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-07-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF"
+                },
+                {
+                    "date": "2019-06-21",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190621T165859_20190621T171322_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190919",
+            "location": "Valsequillo",
+            "obs_date": "2019-09-19",
+            "display_label": "Valsequillo - 19 September 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190919T165949_20190919T171109_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190919T122617_20190919T122642_029090_034D3D_73CA",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-08-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190820T165849_20190820T171711_T14QNG"
+                },
+                {
+                    "date": "2019-07-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20191004",
+            "location": "Valsequillo",
+            "obs_date": "2019-10-04",
+            "display_label": "Valsequillo - 04 October 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191004T170141_20191004T171309_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20191004T004020_20191004T004045_029302_03546D_EC11",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-08-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190820T165849_20190820T171711_T14QNG"
+                },
+                {
+                    "date": "2019-07-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20191019",
+            "location": "Valsequillo",
+            "obs_date": "2019-10-19",
+            "display_label": "Valsequillo - 19 October 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191019T170319_20191019T171034_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20191019T122524_20191019T122549_018544_022F11_61D5",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-10-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191004T170141_20191004T171309_T14QNF"
+                },
+                {
+                    "date": "2019-07-21",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190721T165859_20190721T171631_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20191103",
+            "location": "Valsequillo",
+            "obs_date": "2019-11-03",
+            "display_label": "Valsequillo - 03 November 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191103T170451_20191103T170811_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20191103T003921_20191103T003946_018756_0235A1_3245",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-10-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191004T170141_20191004T171309_T14QNF"
+                },
+                {
+                    "date": "2019-08-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190820T165849_20190820T171711_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20191118",
+            "location": "Valsequillo",
+            "obs_date": "2019-11-18",
+            "display_label": "Valsequillo - 18 November 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191118T170609_20191118T171457_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20191118T122617_20191118T122642_029965_036B8B_9EA8",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-10-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191004T170141_20191004T171309_T14QNF"
+                },
+                {
+                    "date": "2019-08-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190820T165849_20190820T171711_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20191203",
+            "location": "Valsequillo",
+            "obs_date": "2019-12-03",
+            "display_label": "Valsequillo - 03 December 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191203T170701_20191203T171100_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20191203T004019_20191203T004044_030177_0372CD_BFE5",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-11-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191118T170609_20191118T171457_T14QNF"
+                },
+                {
+                    "date": "2019-10-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191004T170141_20191004T171309_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20191218",
+            "location": "Valsequillo",
+            "obs_date": "2019-12-18",
+            "display_label": "Valsequillo - 18 December 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191218T170719_20191218T171139_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20191218T122523_20191218T122548_019419_024AF1_F356",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-12-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191203T170701_20191203T171100_T14QNF"
+                },
+                {
+                    "date": "2019-10-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191004T170141_20191004T171309_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200102",
+            "location": "Valsequillo",
+            "obs_date": "2020-01-02",
+            "display_label": "Valsequillo - 02 January 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200102T170711_20200102T171105_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200102T003919_20200102T003944_019631_02519C_B267",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-12-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191203T170701_20191203T171100_T14QNF"
+                },
+                {
+                    "date": "2019-10-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191004T170141_20191004T171309_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200117",
+            "location": "Valsequillo",
+            "obs_date": "2020-01-17",
+            "display_label": "Valsequillo - 17 January 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200117T170629_20200117T171145_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200117T122615_20200117T122640_030840_0389DE_0A78",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-12-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191203T170701_20191203T171100_T14QNF"
+                },
+                {
+                    "date": "2019-11-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191118T170609_20191118T171457_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200201",
+            "location": "Valsequillo",
+            "obs_date": "2020-02-01",
+            "display_label": "Valsequillo - 01 February 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200201T170521_20200201T171604_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200201T004017_20200201T004042_031052_039134_3933",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-01-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200117T170629_20200117T171145_T14QNG"
+                },
+                {
+                    "date": "2019-12-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191203T170701_20191203T171100_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200216",
+            "location": "Valsequillo",
+            "obs_date": "2020-02-16",
+            "display_label": "Valsequillo - 16 February 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200216T170359_20200216T171810_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200216T122521_20200216T122546_020294_0266F0_EC0C",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-01-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200117T170629_20200117T171145_T14QNG"
+                },
+                {
+                    "date": "2019-12-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191203T170701_20191203T171100_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200302",
+            "location": "Valsequillo",
+            "obs_date": "2020-03-02",
+            "display_label": "Valsequillo - 02 March 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200302T170211_20200302T171425_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200302T003917_20200302T003942_020506_026DB6_B62F",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-02-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200216T170359_20200216T171810_T14QNF"
+                },
+                {
+                    "date": "2019-12-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191203T170701_20191203T171100_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200317",
+            "location": "Valsequillo",
+            "obs_date": "2020-03-17",
+            "display_label": "Valsequillo - 17 March 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200317T165929_20200317T170929_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200317T122614_20200317T122639_031715_03A840_BDCF",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-02-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200216T170359_20200216T171810_T14QNF"
+                },
+                {
+                    "date": "2020-01-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200117T170629_20200117T171145_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200401",
+            "location": "Valsequillo",
+            "obs_date": "2020-04-01",
+            "display_label": "Valsequillo - 01 April 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200401T165851_20200401T171339_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200401T004017_20200401T004042_031927_03AFA8_B53B",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-02-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200216T170359_20200216T171810_T14QNF"
+                },
+                {
+                    "date": "2020-01-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200117T170629_20200117T171145_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200416",
+            "location": "Valsequillo",
+            "obs_date": "2020-04-16",
+            "display_label": "Valsequillo - 16 April 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200416T165839_20200416T171354_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200416T122521_20200416T122546_021169_0282BB_D934",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-03-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200302T170211_20200302T171425_T14QNF"
+                },
+                {
+                    "date": "2020-02-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200216T170359_20200216T171810_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200501",
+            "location": "Valsequillo",
+            "obs_date": "2020-05-01",
+            "display_label": "Valsequillo - 01 May 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200501T165901_20200501T171329_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200501T003919_20200501T003944_021381_028960_6BE3",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-04-01",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200401T165851_20200401T171339_T14QNF"
+                },
+                {
+                    "date": "2020-02-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200216T170359_20200216T171810_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200516",
+            "location": "Valsequillo",
+            "obs_date": "2020-05-16",
+            "display_label": "Valsequillo - 16 May 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T165849_20200516T171427_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200516T122617_20200516T122642_032590_03C657_2650",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-04-01",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200401T165851_20200401T171339_T14QNF"
+                },
+                {
+                    "date": "2020-02-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200216T170359_20200216T171810_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200531",
+            "location": "Valsequillo",
+            "obs_date": "2020-05-31",
+            "display_label": "Valsequillo - 31 May 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200531T165901_20200531T171419_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200531T004020_20200531T004045_032802_03CCAB_CB9F",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T165849_20200516T171427_T14QNF"
+                },
+                {
+                    "date": "2020-03-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200302T170211_20200302T171425_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200615",
+            "location": "Valsequillo",
+            "obs_date": "2020-06-15",
+            "display_label": "Valsequillo - 15 June 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200615T165849_20200615T171154_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200615T122525_20200615T122550_022044_029D64_C389",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T165849_20200516T171427_T14QNF"
+                },
+                {
+                    "date": "2020-04-01",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200401T165851_20200401T171339_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200630",
+            "location": "Valsequillo",
+            "obs_date": "2020-06-30",
+            "display_label": "Valsequillo - 30 June 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200630T165901_20200630T171425_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200630T003923_20200630T003948_022256_02A3D9_11F6",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T165849_20200516T171427_T14QNF"
+                },
+                {
+                    "date": "2020-04-01",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200401T165851_20200401T171339_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200715",
+            "location": "Valsequillo",
+            "obs_date": "2020-07-15",
+            "display_label": "Valsequillo - 15 July 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200715T165849_20200715T171429_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200715T122620_20200715T122645_033465_03E0BD_9811",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-05-31",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200531T165901_20200531T171419_T14QNF"
+                },
+                {
+                    "date": "2020-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T165849_20200516T171427_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200730",
+            "location": "Valsequillo",
+            "obs_date": "2020-07-30",
+            "display_label": "Valsequillo - 30 July 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200730T165901_20200730T171827_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200730T004023_20200730T004048_033677_03E72F_95FE",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-06-15",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200615T165849_20200615T171154_T14QNG"
+                },
+                {
+                    "date": "2020-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T165849_20200516T171427_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200814",
+            "location": "Valsequillo",
+            "obs_date": "2020-08-14",
+            "display_label": "Valsequillo - 14 August 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200814T122528_20200814T122553_022919_02B814_26A1",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-07-30",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200730T165901_20200730T171827_T14QNF"
+                },
+                {
+                    "date": "2020-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T165849_20200516T171427_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200829",
+            "location": "Valsequillo",
+            "obs_date": "2020-08-29",
+            "display_label": "Valsequillo - 29 August 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200829T165901_20200829T171526_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200829T003926_20200829T003951_023131_02BEB3_099C",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-08-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF"
+                },
+                {
+                    "date": "2020-05-31",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200531T165901_20200531T171419_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200913",
+            "location": "Valsequillo",
+            "obs_date": "2020-09-13",
+            "display_label": "Valsequillo - 13 September 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200913T165849_20200913T171512_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200913T122623_20200913T122648_034340_03FE19_129C",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-08-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF"
+                },
+                {
+                    "date": "2020-06-15",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200615T165849_20200615T171154_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200928",
+            "location": "Valsequillo",
+            "obs_date": "2020-09-28",
+            "display_label": "Valsequillo - 28 September 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200928T170111_20200928T171211_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200928T004026_20200928T004051_034552_040591_AECF",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-08-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF"
+                },
+                {
+                    "date": "2020-07-30",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200730T165901_20200730T171827_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20201013",
+            "location": "Valsequillo",
+            "obs_date": "2020-10-13",
+            "display_label": "Valsequillo - 13 October 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20201013T170159_20201013T171425_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20201013T122530_20201013T122555_023794_02D375_60C5",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-09-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200913T165849_20200913T171512_T14QNF"
+                },
+                {
+                    "date": "2020-08-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20201028",
+            "location": "Valsequillo",
+            "obs_date": "2020-10-28",
+            "display_label": "Valsequillo - 28 October 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20201028T170431_20201028T171606_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20201028T003927_20201028T003952_024006_02DA15_C9BE",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-09-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200913T165849_20200913T171512_T14QNF"
+                },
+                {
+                    "date": "2020-08-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20201112",
+            "location": "Valsequillo",
+            "obs_date": "2020-11-12",
+            "display_label": "Valsequillo - 12 November 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20201112T170539_20201112T171320_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20201112T122624_20201112T122649_035215_041C9D_D53B",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-10-28",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201028T170431_20201028T171606_T14QNF"
+                },
+                {
+                    "date": "2020-08-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20201127",
+            "location": "Valsequillo",
+            "obs_date": "2020-11-27",
+            "display_label": "Valsequillo - 27 November 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20201127T170641_20201127T171409_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20201127T004026_20201127T004051_035427_0423EF_5698",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-11-12",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201112T170539_20201112T171320_T14QNF"
+                },
+                {
+                    "date": "2020-09-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200913T165849_20200913T171512_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20201212",
+            "location": "Valsequillo",
+            "obs_date": "2020-12-12",
+            "display_label": "Valsequillo - 12 December 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20201212T170719_20201212T171503_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20201212T122529_20201212T122554_024669_02EF0C_AEB6",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-11-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201127T170641_20201127T171409_T14QNF"
+                },
+                {
+                    "date": "2020-09-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200913T165849_20200913T171512_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20201227",
+            "location": "Valsequillo",
+            "obs_date": "2020-12-27",
+            "display_label": "Valsequillo - 27 December 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20201227T170721_20201227T171445_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20201227T003926_20201227T003951_024881_02F5E3_6AC6",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-11-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201127T170641_20201127T171409_T14QNF"
+                },
+                {
+                    "date": "2020-10-28",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201028T170431_20201028T171606_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210126",
+            "location": "Valsequillo",
+            "obs_date": "2021-01-26",
+            "display_label": "Valsequillo - 26 January 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210126T170601_20210126T171307_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210126T004023_20210126T004048_036302_044253_6577",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-12-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201227T170721_20201227T171445_T14QNG"
+                },
+                {
+                    "date": "2020-11-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201127T170641_20201127T171409_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210210",
+            "location": "Valsequillo",
+            "obs_date": "2021-02-10",
+            "display_label": "Valsequillo - 10 February 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210210T170439_20210210T171435_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20210210T122527_20210210T122552_025544_030B38_D15E",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-01-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210126T170601_20210126T171307_T14QNF"
+                },
+                {
+                    "date": "2020-11-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201127T170641_20201127T171409_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210225",
+            "location": "Valsequillo",
+            "obs_date": "2021-02-25",
+            "display_label": "Valsequillo - 25 February 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210225T170251_20210225T171532_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20210225T003923_20210225T003948_025756_03121A_1C06",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-01-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210126T170601_20210126T171307_T14QNF"
+                },
+                {
+                    "date": "2020-11-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201127T170641_20201127T171409_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210312",
+            "location": "Valsequillo",
+            "obs_date": "2021-03-12",
+            "display_label": "Valsequillo - 12 March 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210312T170009_20210312T171117_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210312T122620_20210312T122645_036965_045961_3DED",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-01-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210126T170601_20210126T171307_T14QNF"
+                },
+                {
+                    "date": "2020-12-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201227T170721_20201227T171445_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210327",
+            "location": "Valsequillo",
+            "obs_date": "2021-03-27",
+            "display_label": "Valsequillo - 27 March 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210327T165921_20210327T170852_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210327T004023_20210327T004048_037177_0460B5_CC2A",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-02-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210225T170251_20210225T171532_T14QNF"
+                },
+                {
+                    "date": "2021-01-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210126T170601_20210126T171307_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210411",
+            "location": "Valsequillo",
+            "obs_date": "2021-04-11",
+            "display_label": "Valsequillo - 11 April 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210411T165839_20210411T171141_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20210411T122527_20210411T122552_026419_032766_927E",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-02-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210225T170251_20210225T171532_T14QNF"
+                },
+                {
+                    "date": "2021-01-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210126T170601_20210126T171307_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210426",
+            "location": "Valsequillo",
+            "obs_date": "2021-04-26",
+            "display_label": "Valsequillo - 26 April 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210426T165851_20210426T170638_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20210426T003925_20210426T003950_026631_032E2C_B894",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-03-12",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210312T170009_20210312T171117_T14QNF"
+                },
+                {
+                    "date": "2021-01-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210126T170601_20210126T171307_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210511",
+            "location": "Valsequillo",
+            "obs_date": "2021-05-11",
+            "display_label": "Valsequillo - 11 May 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210511T165849_20210511T171751_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210511T122622_20210511T122647_037840_047754_D54C",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-04-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210426T165851_20210426T170638_T14QNF"
+                },
+                {
+                    "date": "2021-02-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210225T170251_20210225T171532_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210526",
+            "location": "Valsequillo",
+            "obs_date": "2021-05-26",
+            "display_label": "Valsequillo - 26 May 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210526T165851_20210526T170700_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210526T004025_20210526T004050_038052_047DB0_04E0",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-04-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210426T165851_20210426T170638_T14QNF"
+                },
+                {
+                    "date": "2021-03-12",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210312T170009_20210312T171117_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210610",
+            "location": "Valsequillo",
+            "obs_date": "2021-06-10",
+            "display_label": "Valsequillo - 10 June 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210610T165849_20210610T171207_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20210610T122530_20210610T122555_027294_034293_47EB",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-04-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210426T165851_20210426T170638_T14QNF"
+                },
+                {
+                    "date": "2021-03-12",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210312T170009_20210312T171117_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210725",
+            "location": "Valsequillo",
+            "obs_date": "2021-07-25",
+            "display_label": "Valsequillo - 25 July 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210725T165901_20210725T171814_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210725T004029_20210725T004054_038927_0497DB_3228",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-06-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210610T165849_20210610T171207_T14QNG"
+                },
+                {
+                    "date": "2021-04-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210426T165851_20210426T170638_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210809",
+            "location": "Valsequillo",
+            "obs_date": "2021-08-09",
+            "display_label": "Valsequillo - 09 August 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210809T165849_20210809T171029_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20210809T122534_20210809T122559_028169_035C50_638D",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-07-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210725T165901_20210725T171814_T14QNG"
+                },
+                {
+                    "date": "2021-06-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210610T165849_20210610T171207_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210908",
+            "location": "Valsequillo",
+            "obs_date": "2021-09-08",
+            "display_label": "Valsequillo - 08 September 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210908T165839_20210908T171655_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210908T122629_20210908T122654_039590_04AE04_166C",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-07-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210725T165901_20210725T171814_T14QNG"
+                },
+                {
+                    "date": "2021-06-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210610T165849_20210610T171207_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20210923",
+            "location": "Valsequillo",
+            "obs_date": "2021-09-23",
+            "display_label": "Valsequillo - 23 September 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210923T170031_20210923T171002_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210923T004032_20210923T004057_039802_04B530_F10A",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-08-09",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210809T165849_20210809T171029_T14QNG"
+                },
+                {
+                    "date": "2021-07-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210725T165901_20210725T171814_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20211008",
+            "location": "Valsequillo",
+            "obs_date": "2021-10-08",
+            "display_label": "Valsequillo - 08 October 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211008T170119_20211008T171734_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20211008T122536_20211008T122601_029044_03773B_B8E1",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-09-23",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210923T170031_20210923T171002_T14QNF"
+                },
+                {
+                    "date": "2021-07-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210725T165901_20210725T171814_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20211023",
+            "location": "Valsequillo",
+            "obs_date": "2021-10-23",
+            "display_label": "Valsequillo - 23 October 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211023T170351_20211023T171726_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20211023T003933_20211023T003958_029256_037DCC_D83C",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-09-23",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210923T170031_20210923T171002_T14QNF"
+                },
+                {
+                    "date": "2021-07-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210725T165901_20210725T171814_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20211107",
+            "location": "Valsequillo",
+            "obs_date": "2021-11-07",
+            "display_label": "Valsequillo - 07 November 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211107T170519_20211107T171601_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20211107T122629_20211107T122654_040465_04CC43_49FD",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-09-23",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210923T170031_20210923T171002_T14QNF"
+                },
+                {
+                    "date": "2021-08-09",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210809T165849_20210809T171029_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20211122",
+            "location": "Valsequillo",
+            "obs_date": "2021-11-22",
+            "display_label": "Valsequillo - 22 November 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211122T170621_20211122T171351_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20211122T004032_20211122T004057_040677_04D392_51DF",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-11-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211107T170519_20211107T171601_T14QNG"
+                },
+                {
+                    "date": "2021-09-23",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210923T170031_20210923T171002_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20211207",
+            "location": "Valsequillo",
+            "obs_date": "2021-12-07",
+            "display_label": "Valsequillo - 07 December 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211207T170659_20211207T171046_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20211207T122535_20211207T122600_029919_03925C_5508",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-11-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211107T170519_20211107T171601_T14QNG"
+                },
+                {
+                    "date": "2021-09-23",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210923T170031_20210923T171002_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20211222",
+            "location": "Valsequillo",
+            "obs_date": "2021-12-22",
+            "display_label": "Valsequillo - 22 December 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211222T170731_20211222T171452_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20211222T003931_20211222T003956_030131_03990E_D25A",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-12-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211207T170659_20211207T171046_T14QNF"
+                },
+                {
+                    "date": "2021-09-23",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210923T170031_20210923T171002_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20220106",
+            "location": "Valsequillo",
+            "obs_date": "2022-01-06",
+            "display_label": "Valsequillo - 06 January 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220106T170709_20220106T171047_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220106T122627_20220106T122652_041340_04EA25_6631",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-12-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211207T170659_20211207T171046_T14QNF"
+                },
+                {
+                    "date": "2021-11-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211107T170519_20211107T171601_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20220307",
+            "location": "Valsequillo",
+            "obs_date": "2022-03-07",
+            "display_label": "Valsequillo - 07 March 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220307T170049_20220307T170827_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220307T122626_20220307T122651_042215_0507EE_73EB",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-12-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211207T170659_20211207T171046_T14QNF"
+                },
+                {
+                    "date": "2021-12-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211222T170731_20211222T171452_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20220322",
+            "location": "Valsequillo",
+            "obs_date": "2022-03-22",
+            "display_label": "Valsequillo - 22 March 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220322T170001_20220322T170817_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220322T004028_20220322T004053_042427_050F21_01B5",
+            "s2_comparison_images": [
+                {
+                    "date": "2022-03-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220307T170049_20220307T170827_T14QNF"
+                },
+                {
+                    "date": "2021-12-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211222T170731_20211222T171452_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20220506",
+            "location": "Valsequillo",
+            "obs_date": "2022-05-06",
+            "display_label": "Valsequillo - 06 May 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220506T165839_20220506T171614_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220506T122627_20220506T122652_043090_052545_3751",
+            "s2_comparison_images": [
+                {
+                    "date": "2022-03-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220322T170001_20220322T170817_T14QNF"
+                },
+                {
+                    "date": "2022-03-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220307T170049_20220307T170827_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20220521",
+            "location": "Valsequillo",
+            "obs_date": "2022-05-21",
+            "display_label": "Valsequillo - 21 May 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220521T165851_20220521T171441_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220521T004031_20220521T004056_043302_052BCA_07B0",
+            "s2_comparison_images": [
+                {
+                    "date": "2022-05-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220506T165839_20220506T171614_T14QNF"
+                },
+                {
+                    "date": "2022-03-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220307T170049_20220307T170827_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20220720",
+            "location": "Valsequillo",
+            "obs_date": "2022-07-20",
+            "display_label": "Valsequillo - 20 July 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220720T165901_20220720T171004_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220720T004035_20220720T004100_044177_0545E1_FE4F",
+            "s2_comparison_images": [
+                {
+                    "date": "2022-05-21",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220521T165851_20220521T171441_T14QNF"
+                },
+                {
+                    "date": "2022-05-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220506T165839_20220506T171614_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20221117",
+            "location": "Valsequillo",
+            "obs_date": "2022-11-17",
+            "display_label": "Valsequillo - 17 November 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20221117T170601_20221117T171404_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20221117T004037_20221117T004102_045927_057ED0_3E52",
+            "s2_comparison_images": []
+        },
+        {
+            "entry_id": "Valsequillo_20230302",
+            "location": "Valsequillo",
+            "obs_date": "2023-03-02",
+            "display_label": "Valsequillo - 02 March 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230302T170219_20230302T171139_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230302T122632_20230302T122657_047465_05B2D3_CE68",
+            "s2_comparison_images": []
+        },
+        {
+            "entry_id": "Valsequillo_20230317",
+            "location": "Valsequillo",
+            "obs_date": "2023-03-17",
+            "display_label": "Valsequillo - 17 March 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230317T170031_20230317T171544_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230317T004034_20230317T004059_047677_05BA05_B61D",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-03-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230302T170219_20230302T171139_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20230516",
+            "location": "Valsequillo",
+            "obs_date": "2023-05-16",
+            "display_label": "Valsequillo - 16 May 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230516T165851_20230516T171315_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230516T004036_20230516T004101_048552_05D706_8494",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-03-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230302T170219_20230302T171139_T14QNG"
+                },
+                {
+                    "date": "2023-03-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230317T170031_20230317T171544_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20230715",
+            "location": "Valsequillo",
+            "obs_date": "2023-07-15",
+            "display_label": "Valsequillo - 15 July 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230715T165851_20230715T170556_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230715T004040_20230715T004105_049427_05F18D_CA94",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230516T165851_20230516T171315_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20230913",
+            "location": "Valsequillo",
+            "obs_date": "2023-09-13",
+            "display_label": "Valsequillo - 13 September 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230913T165921_20230913T171706_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230913T004043_20230913T004108_050302_060E50_ECD9",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-07-15",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230715T165851_20230715T170556_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20231028",
+            "location": "Valsequillo",
+            "obs_date": "2023-10-28",
+            "display_label": "Valsequillo - 28 October 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20231028T170419_20231028T171541_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20231028T122641_20231028T122706_050965_0624EA_E30B",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-09-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230913T165921_20230913T171706_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20231112",
+            "location": "Valsequillo",
+            "obs_date": "2023-11-12",
+            "display_label": "Valsequillo - 12 November 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20231112T170541_20231112T171411_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20231112T004043_20231112T004108_051177_062C3E_BCC5",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-10-28",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231028T170419_20231028T171541_T14QNG"
+                },
+                {
+                    "date": "2023-09-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230913T165921_20230913T171706_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20240111",
+            "location": "Valsequillo",
+            "obs_date": "2024-01-11",
+            "display_label": "Valsequillo - 11 January 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240111T170651_20240111T171759_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240111T004040_20240111T004105_052052_064A6D_2355",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-10-28",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231028T170419_20231028T171541_T14QNG"
+                },
+                {
+                    "date": "2023-11-12",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231112T170541_20231112T171411_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20240311",
+            "location": "Valsequillo",
+            "obs_date": "2024-03-11",
+            "display_label": "Valsequillo - 11 March 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240311T170111_20240311T171732_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240311T004039_20240311T004104_052927_06680C_2C24",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-01-11",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240111T170651_20240111T171759_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20240425",
+            "location": "Valsequillo",
+            "obs_date": "2024-04-25",
+            "display_label": "Valsequillo - 25 April 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240425T165849_20240425T171045_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240425T122638_20240425T122703_053590_06818E_ECC3",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-03-11",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240311T170111_20240311T171732_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20240510",
+            "location": "Valsequillo",
+            "obs_date": "2024-05-10",
+            "display_label": "Valsequillo - 10 May 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240510T165851_20240510T171606_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240510T004041_20240510T004106_053802_0689C7_B916",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-04-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240425T165849_20240425T171045_T14QNF"
+                },
+                {
+                    "date": "2024-03-11",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240311T170111_20240311T171732_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20240709",
+            "location": "Valsequillo",
+            "obs_date": "2024-07-09",
+            "display_label": "Valsequillo - 09 July 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240709T165901_20240709T171701_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240709T004038_20240709T004103_054677_06A813_5BA8",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-04-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240425T165849_20240425T171045_T14QNF"
+                },
+                {
+                    "date": "2024-05-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240510T165851_20240510T171606_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20241106",
+            "location": "Valsequillo",
+            "obs_date": "2024-11-06",
+            "display_label": "Valsequillo - 06 November 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20241106T170511_20241106T171612_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20241106T004039_20241106T004104_056427_06EA30_5A70",
+            "s2_comparison_images": []
+        },
+        {
+            "entry_id": "Valsequillo_20250306",
+            "location": "Valsequillo",
+            "obs_date": "2025-03-06",
+            "display_label": "Valsequillo - 06 March 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250306T170211_20250306T170836_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250306T004032_20250306T004057_058177_073005_8A32",
+            "s2_comparison_images": []
+        },
+        {
+            "entry_id": "Valsequillo_20250318",
+            "location": "Valsequillo",
+            "obs_date": "2025-03-18",
+            "display_label": "Valsequillo - 18 March 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250318T170711_20250318T170954_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250318T004032_20250318T004057_058352_0736EF_E44B",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-03-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250306T170211_20250306T170836_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250407",
+            "location": "Valsequillo",
+            "obs_date": "2025-04-07",
+            "display_label": "Valsequillo - 07 April 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250407T170711_20250407T171100_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_EW_GRDM_1SDV_20250407T123314_20250407T123341_001787_00338C_C573",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-03-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250318T170711_20250318T170954_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250420",
+            "location": "Valsequillo",
+            "obs_date": "2025-04-20",
+            "display_label": "Valsequillo - 20 April 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250420T165849_20250420T171251_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250420T122630_20250420T122655_058840_074AB5_C777",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-03-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250318T170711_20250318T170954_T14QNF"
+                },
+                {
+                    "date": "2025-04-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250407T170711_20250407T171100_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250505",
+            "location": "Valsequillo",
+            "obs_date": "2025-05-05",
+            "display_label": "Valsequillo - 05 May 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250505T004033_20250505T004058_059052_07533E_5EC7",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-04-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250420T165849_20250420T171251_T14QNG"
+                },
+                {
+                    "date": "2025-03-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250318T170711_20250318T170954_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250517",
+            "location": "Valsequillo",
+            "obs_date": "2025-05-17",
+            "display_label": "Valsequillo - 17 May 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250517T170711_20250517T171540_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250517T004032_20250517T004057_059227_07597B_A10B",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-05-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF"
+                },
+                {
+                    "date": "2025-03-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250318T170711_20250318T170954_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250520",
+            "location": "Valsequillo",
+            "obs_date": "2025-05-20",
+            "display_label": "Valsequillo - 20 May 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250520T165849_20250520T171609_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250520T122500_20250520T122525_002414_0050FB_72C7",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-05-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF"
+                },
+                {
+                    "date": "2025-03-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250318T170711_20250318T170954_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250604",
+            "location": "Valsequillo",
+            "obs_date": "2025-06-04",
+            "display_label": "Valsequillo - 04 June 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250604T165911_20250604T170831_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250604T003924_20250604T003949_002626_0056FE_856F",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-05-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF"
+                },
+                {
+                    "date": "2025-03-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250318T170711_20250318T170954_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250704",
+            "location": "Valsequillo",
+            "obs_date": "2025-07-04",
+            "display_label": "Valsequillo - 04 July 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250704T004030_20250704T004055_059927_0771B0_16CE",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-05-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250520T165849_20250520T171609_T14QNG"
+                },
+                {
+                    "date": "2025-05-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250716",
+            "location": "Valsequillo",
+            "obs_date": "2025-07-16",
+            "display_label": "Valsequillo - 16 July 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250716T170721_20250716T171808_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250716T004029_20250716T004054_060102_0777B4_7693",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-07-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG"
+                },
+                {
+                    "date": "2025-05-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250719",
+            "location": "Valsequillo",
+            "obs_date": "2025-07-19",
+            "display_label": "Valsequillo - 19 July 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250719T165849_20250719T171802_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250719T122504_20250719T122529_003289_006A2D_3264",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-07-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG"
+                },
+                {
+                    "date": "2025-05-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250803",
+            "location": "Valsequillo",
+            "obs_date": "2025-08-03",
+            "display_label": "Valsequillo - 03 August 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250803T165911_20250803T171635_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250803T003927_20250803T003952_003501_00705A_6ED9",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-07-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG"
+                },
+                {
+                    "date": "2025-05-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250818",
+            "location": "Valsequillo",
+            "obs_date": "2025-08-18",
+            "display_label": "Valsequillo - 18 August 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250818T165849_20250818T171222_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250818T122626_20250818T122651_060590_07895E_A946",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-07-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG"
+                },
+                {
+                    "date": "2025-05-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250520T165849_20250520T171609_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250902",
+            "location": "Valsequillo",
+            "obs_date": "2025-09-02",
+            "display_label": "Valsequillo - 02 September 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250902T165911_20250902T171205_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250902T004029_20250902T004054_060802_0791BA_54C2",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-08-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250803T165911_20250803T171635_T14QNF"
+                },
+                {
+                    "date": "2025-07-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250914",
+            "location": "Valsequillo",
+            "obs_date": "2025-09-14",
+            "display_label": "Valsequillo - 14 September 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250914T170711_20250914T171433_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250914T004029_20250914T004054_060977_0798BF_A5D3",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-08-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250803T165911_20250803T171635_T14QNF"
+                },
+                {
+                    "date": "2025-07-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20250917",
+            "location": "Valsequillo",
+            "obs_date": "2025-09-17",
+            "display_label": "Valsequillo - 17 September 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250917T165849_20250917T171250_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250917T122507_20250917T122532_004164_008451_D5AD",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-08-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250803T165911_20250803T171635_T14QNF"
+                },
+                {
+                    "date": "2025-07-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251014",
+            "location": "Valsequillo",
+            "obs_date": "2025-10-14",
+            "display_label": "Valsequillo - 14 October 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20251014T003929_20251014T003954_004551_009010_7725",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-09-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250917T165849_20250917T171250_T14QNF"
+                },
+                {
+                    "date": "2025-07-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250716T170721_20250716T171808_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251017",
+            "location": "Valsequillo",
+            "obs_date": "2025-10-17",
+            "display_label": "Valsequillo - 17 October 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251017T170209_20251017T171047_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20251017T122628_20251017T122653_061465_07AC5A_8513",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-10-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF"
+                },
+                {
+                    "date": "2025-08-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250803T165911_20250803T171635_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251101",
+            "location": "Valsequillo",
+            "obs_date": "2025-11-01",
+            "display_label": "Valsequillo - 01 November 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251101T170501_20251101T170630_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20251101T004018_20251101T004043_061677_07B4E3_AC54",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-10-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF"
+                },
+                {
+                    "date": "2025-08-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250803T165911_20250803T171635_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251116",
+            "location": "Valsequillo",
+            "obs_date": "2025-11-16",
+            "display_label": "Valsequillo - 16 November 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251116T170509_20251116T171646_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20251116T122507_20251116T122532_005039_009FB3_B1F3",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-10-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF"
+                },
+                {
+                    "date": "2025-08-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250818T165849_20250818T171222_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251201",
+            "location": "Valsequillo",
+            "obs_date": "2025-12-01",
+            "display_label": "Valsequillo - 01 December 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251201T170701_20251201T170703_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20251201T003928_20251201T003953_005251_00A6C5_0367",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-11-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251116T170509_20251116T171646_T14QNG"
+                },
+                {
+                    "date": "2025-10-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251213",
+            "location": "Valsequillo",
+            "obs_date": "2025-12-13",
+            "display_label": "Valsequillo - 13 December 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251213T170731_20251213T170733_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20251213T003928_20251213T003953_005426_00ACCC_94A3",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-11-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251116T170509_20251116T171646_T14QNG"
+                },
+                {
+                    "date": "2025-10-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251216",
+            "location": "Valsequillo",
+            "obs_date": "2025-12-16",
+            "display_label": "Valsequillo - 16 December 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251216T170629_20251216T171819_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20251216T122624_20251216T122649_062340_07CEB1_CAC4",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-11-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251116T170509_20251116T171646_T14QNG"
+                },
+                {
+                    "date": "2025-10-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251231",
+            "location": "Valsequillo",
+            "obs_date": "2025-12-31",
+            "display_label": "Valsequillo - 31 December 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251231T170731_20251231T170726_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20251231T004013_20251231T004038_062552_07D6E3_E2E9",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-11-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251116T170509_20251116T171646_T14QNG"
+                },
+                {
+                    "date": "2025-10-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF"
+                }
+            ]
+        }
+    ]
 }
