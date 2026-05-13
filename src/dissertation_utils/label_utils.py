@@ -227,6 +227,7 @@ def create_s1_list_for_location(location: str, site_fp: str | Path):
 
 
 def get_s2_s1_matching_dates(location: str, site_fp: str | Path, project_root: str |Path, cloud_perc: int = 10):
+
     s1_fc = create_s1_list_for_location(location=location, site_fp=site_fp)
     s2_fc = create_s2_list_for_location(
         location=location,
@@ -330,6 +331,11 @@ def image_details_to_json(comparison_df: pd.DataFrame,
     with open(images_fp, "r") as f:
         Image_dict = json.load(f)
 
+    # Each comparison_df will be for a single location
+    location = comparison_df["location"].iloc[0]
+
+    # Each location key has a list of images as its value
+    image_list_for_location = []
 
     for _, row in comparison_df.iterrows():
 
@@ -368,12 +374,11 @@ def image_details_to_json(comparison_df: pd.DataFrame,
                 "s2_comparison_images": compar_list  
                 }
         
-        # Each location key has a list of images as its value
-        if location in Image_dict:
-            Image_dict[location].append(Dict)
-        else: 
-            Image_dict[location] = []
-            Image_dict[location].append(Dict)
+        image_list_for_location.append(Dict)
+    
+    # Assign the list of image-dates to the location key in Image_dict
+
+    Image_dict[location]= image_list_for_location
 
     with open(images_fp, "w") as f:
         json.dump(Image_dict, f, indent = 4)

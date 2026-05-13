@@ -1,5 +1,4 @@
 {
-    "_comment": "Image catalog for the labelling app. Each site key matches sites.json. Each entry is one target image with its comparison images. Replace REPLACE_ME placeholders with real GEE image IDs found via the GEE Code Editor or the GEE Python API. s1_image_id can be null if no S1 coverage exists.",
     "Vembanad": [
   
         {
