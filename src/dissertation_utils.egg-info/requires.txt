@@ -1,6 +1,0 @@
-earthengine-api
-geemap
-geopandas
-matplotlib
-pandas
-seaborn
