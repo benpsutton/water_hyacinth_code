@@ -1,6 +1,5 @@
 {
     "Vembanad": [
-  
         {
             "entry_id": "Vembanad_20190124",
             "location": "Vembanad",
@@ -32,6 +31,20 @@
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191120T051121_20191120T052455_T43PFL",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20191120T004052_20191120T004117_029987_036C50_6575",
             "s2_comparison_images": []
+        },
+        {
+            "entry_id": "Vembanad_20200119",
+            "location": "Vembanad",
+            "obs_date": "2020-01-19",
+            "display_label": "Vembanad - 19 January 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200119T051121_20200119T052519_T43PFL",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200119T004048_20200119T004113_030862_038AA2_1FA6",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-11-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191120T051121_20191120T052455_T43PFL"
+                }
+            ]
         },
         {
             "entry_id": "Vembanad_20201214",
@@ -89,6 +102,15 @@
             ]
         },
         {
+            "entry_id": "Vembanad_20230831",
+            "location": "Vembanad",
+            "obs_date": "2023-08-31",
+            "display_label": "Vembanad - 31 August 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230831T050701_20230831T051930_T43PFL",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230831T004122_20230831T004147_050112_0607D5_C31F",
+            "s2_comparison_images": []
+        },
+        {
             "entry_id": "Vembanad_20241223",
             "location": "Vembanad",
             "obs_date": "2024-12-23",
@@ -108,6 +130,29 @@
                 {
                     "date": "2024-12-23",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20241223T051231_20241223T052219_T43PFL"
+                }
+            ]
+        },
+        {
+            "entry_id": "Vembanad_20250820",
+            "location": "Vembanad",
+            "obs_date": "2025-08-20",
+            "display_label": "Vembanad - 20 August 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250820T051051_20250820T052252_T43PFL",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250820T004109_20250820T004134_060612_078A40_BAB5",
+            "s2_comparison_images": []
+        },
+        {
+            "entry_id": "Vembanad_20251218",
+            "location": "Vembanad",
+            "obs_date": "2025-12-18",
+            "display_label": "Vembanad - 18 December 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251218T051231_20251218T052410_T43PFL",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20251218T004106_20251218T004131_062362_07CF8B_8871",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-08-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250820T051051_20250820T052252_T43PFL"
                 }
             ]
         }
@@ -227,6 +272,24 @@
             ]
         },
         {
+            "entry_id": "Winam_20190522",
+            "location": "Winam",
+            "obs_date": "2019-05-22",
+            "display_label": "Winam - 22 May 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190522T074621_20190522T080757_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190522T032733_20190522T032758_016351_01EC69_FD12",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-05-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190517T074619_20190517T075858_T36MXE"
+                },
+                {
+                    "date": "2019-03-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190318T074639_20190318T080921_T36MXE"
+                }
+            ]
+        },
+        {
             "entry_id": "Winam_20190701",
             "location": "Winam",
             "obs_date": "2019-07-01",
@@ -245,6 +308,42 @@
             ]
         },
         {
+            "entry_id": "Winam_20190716",
+            "location": "Winam",
+            "obs_date": "2019-07-16",
+            "display_label": "Winam - 16 July 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190716T074619_20190716T080657_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190716T031931_20190716T031956_017153_02044C_D973",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-07-01",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190701T074621_20190701T080914_T36MXE"
+                },
+                {
+                    "date": "2019-03-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190318T074639_20190318T080921_T36MXE"
+                }
+            ]
+        },
+        {
+            "entry_id": "Winam_20190721",
+            "location": "Winam",
+            "obs_date": "2019-07-21",
+            "display_label": "Winam - 21 July 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190721T074621_20190721T080458_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190721T032736_20190721T032801_017226_02065D_74CF",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-07-01",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190701T074621_20190701T080914_T36MXE"
+                },
+                {
+                    "date": "2019-03-23",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190323T074611_20190323T080452_T36MXE"
+                }
+            ]
+        },
+        {
             "entry_id": "Winam_20190825",
             "location": "Winam",
             "obs_date": "2019-08-25",
@@ -253,12 +352,12 @@
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190825T155633_20190825T155658_028727_0340B0_DA96",
             "s2_comparison_images": [
                 {
-                    "date": "2019-05-17",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190517T074619_20190517T075858_T36MXE"
+                    "date": "2019-07-21",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190721T074621_20190721T080458_T36MXE"
                 },
                 {
-                    "date": "2019-07-01",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190701T074621_20190701T080914_T36MXE"
+                    "date": "2019-05-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190517T074619_20190517T075858_T36MXE"
                 }
             ]
         },
@@ -299,13 +398,76 @@
             ]
         },
         {
+            "entry_id": "Winam_20191113",
+            "location": "Winam",
+            "obs_date": "2019-11-13",
+            "display_label": "Winam - 13 November 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191113T075059_20191113T080912_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20191113T031936_20191113T032001_018903_023A6C_7D49",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-08-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190825T074619_20190825T080100_T36MXE"
+                },
+                {
+                    "date": "2019-09-19",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190919T074611_20190919T080026_T36MXE"
+                }
+            ]
+        },
+        {
+            "entry_id": "Winam_20200117",
+            "location": "Winam",
+            "obs_date": "2020-01-17",
+            "display_label": "Winam - 17 January 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200117T075241_20200117T075557_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200117T032737_20200117T032802_019851_02589E_4496",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-09-19",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190919T074611_20190919T080026_T36MXE"
+                },
+                {
+                    "date": "2019-11-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191113T075059_20191113T080912_T36MXE"
+                }
+            ]
+        },
+        {
+            "entry_id": "Winam_20200221",
+            "location": "Winam",
+            "obs_date": "2020-02-21",
+            "display_label": "Winam - 21 February 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200221T074939_20200221T080715_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200221T155631_20200221T155656_031352_039BBA_4886",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-01-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200117T075241_20200117T075557_T36MXE"
+                },
+                {
+                    "date": "2019-11-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191113T075059_20191113T080912_T36MXE"
+                }
+            ]
+        },
+        {
             "entry_id": "Winam_20200426",
             "location": "Winam",
             "obs_date": "2020-04-26",
             "display_label": "Winam - 26 April 2020",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200426T074611_20200426T080911_T36MXE",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200426T160437_20200426T160502_032300_03BCD7_538A",
-            "s2_comparison_images": []
+            "s2_comparison_images": [
+                {
+                    "date": "2020-01-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200117T075241_20200117T075557_T36MXE"
+                },
+                {
+                    "date": "2020-02-21",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200221T074939_20200221T080715_T36MXE"
+                }
+            ]
         },
         {
             "entry_id": "Winam_20200511",
@@ -318,6 +480,10 @@
                 {
                     "date": "2020-04-26",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200426T074611_20200426T080911_T36MXE"
+                },
+                {
+                    "date": "2020-01-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200117T075241_20200117T075557_T36MXE"
                 }
             ]
         },
@@ -376,6 +542,24 @@
             ]
         },
         {
+            "entry_id": "Winam_20200819",
+            "location": "Winam",
+            "obs_date": "2020-08-19",
+            "display_label": "Winam - 19 August 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200819T074619_20200819T080457_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200819T155639_20200819T155704_033977_03F167_C81F",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-07-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200710T074619_20200710T080556_T36MXE"
+                },
+                {
+                    "date": "2020-06-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200625T074621_20200625T080202_T36MXE"
+                }
+            ]
+        },
+        {
             "entry_id": "Winam_20200908",
             "location": "Winam",
             "obs_date": "2020-09-08",
@@ -384,12 +568,12 @@
             "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200908T031941_20200908T032006_023278_02C34F_4E3C",
             "s2_comparison_images": [
                 {
-                    "date": "2020-06-25",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200625T074621_20200625T080202_T36MXE"
+                    "date": "2020-08-19",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200819T074619_20200819T080457_T36MXE"
                 },
                 {
-                    "date": "2020-05-11",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200511T074609_20200511T080553_T36MXE"
+                    "date": "2020-06-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200625T074621_20200625T080202_T36MXE"
                 }
             ]
         },
@@ -538,6 +722,42 @@
             ]
         },
         {
+            "entry_id": "Winam_20210416",
+            "location": "Winam",
+            "obs_date": "2021-04-16",
+            "display_label": "Winam - 16 April 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210416T074609_20210416T080449_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210416T155638_20210416T155703_037477_046B2A_05F8",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-03-12",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210312T074721_20210312T075212_T36MXE"
+                },
+                {
+                    "date": "2021-02-15",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210215T075009_20210215T080449_T36MXE"
+                }
+            ]
+        },
+        {
+            "entry_id": "Winam_20210506",
+            "location": "Winam",
+            "obs_date": "2021-05-06",
+            "display_label": "Winam - 06 May 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210506T074609_20210506T080443_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20210506T031940_20210506T032005_026778_0332DD_57B0",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-04-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210416T074609_20210416T080449_T36MXE"
+                },
+                {
+                    "date": "2021-02-15",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210215T075009_20210215T080449_T36MXE"
+                }
+            ]
+        },
+        {
             "entry_id": "Winam_20210620",
             "location": "Winam",
             "obs_date": "2021-06-20",
@@ -545,6 +765,10 @@
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210620T074611_20210620T075213_T36MXE",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210620T160446_20210620T160511_038425_0488CC_47DA",
             "s2_comparison_images": [
+                {
+                    "date": "2021-05-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210506T074609_20210506T080443_T36MXE"
+                },
                 {
                     "date": "2021-03-12",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210312T074721_20210312T075212_T36MXE"
@@ -570,12 +794,12 @@
             ]
         },
         {
-            "entry_id": "Winam_20210908",
+            "entry_id": "Winam_20210819",
             "location": "Winam",
-            "obs_date": "2021-09-08",
-            "display_label": "Winam - 08 September 2021",
-            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210908T074611_20210908T075212_T36MXE",
-            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20210908T032751_20210908T032816_028601_0369C1_23CB",
+            "obs_date": "2021-08-19",
+            "display_label": "Winam - 19 August 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210819T074611_20210819T075215_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210819T160449_20210819T160514_039300_04A41D_5707",
             "s2_comparison_images": [
                 {
                     "date": "2021-07-05",
@@ -584,6 +808,24 @@
                 {
                     "date": "2021-06-20",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210620T074611_20210620T075213_T36MXE"
+                }
+            ]
+        },
+        {
+            "entry_id": "Winam_20210908",
+            "location": "Winam",
+            "obs_date": "2021-09-08",
+            "display_label": "Winam - 08 September 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210908T074611_20210908T075212_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20210908T032751_20210908T032816_028601_0369C1_23CB",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-08-19",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210819T074611_20210819T075215_T36MXE"
+                },
+                {
+                    "date": "2021-07-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210705T074619_20210705T080448_T36MXE"
                 }
             ]
         },
@@ -665,13 +907,50 @@
             ]
         },
         {
+            "entry_id": "Winam_20220814",
+            "location": "Winam",
+            "obs_date": "2022-08-14",
+            "display_label": "Winam - 14 August 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220814T074621_20220814T080506_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220814T160455_20220814T160520_044550_055139_8A96",
+            "s2_comparison_images": [
+                {
+                    "date": "2022-08-09",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220809T074619_20220809T080457_T36MXE"
+                },
+                {
+                    "date": "2022-06-15",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220615T074621_20220615T080504_T36MXE"
+                }
+            ]
+        },
+        {
+            "entry_id": "Winam_20221207",
+            "location": "Winam",
+            "obs_date": "2022-12-07",
+            "display_label": "Winam - 07 December 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20221207T075219_20221207T080500_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20221207T155651_20221207T155716_046227_058916_B4B4",
+            "s2_comparison_images": [
+                {
+                    "date": "2022-08-09",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220809T074619_20220809T080457_T36MXE"
+                }
+            ]
+        },
+        {
             "entry_id": "Winam_20230205",
             "location": "Winam",
             "obs_date": "2023-02-05",
             "display_label": "Winam - 05 February 2023",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230205T075019_20230205T080451_T36MXE",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230205T155648_20230205T155713_047102_05A6A0_5630",
-            "s2_comparison_images": []
+            "s2_comparison_images": [
+                {
+                    "date": "2022-12-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20221207T075219_20221207T080500_T36MXE"
+                }
+            ]
         },
         {
             "entry_id": "Winam_20230210",
@@ -684,8 +963,21 @@
                 {
                     "date": "2023-02-05",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230205T075019_20230205T080451_T36MXE"
+                },
+                {
+                    "date": "2022-12-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20221207T075219_20221207T080500_T36MXE"
                 }
             ]
+        },
+        {
+            "entry_id": "Winam_20231202",
+            "location": "Winam",
+            "obs_date": "2023-12-02",
+            "display_label": "Winam - 02 December 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20231202T075209_20231202T080446_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20231202T155656_20231202T155721_051477_063696_FA9E",
+            "s2_comparison_images": []
         },
         {
             "entry_id": "Winam_20231207",
@@ -694,7 +986,26 @@
             "display_label": "Winam - 07 December 2023",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20231207T075311_20231207T080537_T36MXE",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20231207T160500_20231207T160525_051550_063929_8748",
-            "s2_comparison_images": []
+            "s2_comparison_images": [
+                {
+                    "date": "2023-12-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231202T075209_20231202T080446_T36MXE"
+                }
+            ]
+        },
+        {
+            "entry_id": "Winam_20240131",
+            "location": "Winam",
+            "obs_date": "2024-01-31",
+            "display_label": "Winam - 31 January 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240131T075049_20240131T080446_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240131T155653_20240131T155718_052352_06549A_A2F4",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-12-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231207T075311_20231207T080537_T36MXE"
+                }
+            ]
         },
         {
             "entry_id": "Winam_20240405",
@@ -707,6 +1018,28 @@
                 {
                     "date": "2023-12-07",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231207T075311_20231207T080537_T36MXE"
+                },
+                {
+                    "date": "2024-01-31",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240131T075049_20240131T080446_T36MXE"
+                }
+            ]
+        },
+        {
+            "entry_id": "Winam_20240530",
+            "location": "Winam",
+            "obs_date": "2024-05-30",
+            "display_label": "Winam - 30 May 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240530T074609_20240530T080924_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240530T155654_20240530T155722_054102_06942D_09B7",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-04-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240405T074611_20240405T080446_T36MXE"
+                },
+                {
+                    "date": "2024-01-31",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240131T075049_20240131T080446_T36MXE"
                 }
             ]
         },
@@ -719,8 +1052,26 @@
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240604T160458_20240604T160523_054175_0696A8_99C8",
             "s2_comparison_images": [
                 {
+                    "date": "2024-05-30",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240530T074609_20240530T080924_T36MXE"
+                },
+                {
                     "date": "2024-04-05",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240405T074611_20240405T080446_T36MXE"
+                }
+            ]
+        },
+        {
+            "entry_id": "Winam_20240927",
+            "location": "Winam",
+            "obs_date": "2024-09-27",
+            "display_label": "Winam - 27 September 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240927T074609_20240927T080448_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240927T155653_20240927T155718_055852_06D37B_DCDA",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-06-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240604T074621_20240604T080444_T36MXE"
                 }
             ]
         },
@@ -731,7 +1082,12 @@
             "display_label": "Winam - 26 November 2024",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20241126T075159_20241126T080451_T36MXE",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20241126T155652_20241126T155717_056727_06F636_061A",
-            "s2_comparison_images": []
+            "s2_comparison_images": [
+                {
+                    "date": "2024-09-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240927T074609_20240927T080448_T36MXE"
+                }
+            ]
         },
         {
             "entry_id": "Winam_20250331",
@@ -743,6 +1099,20 @@
             "s2_comparison_images": []
         },
         {
+            "entry_id": "Winam_20250502",
+            "location": "Winam",
+            "obs_date": "2025-05-02",
+            "display_label": "Winam - 02 May 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250502T080451_20250502T080905_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250502T032726_20250502T032748_002146_0048EA_4F02",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-03-31",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250331T074631_20250331T080833_T36MXE"
+                }
+            ]
+        },
+        {
             "entry_id": "Winam_20250525",
             "location": "Winam",
             "obs_date": "2025-05-25",
@@ -750,6 +1120,10 @@
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250525T074609_20250525T080653_T36MXE",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250525T155646_20250525T155714_059352_075DDD_BAB0",
             "s2_comparison_images": [
+                {
+                    "date": "2025-05-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250502T080451_20250502T080905_T36MXE"
+                },
                 {
                     "date": "2025-03-31",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250331T074631_20250331T080833_T36MXE"
@@ -811,6 +1185,24 @@
             ]
         },
         {
+            "entry_id": "Winam_20250729",
+            "location": "Winam",
+            "obs_date": "2025-07-29",
+            "display_label": "Winam - 29 July 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250729T074631_20250729T080207_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250729T160448_20250729T160513_060300_077E7E_2FD0",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-06-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250614T074609_20250614T080628_T36MXE"
+                },
+                {
+                    "date": "2025-03-31",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250331T074631_20250331T080833_T36MXE"
+                }
+            ]
+        },
+        {
             "entry_id": "Winam_20250830",
             "location": "Winam",
             "obs_date": "2025-08-30",
@@ -835,6 +1227,24 @@
             "display_label": "Winam - 22 September 2025",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250922T074609_20250922T080820_T36MXE",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250922T155644_20250922T155709_061102_079DC7_E766",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-08-30",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250830T080451_20250830T080453_T36MXE"
+                },
+                {
+                    "date": "2025-06-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250614T074609_20250614T080628_T36MXE"
+                }
+            ]
+        },
+        {
+            "entry_id": "Winam_20251009",
+            "location": "Winam",
+            "obs_date": "2025-10-09",
+            "display_label": "Winam - 09 October 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251009T080451_20251009T080453_T36MXE",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20251009T160449_20251009T160514_061350_07A7CB_03B3",
             "s2_comparison_images": [
                 {
                     "date": "2025-08-30",
@@ -920,7 +1330,6 @@
         }
     ],
     "Inle": [
-  
         {
             "entry_id": "Inle_20190207",
             "location": "Inle",
@@ -972,6 +1381,20 @@
             "s2_comparison_images": []
         },
         {
+            "entry_id": "Inle_20191204",
+            "location": "Inle",
+            "obs_date": "2019-12-04",
+            "display_label": "Inle - 04 December 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191204T040129_20191204T040125_T47QKC",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20191204T232351_20191204T232416_030205_0373D3_865F",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-10-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191020T035801_20191020T040337_T46QHH"
+                }
+            ]
+        },
+        {
             "entry_id": "Inle_20191219",
             "location": "Inle",
             "obs_date": "2019-12-19",
@@ -979,6 +1402,28 @@
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191219T040151_20191219T040855_T46QHH",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20191219T113856_20191219T113921_030417_037B24_20E9",
             "s2_comparison_images": [
+                {
+                    "date": "2019-12-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191204T040129_20191204T040125_T47QKC"
+                },
+                {
+                    "date": "2019-10-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191020T035801_20191020T040337_T46QHH"
+                }
+            ]
+        },
+        {
+            "entry_id": "Inle_20200202",
+            "location": "Inle",
+            "obs_date": "2020-02-02",
+            "display_label": "Inle - 02 February 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200202T035959_20200202T041035_T46QHH",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200202T232349_20200202T232414_031080_039234_FDC2",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-12-19",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191219T040151_20191219T040855_T46QHH"
+                },
                 {
                     "date": "2019-10-20",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191020T035801_20191020T040337_T46QHH"
@@ -994,12 +1439,12 @@
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200217T113854_20200217T113919_031292_039993_8683",
             "s2_comparison_images": [
                 {
-                    "date": "2019-12-19",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191219T040151_20191219T040855_T46QHH"
+                    "date": "2020-02-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200202T035959_20200202T041035_T46QHH"
                 },
                 {
-                    "date": "2019-10-20",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191020T035801_20191020T040337_T46QHH"
+                    "date": "2019-12-19",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191219T040151_20191219T040855_T46QHH"
                 }
             ]
         },
@@ -1153,13 +1598,27 @@
             ]
         },
         {
+            "entry_id": "Inle_20211009",
+            "location": "Inle",
+            "obs_date": "2021-10-09",
+            "display_label": "Inle - 09 October 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211009T035651_20211009T041130_T47QKC",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20211009T113910_20211009T113935_040042_04BD80_33D2",
+            "s2_comparison_images": []
+        },
+        {
             "entry_id": "Inle_20211123",
             "location": "Inle",
             "obs_date": "2021-11-23",
             "display_label": "Inle - 23 November 2021",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211123T040059_20211123T041209_T46QHH",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20211123T232404_20211123T232429_040705_04D48F_74A9",
-            "s2_comparison_images": []
+            "s2_comparison_images": [
+                {
+                    "date": "2021-10-09",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211009T035651_20211009T041130_T47QKC"
+                }
+            ]
         },
         {
             "entry_id": "Inle_20211208",
@@ -1172,6 +1631,10 @@
                 {
                     "date": "2021-11-23",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211123T040059_20211123T041209_T46QHH"
+                },
+                {
+                    "date": "2021-10-09",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211009T035651_20211009T041130_T47QKC"
                 }
             ]
         },
@@ -1190,6 +1653,24 @@
                 {
                     "date": "2021-11-23",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211123T040059_20211123T041209_T46QHH"
+                }
+            ]
+        },
+        {
+            "entry_id": "Inle_20220407",
+            "location": "Inle",
+            "obs_date": "2022-04-07",
+            "display_label": "Inle - 07 April 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220407T035541_20220407T040724_T46QHH",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220407T113906_20220407T113931_042667_05173A_79D7",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-12-08",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211208T040141_20211208T040842_T47QKC"
+                },
+                {
+                    "date": "2022-01-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220122T040049_20220122T040859_T46QHH"
                 }
             ]
         },
@@ -1235,6 +1716,20 @@
             ]
         },
         {
+            "entry_id": "Inle_20230601",
+            "location": "Inle",
+            "obs_date": "2023-06-01",
+            "display_label": "Inle - 01 June 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230601T035541_20230601T040619_T47QKC",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230601T113915_20230601T113940_048792_05DE21_35A0",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-04-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230402T035541_20230402T041016_T47QKC"
+                }
+            ]
+        },
+        {
             "entry_id": "Inle_20231128",
             "location": "Inle",
             "obs_date": "2023-11-28",
@@ -1258,6 +1753,24 @@
             ]
         },
         {
+            "entry_id": "Inle_20240127",
+            "location": "Inle",
+            "obs_date": "2024-01-27",
+            "display_label": "Inle - 27 January 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240127T040031_20240127T041229_T47QKC",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240127T113917_20240127T113942_052292_065280_F06C",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-01-12",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240112T040129_20240112T041003_T46QHH"
+                },
+                {
+                    "date": "2023-11-28",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231128T040111_20231128T040625_T46QHH"
+                }
+            ]
+        },
+        {
             "entry_id": "Inle_20240312",
             "location": "Inle",
             "obs_date": "2024-03-12",
@@ -1266,12 +1779,12 @@
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240312T232411_20240312T232436_052955_06690D_6E2F",
             "s2_comparison_images": [
                 {
-                    "date": "2023-11-28",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231128T040111_20231128T040625_T46QHH"
+                    "date": "2024-01-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240127T040031_20240127T041229_T47QKC"
                 },
                 {
-                    "date": "2024-01-12",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240112T040129_20240112T041003_T46QHH"
+                    "date": "2023-11-28",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231128T040111_20231128T040625_T46QHH"
                 }
             ]
         },
@@ -1294,13 +1807,45 @@
             ]
         },
         {
+            "entry_id": "Inle_20241122",
+            "location": "Inle",
+            "obs_date": "2024-11-22",
+            "display_label": "Inle - 22 November 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20241122T040101_20241122T040317_T46QHH",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20241122T113916_20241122T113941_056667_06F3CB_FF66",
+            "s2_comparison_images": []
+        },
+        {
+            "entry_id": "Inle_20250106",
+            "location": "Inle",
+            "obs_date": "2025-01-06",
+            "display_label": "Inle - 06 January 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250106T040049_20250106T040849_T46QHH",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250106T232407_20250106T232432_057330_070E07_B95C",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-11-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20241122T040101_20241122T040317_T46QHH"
+                }
+            ]
+        },
+        {
             "entry_id": "Inle_20250121",
             "location": "Inle",
             "obs_date": "2025-01-21",
             "display_label": "Inle - 21 January 2025",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250121T040051_20250121T041023_T46QHH",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250121T113911_20250121T113936_057542_071671_C305",
-            "s2_comparison_images": []
+            "s2_comparison_images": [
+                {
+                    "date": "2025-01-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250106T040049_20250106T040849_T46QHH"
+                },
+                {
+                    "date": "2024-11-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20241122T040101_20241122T040317_T46QHH"
+                }
+            ]
         },
         {
             "entry_id": "Inle_20250307",
@@ -1310,6 +1855,64 @@
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250307T035539_20250307T040534_T47QKC",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250307T232404_20250307T232429_058205_073126_221A",
             "s2_comparison_images": [
+                {
+                    "date": "2025-01-21",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250121T040051_20250121T041023_T46QHH"
+                },
+                {
+                    "date": "2024-11-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20241122T040101_20241122T040317_T46QHH"
+                }
+            ]
+        },
+        {
+            "entry_id": "Inle_20250322",
+            "location": "Inle",
+            "obs_date": "2025-03-22",
+            "display_label": "Inle - 22 March 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250322T035601_20250322T040341_T46QHH",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250322T113910_20250322T113935_058417_073988_BB03",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-03-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250307T035539_20250307T040534_T47QKC"
+                },
+                {
+                    "date": "2025-01-21",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250121T040051_20250121T041023_T46QHH"
+                }
+            ]
+        },
+        {
+            "entry_id": "Inle_20250406",
+            "location": "Inle",
+            "obs_date": "2025-04-06",
+            "display_label": "Inle - 06 April 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250406T035539_20250406T040723_T47QKC",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250406T232304_20250406T232329_001779_003313_9730",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-03-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250307T035539_20250307T040534_T47QKC"
+                },
+                {
+                    "date": "2025-01-21",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250121T040051_20250121T041023_T46QHH"
+                }
+            ]
+        },
+        {
+            "entry_id": "Inle_20250421",
+            "location": "Inle",
+            "obs_date": "2025-04-21",
+            "display_label": "Inle - 21 April 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250421T035601_20250421T040955_T46QHH",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250421T113802_20250421T113827_001991_004026_C018",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-03-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250307T035539_20250307T040534_T47QKC"
+                },
                 {
                     "date": "2025-01-21",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250121T040051_20250121T041023_T46QHH"
@@ -1325,18 +1928,17 @@
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250506T232405_20250506T232430_059080_07545B_8848",
             "s2_comparison_images": [
                 {
-                    "date": "2025-01-21",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250121T040051_20250121T041023_T46QHH"
+                    "date": "2025-03-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250322T035601_20250322T040341_T46QHH"
                 },
                 {
-                    "date": "2025-03-07",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250307T035539_20250307T040534_T47QKC"
+                    "date": "2025-01-21",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250121T040051_20250121T041023_T46QHH"
                 }
             ]
         }
     ],
     "Hartbeespoort": [
-  
         {
             "entry_id": "Hartbeespoort_20190122",
             "location": "Hartbeespoort",
@@ -1354,6 +1956,24 @@
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190321T075619_20190321T081839_T35JNM",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190321T164701_20190321T164726_026438_02F5B7_3F33",
             "s2_comparison_images": [
+                {
+                    "date": "2019-01-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190122T075221_20190122T081410_T35JNM"
+                }
+            ]
+        },
+        {
+            "entry_id": "Hartbeespoort_20190323",
+            "location": "Hartbeespoort",
+            "obs_date": "2019-03-23",
+            "display_label": "Hartbeespoort - 23 March 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190323T074611_20190323T080452_T35JNM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190323T033435_20190323T033500_015476_01CFD6_E8F4",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-03-21",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190321T075619_20190321T081839_T35JNM"
+                },
                 {
                     "date": "2019-01-22",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190122T075221_20190122T081410_T35JNM"
@@ -1751,8 +2371,8 @@
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200504T075609_20200504T082219_T35JNM"
                 },
                 {
-                    "date": "2020-01-27",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200127T075201_20200127T081349_T35JNM"
+                    "date": "2020-03-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200327T074611_20200327T080818_T35JNM"
                 }
             ]
         },
@@ -1769,8 +2389,8 @@
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200514T075609_20200514T082257_T35JNM"
                 },
                 {
-                    "date": "2020-01-27",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200127T075201_20200127T081349_T35JNM"
+                    "date": "2020-03-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200327T074611_20200327T080818_T35JNM"
                 }
             ]
         },
@@ -1787,8 +2407,8 @@
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T074621_20200516T081446_T35JNM"
                 },
                 {
-                    "date": "2020-01-27",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200127T075201_20200127T081349_T35JNM"
+                    "date": "2020-03-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200327T074611_20200327T080818_T35JNM"
                 }
             ]
         },
@@ -1835,6 +2455,24 @@
             "display_label": "Hartbeespoort - 15 July 2020",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200715T074621_20200715T080806_T35JNM",
             "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200715T033447_20200715T033512_022476_02AA8C_8244",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-07-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200713T075609_20200713T082205_T35JNM"
+                },
+                {
+                    "date": "2020-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T074621_20200516T081446_T35JNM"
+                }
+            ]
+        },
+        {
+            "entry_id": "Hartbeespoort_20200725",
+            "location": "Hartbeespoort",
+            "obs_date": "2020-07-25",
+            "display_label": "Hartbeespoort - 25 July 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200725T074621_20200725T080832_T35JNM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200725T164714_20200725T164739_033613_03E550_641A",
             "s2_comparison_images": [
                 {
                     "date": "2020-07-13",
@@ -1915,6 +2553,24 @@
                 {
                     "date": "2020-09-11",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200911T075609_20200911T082123_T35JNM"
+                }
+            ]
+        },
+        {
+            "entry_id": "Hartbeespoort_20210109",
+            "location": "Hartbeespoort",
+            "obs_date": "2021-01-09",
+            "display_label": "Hartbeespoort - 09 January 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210109T080219_20210109T082146_T35JNM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210109T164714_20210109T164739_036063_043A0D_9517",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-12-30",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201230T080239_20201230T082138_T35JNM"
+                },
+                {
+                    "date": "2020-09-23",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200923T074641_20200923T081054_T35JNM"
                 }
             ]
         },
@@ -2343,6 +2999,24 @@
             ]
         },
         {
+            "entry_id": "Hartbeespoort_20230710",
+            "location": "Hartbeespoort",
+            "obs_date": "2023-07-10",
+            "display_label": "Hartbeespoort - 10 July 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230710T074621_20230710T081149_T35JNM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230710T164713_20230710T164738_049363_05EFA0_C4EB",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-05-11",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230511T074611_20230511T081143_T35JNM"
+                },
+                {
+                    "date": "2023-04-29",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230429T075609_20230429T082129_T35JNM"
+                }
+            ]
+        },
+        {
             "entry_id": "Hartbeespoort_20230827",
             "location": "Hartbeespoort",
             "obs_date": "2023-08-27",
@@ -2510,6 +3184,24 @@
             ]
         },
         {
+            "entry_id": "Hartbeespoort_20241020",
+            "location": "Hartbeespoort",
+            "obs_date": "2024-10-20",
+            "display_label": "Hartbeespoort - 20 October 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20241020T075849_20241020T082124_T35JNM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20241020T164713_20241020T164738_056188_06E0BE_974E",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-06-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240622T075609_20240622T082125_T35JNM"
+                },
+                {
+                    "date": "2024-09-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240902T074611_20240902T080622_T35JNM"
+                }
+            ]
+        },
+        {
             "entry_id": "Hartbeespoort_20241101",
             "location": "Hartbeespoort",
             "obs_date": "2024-11-01",
@@ -2518,12 +3210,12 @@
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20241101T164713_20241101T164738_056363_06E7B0_7227",
             "s2_comparison_images": [
                 {
-                    "date": "2024-09-02",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240902T074611_20240902T080622_T35JNM"
+                    "date": "2024-10-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20241020T075849_20241020T082124_T35JNM"
                 },
                 {
-                    "date": "2024-08-21",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240821T075609_20240821T081957_T35JNM"
+                    "date": "2024-09-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240902T074611_20240902T080622_T35JNM"
                 }
             ]
         },
@@ -2605,6 +3297,42 @@
             ]
         },
         {
+            "entry_id": "Hartbeespoort_20250806",
+            "location": "Hartbeespoort",
+            "obs_date": "2025-08-06",
+            "display_label": "Hartbeespoort - 06 August 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250806T075609_20250806T082254_T35JNM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250806T033431_20250806T033456_003546_0071A8_930D",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-06-29",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250629T074631_20250629T081419_T35JNM"
+                },
+                {
+                    "date": "2025-06-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250617T075609_20250617T082531_T35JNM"
+                }
+            ]
+        },
+        {
+            "entry_id": "Hartbeespoort_20250816",
+            "location": "Hartbeespoort",
+            "obs_date": "2025-08-16",
+            "display_label": "Hartbeespoort - 16 August 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250816T075609_20250816T082125_T35JNM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250816T164703_20250816T164728_060563_078859_F300",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-07-11",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250711T075031_20250711T081403_T35JNM"
+                },
+                {
+                    "date": "2025-06-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250617T075609_20250617T082531_T35JNM"
+                }
+            ]
+        },
+        {
             "entry_id": "Hartbeespoort_20250828",
             "location": "Hartbeespoort",
             "obs_date": "2025-08-28",
@@ -2613,12 +3341,12 @@
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250828T164703_20250828T164728_060738_078F3D_DE3C",
             "s2_comparison_images": [
                 {
-                    "date": "2025-06-17",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250617T075609_20250617T082531_T35JNM"
+                    "date": "2025-08-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250816T075609_20250816T082125_T35JNM"
                 },
                 {
-                    "date": "2025-06-29",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250629T074631_20250629T081419_T35JNM"
+                    "date": "2025-06-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250617T075609_20250617T082531_T35JNM"
                 }
             ]
         },
@@ -2657,10 +3385,27 @@
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250617T075609_20250617T082531_T35JNM"
                 }
             ]
+        },
+        {
+            "entry_id": "Hartbeespoort_20251226",
+            "location": "Hartbeespoort",
+            "obs_date": "2025-12-26",
+            "display_label": "Hartbeespoort - 26 December 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251226T075341_20251226T081515_T35JNM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20251226T164659_20251226T164724_062488_07D479_0A9E",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-08-28",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250828T074631_20250828T081417_T35JNM"
+                },
+                {
+                    "date": "2025-10-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251017T074931_20251017T081408_T35JNM"
+                }
+            ]
         }
     ],
     "Mula": [
-  
         {
             "entry_id": "Mula_20190110",
             "location": "Mula",
@@ -2977,7 +3722,47 @@
         }
     ],
     "RawaPening": [
-  
+        {
+            "entry_id": "RawaPening_20190310",
+            "location": "RawaPening",
+            "obs_date": "2019-03-10",
+            "display_label": "RawaPening - 10 March 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190310T023541_20190310T025505_T49MDN",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190310T105824_20190310T105852_026274_02EFB9_DEB1",
+            "s2_comparison_images": []
+        },
+        {
+            "entry_id": "RawaPening_20190330",
+            "location": "RawaPening",
+            "obs_date": "2019-03-30",
+            "display_label": "RawaPening - 30 March 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190330T023551_20190330T025759_T49MDM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190330T221736_20190330T221800_026573_02FAA5_A9F8",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-03-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190310T023541_20190310T025505_T49MDN"
+                }
+            ]
+        },
+        {
+            "entry_id": "RawaPening_20190409",
+            "location": "RawaPening",
+            "obs_date": "2019-04-09",
+            "display_label": "RawaPening - 09 April 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190409T023551_20190409T025935_T49MDM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SSV_20190409T105743_20190409T105811_015728_01D848_3FF3",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-03-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190310T023541_20190310T025505_T49MDN"
+                },
+                {
+                    "date": "2019-03-30",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190330T023551_20190330T025759_T49MDM"
+                }
+            ]
+        },
         {
             "entry_id": "RawaPening_20190509",
             "location": "RawaPening",
@@ -2985,7 +3770,16 @@
             "display_label": "RawaPening - 09 May 2019",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190509T023551_20190509T025745_T49MDN",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190509T105826_20190509T105854_027149_030F7C_A97A",
-            "s2_comparison_images": []
+            "s2_comparison_images": [
+                {
+                    "date": "2019-03-30",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190330T023551_20190330T025759_T49MDM"
+                },
+                {
+                    "date": "2019-03-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190310T023541_20190310T025505_T49MDN"
+                }
+            ]
         },
         {
             "entry_id": "RawaPening_20190529",
@@ -2998,6 +3792,10 @@
                 {
                     "date": "2019-05-09",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190509T023551_20190509T025745_T49MDN"
+                },
+                {
+                    "date": "2019-03-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190310T023541_20190310T025505_T49MDN"
                 }
             ]
         },
@@ -3014,8 +3812,8 @@
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190529T023551_20190529T025705_T49MDM"
                 },
                 {
-                    "date": "2019-05-09",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190509T023551_20190509T025745_T49MDN"
+                    "date": "2019-03-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190310T023541_20190310T025505_T49MDN"
                 }
             ]
         },
@@ -3128,13 +3926,68 @@
             ]
         },
         {
+            "entry_id": "RawaPening_20191125",
+            "location": "RawaPening",
+            "obs_date": "2019-11-25",
+            "display_label": "RawaPening - 25 November 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20191125T024031_20191125T025355_T49MDM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20191125T221745_20191125T221809_030073_036F47_AC24",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-11-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191105T023901_20191105T025713_T49MDN"
+                },
+                {
+                    "date": "2019-07-28",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190728T023551_20190728T025707_T49MDN"
+                }
+            ]
+        },
+        {
+            "entry_id": "RawaPening_20200124",
+            "location": "RawaPening",
+            "obs_date": "2020-01-24",
+            "display_label": "RawaPening - 24 January 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200124T024001_20200124T025332_T49MDM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200124T221742_20200124T221807_030948_038D9E_A125",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-10-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191006T023551_20191006T025940_T49MDN"
+                },
+                {
+                    "date": "2019-11-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191105T023901_20191105T025713_T49MDN"
+                }
+            ]
+        },
+        {
+            "entry_id": "RawaPening_20200403",
+            "location": "RawaPening",
+            "obs_date": "2020-04-03",
+            "display_label": "RawaPening - 03 April 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200403T023541_20200403T025929_T49MDM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SSV_20200403T105749_20200403T105817_020978_027CBB_A5E3",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-01-24",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200124T024001_20200124T025332_T49MDM"
+                }
+            ]
+        },
+        {
             "entry_id": "RawaPening_20200702",
             "location": "RawaPening",
             "obs_date": "2020-07-02",
             "display_label": "RawaPening - 02 July 2020",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200702T023551_20200702T025225_T49MDN",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200702T105835_20200702T105904_033274_03DAF6_E65B",
-            "s2_comparison_images": []
+            "s2_comparison_images": [
+                {
+                    "date": "2020-04-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200403T023541_20200403T025929_T49MDM"
+                }
+            ]
         },
         {
             "entry_id": "RawaPening_20200801",
@@ -3147,6 +4000,10 @@
                 {
                     "date": "2020-07-02",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200702T023551_20200702T025225_T49MDN"
+                },
+                {
+                    "date": "2020-04-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200403T023541_20200403T025929_T49MDM"
                 }
             ]
         },
@@ -3205,13 +4062,54 @@
             ]
         },
         {
+            "entry_id": "RawaPening_20201119",
+            "location": "RawaPening",
+            "obs_date": "2020-11-19",
+            "display_label": "RawaPening - 19 November 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20201119T024011_20201119T025318_T49MDM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20201119T221751_20201119T221816_035323_04205B_6492",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-08-01",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200801T023551_20200801T025925_T49MDM"
+                },
+                {
+                    "date": "2020-08-31",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200831T023551_20200831T025319_T49MDN"
+                }
+            ]
+        },
+        {
             "entry_id": "RawaPening_20210227",
             "location": "RawaPening",
             "obs_date": "2021-02-27",
             "display_label": "RawaPening - 27 February 2021",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210227T023641_20210227T024948_T49MDN",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210227T105836_20210227T105905_036774_0452CD_F17D",
-            "s2_comparison_images": []
+            "s2_comparison_images": [
+                {
+                    "date": "2020-11-19",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201119T024011_20201119T025318_T49MDM"
+                }
+            ]
+        },
+        {
+            "entry_id": "RawaPening_20210319",
+            "location": "RawaPening",
+            "obs_date": "2021-03-19",
+            "display_label": "RawaPening - 19 March 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210319T023551_20210319T024851_T49MDN",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210319T221748_20210319T221812_037073_045D28_86BF",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-02-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210227T023641_20210227T024948_T49MDN"
+                },
+                {
+                    "date": "2020-11-19",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20201119T024011_20201119T025318_T49MDM"
+                }
+            ]
         },
         {
             "entry_id": "RawaPening_20210727",
@@ -3237,6 +4135,24 @@
             ]
         },
         {
+            "entry_id": "RawaPening_20210925",
+            "location": "RawaPening",
+            "obs_date": "2021-09-25",
+            "display_label": "RawaPening - 25 September 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210925T023551_20210925T024855_T49MDM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SSV_20210925T105804_20210925T105832_028853_037188_FBE1",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-08-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210826T023551_20210826T024856_T49MDN"
+                },
+                {
+                    "date": "2021-07-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210727T023551_20210727T024855_T49MDN"
+                }
+            ]
+        },
+        {
             "entry_id": "RawaPening_20211025",
             "location": "RawaPening",
             "obs_date": "2021-10-25",
@@ -3245,14 +4161,55 @@
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20211025T105846_20211025T105914_040274_04C5AB_3795",
             "s2_comparison_images": [
                 {
+                    "date": "2021-09-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210925T023551_20210925T024855_T49MDM"
+                },
+                {
                     "date": "2021-07-27",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210727T023551_20210727T024855_T49MDN"
-                },
+                }
+            ]
+        },
+        {
+            "entry_id": "RawaPening_20211224",
+            "location": "RawaPening",
+            "obs_date": "2021-12-24",
+            "display_label": "RawaPening - 24 December 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211224T024121_20211224T025430_T49MDM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20211224T105844_20211224T105912_041149_04E3B7_E459",
+            "s2_comparison_images": [
                 {
                     "date": "2021-08-26",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210826T023551_20210826T024856_T49MDN"
+                },
+                {
+                    "date": "2021-10-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211025T023801_20211025T025107_T49MDN"
                 }
             ]
+        },
+        {
+            "entry_id": "RawaPening_20220314",
+            "location": "RawaPening",
+            "obs_date": "2022-03-14",
+            "display_label": "RawaPening - 14 March 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220314T023551_20220314T024859_T49MDN",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220314T221753_20220314T221818_042323_050B94_66C6",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-12-24",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211224T024121_20211224T025430_T49MDM"
+                }
+            ]
+        },
+        {
+            "entry_id": "RawaPening_20230309",
+            "location": "RawaPening",
+            "obs_date": "2023-03-09",
+            "display_label": "RawaPening - 09 March 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230309T023531_20230309T024832_T49MDN",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230309T221759_20230309T221823_047573_05B686_453A",
+            "s2_comparison_images": []
         },
         {
             "entry_id": "RawaPening_20230617",
@@ -3261,7 +4218,12 @@
             "display_label": "RawaPening - 17 June 2023",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230617T023531_20230617T025258_T49MDN",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230617T105852_20230617T105920_049024_05E542_F56A",
-            "s2_comparison_images": []
+            "s2_comparison_images": [
+                {
+                    "date": "2023-03-09",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230309T023531_20230309T024832_T49MDN"
+                }
+            ]
         },
         {
             "entry_id": "RawaPening_20230816",
@@ -3332,13 +4294,76 @@
             ]
         },
         {
+            "entry_id": "RawaPening_20240212",
+            "location": "RawaPening",
+            "obs_date": "2024-02-12",
+            "display_label": "RawaPening - 12 February 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240212T023831_20240212T025555_T49MDM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240212T105853_20240212T105921_052524_065A69_802E",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-10-15",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231015T023651_20231015T024948_T49MDM"
+                },
+                {
+                    "date": "2023-12-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231214T024111_20231214T025912_T49MDN"
+                }
+            ]
+        },
+        {
+            "entry_id": "RawaPening_20240412",
+            "location": "RawaPening",
+            "obs_date": "2024-04-12",
+            "display_label": "RawaPening - 12 April 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240412T023531_20240412T025006_T49MDN",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240412T105852_20240412T105921_053399_067A25_A155",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-12-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231214T024111_20231214T025912_T49MDN"
+                },
+                {
+                    "date": "2024-02-12",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240212T023831_20240212T025555_T49MDM"
+                }
+            ]
+        },
+        {
             "entry_id": "RawaPening_20240502",
             "location": "RawaPening",
             "obs_date": "2024-05-02",
             "display_label": "RawaPening - 02 May 2024",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240502T023551_20240502T025256_T49MDN",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240502T221806_20240502T221830_053698_0685DF_2F6E",
-            "s2_comparison_images": []
+            "s2_comparison_images": [
+                {
+                    "date": "2024-04-12",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240412T023531_20240412T025006_T49MDN"
+                },
+                {
+                    "date": "2024-02-12",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240212T023831_20240212T025555_T49MDM"
+                }
+            ]
+        },
+        {
+            "entry_id": "RawaPening_20240611",
+            "location": "RawaPening",
+            "obs_date": "2024-06-11",
+            "display_label": "RawaPening - 11 June 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240611T023551_20240611T025317_T49MDM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240611T105853_20240611T105922_054274_069A23_FC62",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-05-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240502T023551_20240502T025256_T49MDN"
+                },
+                {
+                    "date": "2024-04-12",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240412T023531_20240412T025006_T49MDN"
+                }
+            ]
         },
         {
             "entry_id": "RawaPening_20240810",
@@ -3348,6 +4373,28 @@
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240810T023551_20240810T025550_T49MDM",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240810T105851_20240810T105920_055149_06B896_C888",
             "s2_comparison_images": [
+                {
+                    "date": "2024-05-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240502T023551_20240502T025256_T49MDN"
+                },
+                {
+                    "date": "2024-06-11",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240611T023551_20240611T025317_T49MDM"
+                }
+            ]
+        },
+        {
+            "entry_id": "RawaPening_20240830",
+            "location": "RawaPening",
+            "obs_date": "2024-08-30",
+            "display_label": "RawaPening - 30 August 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240830T023551_20240830T025656_T49MDM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240830T221803_20240830T221828_055448_06C38D_6B66",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-08-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240810T023551_20240810T025550_T49MDM"
+                },
                 {
                     "date": "2024-05-02",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240502T023551_20240502T025256_T49MDN"
@@ -3365,6 +4412,24 @@
                 {
                     "date": "2024-08-10",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240810T023551_20240810T025550_T49MDM"
+                },
+                {
+                    "date": "2024-08-30",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240830T023551_20240830T025656_T49MDM"
+                }
+            ]
+        },
+        {
+            "entry_id": "RawaPening_20250206",
+            "location": "RawaPening",
+            "obs_date": "2025-02-06",
+            "display_label": "RawaPening - 06 February 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250206T023931_20250206T025155_T49MDM",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250206T105846_20250206T105915_057774_071FB0_F323",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-10-29",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20241029T023821_20241029T025815_T49MDN"
                 }
             ]
         },
@@ -3375,7 +4440,48 @@
             "display_label": "RawaPening - 07 April 2025",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250407T023611_20250407T025131_T49MDM",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250407T105846_20250407T105915_058649_0742FA_8BAA",
-            "s2_comparison_images": []
+            "s2_comparison_images": [
+                {
+                    "date": "2025-02-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250206T023931_20250206T025155_T49MDM"
+                }
+            ]
+        },
+        {
+            "entry_id": "RawaPening_20250507",
+            "location": "RawaPening",
+            "obs_date": "2025-05-07",
+            "display_label": "RawaPening - 07 May 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250507T023551_20250507T024851_T49MDN",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250507T105709_20250507T105750_002223_004B9B_C463",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-04-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250407T023611_20250407T025131_T49MDM"
+                },
+                {
+                    "date": "2025-02-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250206T023931_20250206T025155_T49MDM"
+                }
+            ]
+        },
+        {
+            "entry_id": "RawaPening_20250519",
+            "location": "RawaPening",
+            "obs_date": "2025-05-19",
+            "display_label": "RawaPening - 19 May 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250519T024141_20250519T025103_T49MDN",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250519T105709_20250519T105750_002398_00509C_8E96",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-04-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250407T023611_20250407T025131_T49MDM"
+                },
+                {
+                    "date": "2025-02-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250206T023931_20250206T025155_T49MDM"
+                }
+            ]
         },
         {
             "entry_id": "RawaPening_20250606",
@@ -3385,6 +4491,10 @@
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250606T023551_20250606T024851_T49MDM",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250606T105845_20250606T105914_059524_0763D4_107F",
             "s2_comparison_images": [
+                {
+                    "date": "2025-05-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250507T023551_20250507T024851_T49MDN"
+                },
                 {
                     "date": "2025-04-07",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250407T023611_20250407T025131_T49MDM"
@@ -3428,6 +4538,24 @@
             ]
         },
         {
+            "entry_id": "RawaPening_20250825",
+            "location": "RawaPening",
+            "obs_date": "2025-08-25",
+            "display_label": "RawaPening - 25 August 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250825T023611_20250825T025920_T49MDN",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250825T221754_20250825T221819_060698_078DA7_4798",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-07-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250718T024151_20250718T025106_T49MDN"
+                },
+                {
+                    "date": "2025-06-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250606T023551_20250606T024851_T49MDM"
+                }
+            ]
+        },
+        {
             "entry_id": "RawaPening_20250904",
             "location": "RawaPening",
             "obs_date": "2025-09-04",
@@ -3436,12 +4564,12 @@
             "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250904T105716_20250904T105757_003973_007E87_773A",
             "s2_comparison_images": [
                 {
-                    "date": "2025-06-06",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250606T023551_20250606T024851_T49MDM"
+                    "date": "2025-08-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250825T023611_20250825T025920_T49MDN"
                 },
                 {
-                    "date": "2025-06-26",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250626T023611_20250626T025921_T49MDN"
+                    "date": "2025-06-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250606T023551_20250606T024851_T49MDM"
                 }
             ]
         },
@@ -3465,7 +4593,6 @@
         }
     ],
     "Rodman": [
-  
         {
             "entry_id": "Rodman_20190208",
             "location": "Rodman",
@@ -3554,12 +4681,80 @@
             ]
         },
         {
+            "entry_id": "Rodman_20210727",
+            "location": "Rodman",
+            "obs_date": "2021-07-27",
+            "display_label": "Rodman - 27 July 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210727T155911_20210727T160753_T17RMN",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210727T232927_20210727T232952_038970_04991D_AEE6",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-05-28",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210528T155901_20210528T160816_T17RMN"
+                }
+            ]
+        },
+        {
+            "entry_id": "Rodman_20210925",
+            "location": "Rodman",
+            "obs_date": "2021-09-25",
+            "display_label": "Rodman - 25 September 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210925T160021_20210925T161233_T17RMN",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210925T232930_20210925T232955_039845_04B6AA_933A",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-05-28",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210528T155901_20210528T160816_T17RMN"
+                },
+                {
+                    "date": "2021-07-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210727T155911_20210727T160753_T17RMN"
+                }
+            ]
+        },
+        {
             "entry_id": "Rodman_20211124",
             "location": "Rodman",
             "obs_date": "2021-11-24",
             "display_label": "Rodman - 24 November 2021",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211124T160611_20211124T161250_T17RMN",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20211124T232929_20211124T232954_040720_04D50D_384E",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-07-27",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210727T155911_20210727T160753_T17RMN"
+                },
+                {
+                    "date": "2021-09-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210925T160021_20210925T161233_T17RMN"
+                }
+            ]
+        },
+        {
+            "entry_id": "Rodman_20220722",
+            "location": "Rodman",
+            "obs_date": "2022-07-22",
+            "display_label": "Rodman - 22 July 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220722T155911_20220722T161116_T17RMN",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220722T232933_20220722T232958_044220_05471D_856B",
+            "s2_comparison_images": []
+        },
+        {
+            "entry_id": "Rodman_20230319",
+            "location": "Rodman",
+            "obs_date": "2023-03-19",
+            "display_label": "Rodman - 19 March 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230319T155951_20230319T161230_T17RMN",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230319T232932_20230319T232957_047720_05BB74_3B60",
+            "s2_comparison_images": []
+        },
+        {
+            "entry_id": "Rodman_20230915",
+            "location": "Rodman",
+            "obs_date": "2023-09-15",
+            "display_label": "Rodman - 15 September 2023",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20230915T155901_20230915T160959_T17RMN",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20230915T232941_20230915T233006_050345_060FB6_8F4A",
             "s2_comparison_images": []
         },
         {
@@ -3573,7 +4768,6 @@
         }
     ],
     "Valsequillo": [
-
         {
             "entry_id": "Valsequillo_20190107",
             "location": "Valsequillo",
@@ -3778,6 +4972,60 @@
             ]
         },
         {
+            "entry_id": "Valsequillo_20190805",
+            "location": "Valsequillo",
+            "obs_date": "2019-08-05",
+            "display_label": "Valsequillo - 05 August 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190805T165901_20190805T171352_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190805T004017_20190805T004042_028427_033657_4EFB",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-07-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF"
+                },
+                {
+                    "date": "2019-05-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190507T165901_20190507T171141_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190820",
+            "location": "Valsequillo",
+            "obs_date": "2019-08-20",
+            "display_label": "Valsequillo - 20 August 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190820T165849_20190820T171711_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20190820T122522_20190820T122547_017669_0213DF_6726",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-07-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF"
+                },
+                {
+                    "date": "2019-05-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190507T165901_20190507T171141_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20190919",
+            "location": "Valsequillo",
+            "obs_date": "2019-09-19",
+            "display_label": "Valsequillo - 19 September 2019",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20190919T165949_20190919T171109_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20190919T122617_20190919T122642_029090_034D3D_73CA",
+            "s2_comparison_images": [
+                {
+                    "date": "2019-08-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190820T165849_20190820T171711_T14QNG"
+                },
+                {
+                    "date": "2019-07-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF"
+                }
+            ]
+        },
+        {
             "entry_id": "Valsequillo_20191004",
             "location": "Valsequillo",
             "obs_date": "2019-10-04",
@@ -3786,12 +5034,12 @@
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20191004T004020_20191004T004045_029302_03546D_EC11",
             "s2_comparison_images": [
                 {
-                    "date": "2019-07-06",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF"
+                    "date": "2019-08-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190820T165849_20190820T171711_T14QNG"
                 },
                 {
-                    "date": "2019-06-21",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190621T165859_20190621T171322_T14QNG"
+                    "date": "2019-07-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20190706T165901_20190706T171359_T14QNF"
                 }
             ]
         },
@@ -3900,6 +5148,24 @@
                 {
                     "date": "2019-10-04",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191004T170141_20191004T171309_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200201",
+            "location": "Valsequillo",
+            "obs_date": "2020-02-01",
+            "display_label": "Valsequillo - 01 February 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200201T170521_20200201T171604_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200201T004017_20200201T004042_031052_039134_3933",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-01-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200117T170629_20200117T171145_T14QNG"
+                },
+                {
+                    "date": "2019-12-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20191203T170701_20191203T171100_T14QNF"
                 }
             ]
         },
@@ -4066,6 +5332,24 @@
             ]
         },
         {
+            "entry_id": "Valsequillo_20200630",
+            "location": "Valsequillo",
+            "obs_date": "2020-06-30",
+            "display_label": "Valsequillo - 30 June 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200630T165901_20200630T171425_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20200630T003923_20200630T003948_022256_02A3D9_11F6",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T165849_20200516T171427_T14QNF"
+                },
+                {
+                    "date": "2020-03-02",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200302T170211_20200302T171425_T14QNF"
+                }
+            ]
+        },
+        {
             "entry_id": "Valsequillo_20200715",
             "location": "Valsequillo",
             "obs_date": "2020-07-15",
@@ -4120,6 +5404,60 @@
             ]
         },
         {
+            "entry_id": "Valsequillo_20200913",
+            "location": "Valsequillo",
+            "obs_date": "2020-09-13",
+            "display_label": "Valsequillo - 13 September 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200913T165849_20200913T171512_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200913T122623_20200913T122648_034340_03FE19_129C",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-08-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF"
+                },
+                {
+                    "date": "2020-05-16",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200516T165849_20200516T171427_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20200928",
+            "location": "Valsequillo",
+            "obs_date": "2020-09-28",
+            "display_label": "Valsequillo - 28 September 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20200928T170111_20200928T171211_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20200928T004026_20200928T004051_034552_040591_AECF",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-08-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF"
+                },
+                {
+                    "date": "2020-05-31",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200531T165901_20200531T171419_T14QNF"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20201013",
+            "location": "Valsequillo",
+            "obs_date": "2020-10-13",
+            "display_label": "Valsequillo - 13 October 2020",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20201013T170159_20201013T171425_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20201013T122530_20201013T122555_023794_02D375_60C5",
+            "s2_comparison_images": [
+                {
+                    "date": "2020-09-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200913T165849_20200913T171512_T14QNF"
+                },
+                {
+                    "date": "2020-06-15",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200615T165849_20200615T171154_T14QNG"
+                }
+            ]
+        },
+        {
             "entry_id": "Valsequillo_20201028",
             "location": "Valsequillo",
             "obs_date": "2020-10-28",
@@ -4128,12 +5466,12 @@
             "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20201028T003927_20201028T003952_024006_02DA15_C9BE",
             "s2_comparison_images": [
                 {
-                    "date": "2020-08-14",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF"
+                    "date": "2020-09-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200913T165849_20200913T171512_T14QNF"
                 },
                 {
-                    "date": "2020-07-30",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200730T165901_20200730T171827_T14QNF"
+                    "date": "2020-08-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20200814T165849_20200814T171644_T14QNF"
                 }
             ]
         },
@@ -4336,6 +5674,24 @@
             ]
         },
         {
+            "entry_id": "Valsequillo_20210610",
+            "location": "Valsequillo",
+            "obs_date": "2021-06-10",
+            "display_label": "Valsequillo - 10 June 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210610T165849_20210610T171207_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20210610T122530_20210610T122555_027294_034293_47EB",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-04-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210426T165851_20210426T170638_T14QNF"
+                },
+                {
+                    "date": "2021-02-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210225T170251_20210225T171532_T14QNF"
+                }
+            ]
+        },
+        {
             "entry_id": "Valsequillo_20210725",
             "location": "Valsequillo",
             "obs_date": "2021-07-25",
@@ -4344,12 +5700,12 @@
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210725T004029_20210725T004054_038927_0497DB_3228",
             "s2_comparison_images": [
                 {
-                    "date": "2021-04-26",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210426T165851_20210426T170638_T14QNF"
+                    "date": "2021-06-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210610T165849_20210610T171207_T14QNG"
                 },
                 {
-                    "date": "2021-03-27",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210327T165921_20210327T170852_T14QNF"
+                    "date": "2021-04-26",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210426T165851_20210426T170638_T14QNF"
                 }
             ]
         },
@@ -4372,6 +5728,24 @@
             ]
         },
         {
+            "entry_id": "Valsequillo_20210908",
+            "location": "Valsequillo",
+            "obs_date": "2021-09-08",
+            "display_label": "Valsequillo - 08 September 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20210908T165839_20210908T171655_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20210908T122629_20210908T122654_039590_04AE04_166C",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-07-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210725T165901_20210725T171814_T14QNG"
+                },
+                {
+                    "date": "2021-06-10",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210610T165849_20210610T171207_T14QNG"
+                }
+            ]
+        },
+        {
             "entry_id": "Valsequillo_20210923",
             "location": "Valsequillo",
             "obs_date": "2021-09-23",
@@ -4382,6 +5756,24 @@
                 {
                     "date": "2021-08-09",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210809T165849_20210809T171029_T14QNG"
+                },
+                {
+                    "date": "2021-07-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210725T165901_20210725T171814_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20211008",
+            "location": "Valsequillo",
+            "obs_date": "2021-10-08",
+            "display_label": "Valsequillo - 08 October 2021",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20211008T170119_20211008T171734_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20211008T122536_20211008T122601_029044_03773B_B8E1",
+            "s2_comparison_images": [
+                {
+                    "date": "2021-09-23",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20210923T170031_20210923T171002_T14QNF"
                 },
                 {
                     "date": "2021-07-25",
@@ -4498,6 +5890,24 @@
             ]
         },
         {
+            "entry_id": "Valsequillo_20220322",
+            "location": "Valsequillo",
+            "obs_date": "2022-03-22",
+            "display_label": "Valsequillo - 22 March 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220322T170001_20220322T170817_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220322T004028_20220322T004053_042427_050F21_01B5",
+            "s2_comparison_images": [
+                {
+                    "date": "2022-03-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220307T170049_20220307T170827_T14QNF"
+                },
+                {
+                    "date": "2021-12-07",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20211207T170659_20211207T171046_T14QNF"
+                }
+            ]
+        },
+        {
             "entry_id": "Valsequillo_20220506",
             "location": "Valsequillo",
             "obs_date": "2022-05-06",
@@ -4506,12 +5916,12 @@
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220506T122627_20220506T122652_043090_052545_3751",
             "s2_comparison_images": [
                 {
-                    "date": "2022-01-06",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220106T170709_20220106T171047_T14QNF"
+                    "date": "2022-03-22",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220322T170001_20220322T170817_T14QNF"
                 },
                 {
-                    "date": "2022-03-07",
-                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220307T170049_20220307T170827_T14QNF"
+                    "date": "2022-01-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220106T170709_20220106T171047_T14QNF"
                 }
             ]
         },
@@ -4534,13 +5944,36 @@
             ]
         },
         {
+            "entry_id": "Valsequillo_20220720",
+            "location": "Valsequillo",
+            "obs_date": "2022-07-20",
+            "display_label": "Valsequillo - 20 July 2022",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20220720T165901_20220720T171004_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220720T004035_20220720T004100_044177_0545E1_FE4F",
+            "s2_comparison_images": [
+                {
+                    "date": "2022-05-21",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220521T165851_20220521T171441_T14QNF"
+                },
+                {
+                    "date": "2022-05-06",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220506T165839_20220506T171614_T14QNF"
+                }
+            ]
+        },
+        {
             "entry_id": "Valsequillo_20221117",
             "location": "Valsequillo",
             "obs_date": "2022-11-17",
             "display_label": "Valsequillo - 17 November 2022",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20221117T170601_20221117T171404_T14QNF",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20221117T004037_20221117T004102_045927_057ED0_3E52",
-            "s2_comparison_images": []
+            "s2_comparison_images": [
+                {
+                    "date": "2022-07-20",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20220720T165901_20220720T171004_T14QNG"
+                }
+            ]
         },
         {
             "entry_id": "Valsequillo_20230302",
@@ -4665,6 +6098,24 @@
             ]
         },
         {
+            "entry_id": "Valsequillo_20240111",
+            "location": "Valsequillo",
+            "obs_date": "2024-01-11",
+            "display_label": "Valsequillo - 11 January 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240111T170651_20240111T171759_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240111T004040_20240111T004105_052052_064A6D_2355",
+            "s2_comparison_images": [
+                {
+                    "date": "2023-10-28",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231028T170419_20231028T171541_T14QNG"
+                },
+                {
+                    "date": "2023-09-13",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20230913T165921_20230913T171706_T14QNF"
+                }
+            ]
+        },
+        {
             "entry_id": "Valsequillo_20240311",
             "location": "Valsequillo",
             "obs_date": "2024-03-11",
@@ -4675,6 +6126,10 @@
                 {
                     "date": "2023-11-12",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20231112T170541_20231112T171411_T14QNF"
+                },
+                {
+                    "date": "2024-01-11",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240111T170651_20240111T171759_T14QNF"
                 }
             ]
         },
@@ -4689,6 +6144,10 @@
                 {
                     "date": "2024-03-11",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240311T170111_20240311T171732_T14QNF"
+                },
+                {
+                    "date": "2024-01-11",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240111T170651_20240111T171759_T14QNF"
                 }
             ]
         },
@@ -4711,13 +6170,36 @@
             ]
         },
         {
+            "entry_id": "Valsequillo_20240709",
+            "location": "Valsequillo",
+            "obs_date": "2024-07-09",
+            "display_label": "Valsequillo - 09 July 2024",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20240709T165901_20240709T171701_T14QNF",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240709T004038_20240709T004103_054677_06A813_5BA8",
+            "s2_comparison_images": [
+                {
+                    "date": "2024-03-11",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240311T170111_20240311T171732_T14QNF"
+                },
+                {
+                    "date": "2024-04-25",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240425T165849_20240425T171045_T14QNF"
+                }
+            ]
+        },
+        {
             "entry_id": "Valsequillo_20241106",
             "location": "Valsequillo",
             "obs_date": "2024-11-06",
             "display_label": "Valsequillo - 06 November 2024",
             "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20241106T170511_20241106T171612_T14QNF",
             "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20241106T004039_20241106T004104_056427_06EA30_5A70",
-            "s2_comparison_images": []
+            "s2_comparison_images": [
+                {
+                    "date": "2024-07-09",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20240709T165901_20240709T171701_T14QNF"
+                }
+            ]
         },
         {
             "entry_id": "Valsequillo_20250306",
@@ -4838,6 +6320,24 @@
             ]
         },
         {
+            "entry_id": "Valsequillo_20250604",
+            "location": "Valsequillo",
+            "obs_date": "2025-06-04",
+            "display_label": "Valsequillo - 04 June 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250604T165911_20250604T170831_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1C_IW_GRDH_1SDV_20250604T003924_20250604T003949_002626_0056FE_856F",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-05-05",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250505T165911_20250505T170807_T14QNF"
+                },
+                {
+                    "date": "2025-03-18",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250318T170711_20250318T170954_T14QNF"
+                }
+            ]
+        },
+        {
             "entry_id": "Valsequillo_20250704",
             "location": "Valsequillo",
             "obs_date": "2025-07-04",
@@ -4928,6 +6428,24 @@
             ]
         },
         {
+            "entry_id": "Valsequillo_20250914",
+            "location": "Valsequillo",
+            "obs_date": "2025-09-14",
+            "display_label": "Valsequillo - 14 September 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20250914T170711_20250914T171433_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20250914T004029_20250914T004054_060977_0798BF_A5D3",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-08-03",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250803T165911_20250803T171635_T14QNF"
+                },
+                {
+                    "date": "2025-05-17",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250517T170711_20250517T171540_T14QNF"
+                }
+            ]
+        },
+        {
             "entry_id": "Valsequillo_20250917",
             "location": "Valsequillo",
             "obs_date": "2025-09-17",
@@ -4956,6 +6474,24 @@
                 {
                     "date": "2025-09-17",
                     "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250917T165849_20250917T171250_T14QNF"
+                },
+                {
+                    "date": "2025-07-04",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20250704T165911_20250704T171514_T14QNG"
+                }
+            ]
+        },
+        {
+            "entry_id": "Valsequillo_20251017",
+            "location": "Valsequillo",
+            "obs_date": "2025-10-17",
+            "display_label": "Valsequillo - 17 October 2025",
+            "s2_target_image_id": "COPERNICUS/S2_SR_HARMONIZED/20251017T170209_20251017T171047_T14QNG",
+            "s1_image_id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20251017T122628_20251017T122653_061465_07AC5A_8513",
+            "s2_comparison_images": [
+                {
+                    "date": "2025-10-14",
+                    "image_id": "COPERNICUS/S2_SR_HARMONIZED/20251014T170711_20251014T170710_T14QNF"
                 },
                 {
                     "date": "2025-07-04",

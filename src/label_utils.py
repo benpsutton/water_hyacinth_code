@@ -289,6 +289,10 @@ def plot_dates(location: str,
     df = prepare_matching_dates_df(df)
     df = df.set_index('date', drop = False)
 
+    # make certain date is a datetime column
+
+    df["date"] = pd.to_datetime(df["date"])
+
     location = df["location"].iloc[0]
 
     # Specify which years to plot
@@ -305,7 +309,7 @@ def plot_dates(location: str,
         color="season",
         title=f"Dates with matching S1 and S2 images for {location}",
         hover_data={
-            "date": True,
+            "date": "|%Y-%m-%d",
             "cloud_perc": True,
             "season": True
         }
