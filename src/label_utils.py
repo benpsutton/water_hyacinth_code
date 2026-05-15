@@ -20,10 +20,10 @@ def prepare_matching_dates_df(df: pd.DataFrame) -> pd.DataFrame:
         df["date"] = pd.to_datetime(df["date"])
 
     if "S1_time" in df.columns and not pd.api.types.is_datetime64_any_dtype(df["S1_time"]):
-        df["S1_time"] = pd.to_datetime(df["S1_time"], unit="ms", utc=True)
+        df["S1_time"] = pd.to_datetime(df["S1_time"], unit="ms", utc=True, errors="coerce")
 
     if "S2_time" in df.columns and not pd.api.types.is_datetime64_any_dtype(df["S2_time"]):
-        df["S2_time"] = pd.to_datetime(df["S2_time"], unit="ms", utc=True)
+        df["S2_time"] = pd.to_datetime(df["S2_time"], unit="ms", utc=True, errors="coerce")
 
     if "time_diff" not in df.columns and {"S1_time", "S2_time"}.issubset(df.columns):
         # Both timestamps come from GEE system:time_start.
