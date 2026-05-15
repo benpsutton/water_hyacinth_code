@@ -51,8 +51,6 @@ def _best_row_per_location_date(df: pd.DataFrame) -> pd.DataFrame:
 
     if "cloud_perc" in df.columns:
         sort_cols.append("cloud_perc")
-    if "time_diff" in df.columns:
-        sort_cols.append("time_diff")
     if "S2_time" in df.columns:
         sort_cols.append("S2_time")
 
@@ -272,6 +270,59 @@ def get_s2_s1_matching_dates(location: str, site_fp: str | Path, project_root: s
     matching_dates_df.to_csv(dates_output_fp)
 
     return matching_dates_df
+
+
+def get_s2_all_dates_with_s1(location: str, site_fp: str | Path, project_root: str | Path, cloud_perc: int = 10):
+
+    s1_fc = create_s1_list_for_location(location=location, site_fp=site_fp)
+    s2_fc = create_s2_list_for_location(
+        location=location,
+        site_fp=site_fp,
+        cloud_perc=cloud_perc,
+    )
+
+    filter = ee.Filter.equals(
+        leftField='date',
+        rightField='date'
+    )
+
+    all_dates_fc = ee.Join.saveFirst(matchKey='s1_images', outer=True).apply(
+        primary=s2_fc,
+        secondary=s1_fc,
+        condition=filter
+    )
+
+    all_dates_fc = ee.FeatureCollection(all_dates_fc).map(
+        lambda feature: ee.Feature(
+            None,
+            ee.Dictionary({
+                'location': ee.Feature(feature).get('location'),
+                'date': ee.Feature(feature).get('date'),
+                'S2_img_id': ee.Feature(feature).get('S2_img_id'),
+                'S2_time': ee.Feature(feature).get('S2_time'),
+                'cloud_perc': ee.Feature(feature).get('cloud_perc'),
+                'S1_img_id': ee.Algorithms.If(
+                    feature.get('s1_images'),
+                    ee.Feature(feature.get('s1_images')).get('S1_img_id'),
+                    None
+                ),
+                'S1_time': ee.Algorithms.If(
+                    feature.get('s1_images'),
+                    ee.Feature(feature.get('s1_images')).get('S1_time'),
+                    None
+                ),
+            }),
+        ),
+    )
+
+    all_dates_df = geemap.ee_to_df(all_dates_fc)
+
+    PROJECT_ROOT = Path(project_root)
+    dates_output_fp = PROJECT_ROOT / "outputs" / f"{location}_all_dates_with_s1.csv"
+    all_dates_df.to_csv(dates_output_fp)
+
+    return all_dates_df
+
 
 # Plotting the matching dates along with cloud percentage and season
 
