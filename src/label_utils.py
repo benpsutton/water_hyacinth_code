@@ -400,7 +400,7 @@ def image_details_to_json(comparison_df: pd.DataFrame,
         obs_date = row['date'].strftime(format = "%Y-%m-%d")
         display_label = location + " - " + row["date"].strftime(format = "%d %B %Y")
         s2_target_image_id = row["S2_img_id"]
-        s1_target_image_id = row["S1_img_id"]
+        s1_target_image_id = row["S1_img_id"] if pd.notna(row["S1_img_id"]) else None
 
         compar_list = []
         count = int(row["comparison_count"])
