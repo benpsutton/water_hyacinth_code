@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-
+import pandas as pd
 import geopandas as gpd
 ######---- I dont think i want to do this approach now i have labels in a single file
 # def create_shp_for_each_location(label_fp: str | Path, sites_fp: str | Path, project_root: str | Path):
@@ -28,9 +28,9 @@ import geopandas as gpd
 
 #         print(f"Created {location}_points.shp")
 
-def validate_label_file_columns(label_gdf: gpd.GeoDataFrame, label_fp: str | Path):
+def validate_label_columns(label_gdf: gpd.GeoDataFrame, label_fp: str | Path):
 
-    required_cols = ["location", "obs_date", "class_label", "label_id"]
+    required_cols = {"location", "obs_date", "class_label", "label_id"}
 
     missing_cols = required_cols - set(label_gdf.columns)
 
@@ -51,6 +51,19 @@ def validate_label_file_columns(label_gdf: gpd.GeoDataFrame, label_fp: str | Pat
 
     cleaned_gdf = label_gdf.copy()
 
+    cleaned_gdf = cleaned_gdf.to_crs("EPSG:4326")
+
+    def multipoint_to_point(geom):
+        if geom.geom_type == "Point":
+            return geom
+        if geom.geom_type == "MultiPoint" and len(geom.geoms) == 1:
+            return geom.geoms[0]
+        raise ValueError(f"Expected Point or singleton MultiPoint, got {geom.geom_type}")
+
+    cleaned_gdf["geometry"] = cleaned_gdf.geometry.apply(multipoint_to_point)
+    cleaned_gdf["longitude"] = cleaned_gdf.geometry.x # make sure they come from the geomtery
+    cleaned_gdf["latitude"] = cleaned_gdf.geometry.y 
+
     try:
         cleaned_gdf["obs_date"] = pd.to_datetime(
             cleaned_gdf["obs_date"],
@@ -60,16 +73,16 @@ def validate_label_file_columns(label_gdf: gpd.GeoDataFrame, label_fp: str | Pat
     except (TypeError, ValueError) as exc:
         bad_values = cleaned_gdf["obs_date"].dropna().astype(str).unique().tolist()
         raise ValueError(
-            f"{points_file} has invalid obs_date values. Expected YYYY-MM-DD."
+            f"{label_fp} has invalid obs_date values. Expected YYYY-MM-DD."
             f"Examples: {bad_values[:5]}"
         ) from exc
 
     if cleaned_gdf["obs_date"].isna().any():
-        raise ValueError(f"{points_file} containes null obs_date valeus")
+        raise ValueError(f"{label_fp} containes null obs_date valeus")
 
     return cleaned_gdf
 
-def convert_class_labels(label_gdf: gdp.GeoDataFrame, label_fp: str | path):
+def convert_class_labels(label_gdf: gpd.GeoDataFrame, label_fp: str | Path):
 
     """ Create two new columns with class_label as a number and as binary. Other functions expect the 
     points to have a class column 'lc', therefore the binary column will be called this"""
@@ -112,8 +125,8 @@ def clean_labelled_data(label_fp: str | Path, cleaned_label_fp: str | Path):
 
     label_gdf = gpd.read_file(label_fp)
 
-    cleaned_label_gdf = validate_label_file_columns(label_gdf= label_gdf, label_fp= label_fp)
-    cleaned_label_gdf = convert_class_labels(label_gdf= cleaned_label_gdf)
+    cleaned_label_gdf = validate_label_columns(label_gdf= label_gdf, label_fp= label_fp)
+    cleaned_label_gdf = convert_class_labels(label_fp= label_fp, label_gdf= cleaned_label_gdf)
     
     cleaned_label_gdf.to_file(cleaned_label_fp)
 

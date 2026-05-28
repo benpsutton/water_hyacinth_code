@@ -234,48 +234,50 @@ def subset_merged_fc_by_location(locations_ee_list, merged_ic, merged_fc, points
 
 # Can get rif of this once ive moved some of its functionality to the cleaning functions in data_utils
 
-def _load_merged_points(sites_file: str | Path, project_root: str | Path) -> gpd.GeoDataFrame:
-    project_root = Path(project_root)
+# def _load_merged_points(sites_file: str | Path, project_root: str | Path) -> gpd.GeoDataFrame:
+#     project_root = Path(project_root)
 
-    with Path(sites_file).open("r", encoding="utf-8") as f:
-        sites = json.load(f)
+#     with Path(sites_file).open("r", encoding="utf-8") as f:
+#         sites = json.load(f)
 
-    locations_list = list(sites.get("sites", {}).keys())
-    gdf_list = []
+#     locations_list = list(sites.get("sites", {}).keys())
+#     gdf_list = []
     
-    for location in locations_list:
-        points_file = project_root / "configs" / "point_files" / f"{location}_points.shp"
+#     for location in locations_list:
+#         points_file = project_root / "configs" / "point_files" / f"{location}_points.shp"
 
-        if not points_file.exists():
-            raise FileNotFoundError(f"Points file not found for {location}: {points_file}")
+#         if not points_file.exists():
+#             raise FileNotFoundError(f"Points file not found for {location}: {points_file}")
 
-        points_gdf = gpd.read_file(points_file)
-        points_gdf = validate_points_columns(points_gdf, points_file)
-        points_gdf = points_gdf.to_crs("EPSG:4326")
+#         points_gdf = gpd.read_file(points_file)
+#         points_gdf = validate_points_columns(points_gdf, points_file)
+#         points_gdf = points_gdf.to_crs("EPSG:4326")
 
-        def multipoint_to_point(geom):
-            if geom.geom_type == "Point":
-                return geom
-            if geom.geom_type == "MultiPoint" and len(geom.geoms) == 1:
-                return geom.geoms[0]
-            raise ValueError(f"Expected Point or singleton MultiPoint, got {geom.geom_type}")
+#         def multipoint_to_point(geom):
+#             if geom.geom_type == "Point":
+#                 return geom
+#             if geom.geom_type == "MultiPoint" and len(geom.geoms) == 1:
+#                 return geom.geoms[0]
+#             raise ValueError(f"Expected Point or singleton MultiPoint, got {geom.geom_type}")
 
-        points_gdf["geometry"] = points_gdf.geometry.apply(multipoint_to_point)
-        points_gdf["location"] = location
-        points_gdf["lon"] = points_gdf.geometry.x
-        points_gdf["lat"] = points_gdf.geometry.y
+#         points_gdf["geometry"] = points_gdf.geometry.apply(multipoint_to_point)
+#         points_gdf["location"] = location
+#         points_gdf["lon"] = points_gdf.geometry.x
+#         points_gdf["lat"] = points_gdf.geometry.y
 
-        gdf_list.append(points_gdf)
+#         gdf_list.append(points_gdf)
 
-    return pd.concat(gdf_list, ignore_index=True)
+#     return pd.concat(gdf_list, ignore_index=True)
 
 
 # Change this so it is passed the cleaned_label_gpkg instead
 
-def get_samples(merged_ic, sites_file: str | Path, project_root: str | Path) -> pd.DataFrame:
+def get_samples(merged_ic, cleaned_label_fp: str | Path) -> pd.DataFrame:
     """Prepare labelled points for sampling and extract all samples."""
-    merged_gdf = _load_merged_points(sites_file=sites_file, project_root=project_root)
-    merged_fc = geemap.gdf_to_ee(merged_gdf)
+
+    cleaned_label_gdf = gpd.read_file(cleaned_label_fp)
+
+    merged_fc = geemap.gdf_to_ee(cleaned_label_gdf) 
     locations_ee_list = merged_fc.aggregate_array("location").distinct()
 
     all_samples = subset_merged_fc_by_location(
@@ -286,12 +288,14 @@ def get_samples(merged_ic, sites_file: str | Path, project_root: str | Path) -> 
     )
 
     all_samples_df = geemap.ee_to_df(all_samples)
+
     return all_samples_df
 
 
-def export_patches(merged_ic, sites_file: str | Path, project_root: str | Path):
-    merged_gdf = _load_merged_points(sites_file=sites_file, project_root=project_root)
-    merged_fc = geemap.gdf_to_ee(merged_gdf)
+def export_patches(merged_ic, cleaned_label_fp: str | Path):
+
+    cleaned_label_gdf = gpd.read_file(cleaned_label_fp)
+    merged_fc = geemap.gdf_to_ee(cleaned_label_gdf)
     locations_ee_list = merged_fc.aggregate_array("location").distinct()
 
     all_samples = subset_merged_fc_by_location(
@@ -309,4 +313,4 @@ def export_patches(merged_ic, sites_file: str | Path, project_root: str | Path):
     )
 
     task.start()
-    print("Exporting sampled patches to drive/Dissertation")
+    print("Exporting sampled patches as GeoJSON to drive/Dissertation")
