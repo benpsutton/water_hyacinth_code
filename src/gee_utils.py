@@ -77,18 +77,36 @@ def create_image_collection(
         scl = image.select("SCL")
         mask = scl.neq(3).And(scl.neq(9)).And(scl.neq(8))
         return image.updateMask(mask)
-
-    image_list = []
-    for date in date_list:
-        ee_date = ee.Date.parse("yyyy-MM-dd", date)
-
-        daily_collection = (
+    
+    
+    sent2_ic = (
             ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED")
             .filterBounds(point_geom)
-            .filterDate(ee_date, ee_date.advance(1, "day"))
             .map(mask_clouds_scl)
             .select(["B2", "B3", "B4", "B5", "B6", "B7", "B8", "B8A", "B11", "B12"])
         )
+
+    def makeAWEI(image):
+            awei_expression = ("4*(b('B3')-b('B11'))-(0.25*b('B8')+2.75*b('B12'))")
+            awei_image = image.expression(awei_expression).rename('AWEI')
+            return awei_image
+    
+    sent2_AWEI_collection = sent2_ic.map(makeAWEI)
+
+    AWEI_p95 = sent2_AWEI_collection.reduce(ee.Reducer.percentile([95])).rename("AWEIp95")
+
+    def addAWEIp95(image):
+        image = image.addBands(AWEI_p95)
+        return image
+    
+    sent2_ic = sent2_ic.map(addAWEIp95)
+
+    image_list = []
+
+    for date in date_list:
+        ee_date = ee.Date.parse("yyyy-MM-dd", date)
+
+        daily_collection = sent2_ic.filterDate(ee_date, ee_date.advance(1, "day"))
 
         if daily_collection.size().getInfo() == 0:
             raise ValueError(
@@ -165,10 +183,15 @@ def sample_points_from_image(point_fc_for_image, image):
     return samples
 
 
-def sample_patches_from_image(point_fc_for_image, image):
+def sample_patches_from_image(point_fc_for_image, image, kernel_size):
     """Create image patch arrays and sample them at labelled points."""
-    kernel_radius = 7
-    bands = ["B2", "B3", "B4", "B5", "B8", "B11", "B12"]
+
+    if kernel_size < 1 or kernel_size % 2 == 0:
+        raise ValueError("kernel_size must be a positive odd integer")
+    
+    kernel_radius = (kernel_size -1)/2
+
+    bands = ["B2", "B3", "B4", "B5", "B8", "B11", "B12", "AWEIp95"]
 
     image = image.select(bands)
     proj = image.select("B2").projection()
@@ -185,7 +208,7 @@ def sample_patches_from_image(point_fc_for_image, image):
     return sampled_patches
 
 
-def sample_by_date(date, location_fc, merged_ic, location, points_or_patches):
+def sample_by_date(date, location_fc, merged_ic, location, points_or_patches, kernel_size):
     """Sample all labelled points for one date within one study location."""
     point_fc_for_image = location_fc.filter(ee.Filter.eq("obs_date", date))
 
@@ -198,27 +221,27 @@ def sample_by_date(date, location_fc, merged_ic, location, points_or_patches):
     if points_or_patches == "points":
         samples = sample_points_from_image(point_fc_for_image, image)
     elif points_or_patches == "patches":
-        samples = sample_patches_from_image(point_fc_for_image, image)
+        samples = sample_patches_from_image(point_fc_for_image, image, kernel_size)
     else:
         raise ValueError("points_or_patches argument must be either 'points' or 'patches'")
 
     return samples
 
 
-def sample_by_location(location, merged_fc, merged_ic, points_or_patches):
+def sample_by_location(location, merged_fc, merged_ic, points_or_patches, kernel_size):
     """Sample all labelled dates for a single study location."""
     location_fc = merged_fc.filter(ee.Filter.eq("location", location))
     date_list = ee.List(location_fc.aggregate_array("obs_date")).distinct()
 
     def map_over_date(date):
-        return sample_by_date(date, location_fc, merged_ic, location, points_or_patches)
+        return sample_by_date(date, location_fc, merged_ic, location, points_or_patches, kernel_size)
 
     samples_for_location = ee.FeatureCollection(date_list.map(map_over_date)).flatten()
 
     return samples_for_location
 
 
-def subset_merged_fc_by_location(locations_ee_list, merged_ic, merged_fc, points_or_patches):
+def subset_merged_fc_by_location(locations_ee_list, merged_ic, merged_fc, points_or_patches, kernel_size: int | None = None):
     """Sample all configured locations and merge the results."""
     valid_points_or_patch_values = {"points", "patches"}
 
@@ -226,7 +249,7 @@ def subset_merged_fc_by_location(locations_ee_list, merged_ic, merged_fc, points
         raise ValueError("points_or_patches argument must be either 'points' or 'patches'")
 
     def map_over_location(location):
-        return sample_by_location(location, merged_fc, merged_ic, points_or_patches)
+        return sample_by_location(location, merged_fc, merged_ic, points_or_patches, kernel_size)
 
     samples_all_locations = ee.FeatureCollection(locations_ee_list.map(map_over_location)).flatten()
 
@@ -292,7 +315,7 @@ def get_samples(merged_ic, cleaned_label_fp: str | Path) -> pd.DataFrame:
     return all_samples_df
 
 
-def export_patches(merged_ic, cleaned_label_fp: str | Path):
+def export_patches(merged_ic, cleaned_label_fp: str | Path, kernel_size: int):
 
     cleaned_label_gdf = gpd.read_file(cleaned_label_fp)
     merged_fc = geemap.gdf_to_ee(cleaned_label_gdf)
@@ -303,6 +326,8 @@ def export_patches(merged_ic, cleaned_label_fp: str | Path):
         merged_ic,
         merged_fc,
         points_or_patches="patches",
+        kernel_size= kernel_size
+
     )
 
     task = ee.batch.Export.table.toDrive(
