@@ -55,7 +55,8 @@ def create_image_collection(
     location: str,
     clip: bool = False,
 ):
-    """Build a Sentinel-2 image collection for one study location."""
+    """Build a Sentinel-2 image collection for one location."""
+
     if not isinstance(location, str):
         raise TypeError(f"location must be a string, got {type(location).__name__}")
 
@@ -65,9 +66,7 @@ def create_image_collection(
     current_site_point = sites.get("sites", {}).get(location, {}).get("geometry", {}).get("coordinates", [])
     point_geom = ee.Geometry.Point(current_site_point)
 
-    current_site_bbox = sites.get("sites", {}).get(location, {}).get("bbox", {}).get("coordinates", [])
-    bbox_geom = ee.Geometry.Polygon(current_site_bbox)
-
+   
     if "obs_date" not in location_gdf.columns:
         raise ValueError(f"The points file for {location} has no obs_date column")
 
@@ -82,31 +81,35 @@ def create_image_collection(
     sent2_ic = (
             ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED")
             .filterBounds(point_geom)
-            .map(mask_clouds_scl)
-            .select(["B2", "B3", "B4", "B5", "B6", "B7", "B8", "B8A", "B11", "B12"])
+            
         )
 
-    def makeAWEI(image):
-            awei_expression = ("4*(b('B3')-b('B11'))-(0.25*b('B8')+2.75*b('B12'))")
-            awei_image = image.expression(awei_expression).rename('AWEI')
-            return awei_image
+    # def makeAWEI(image):
+    #         awei_expression = "b('B2')+2.5*b('B3')-1.5*(b('B8')+b('B11'))-0.25*b('B12')"
+    #         awei_image = image.expression(awei_expression).rename('AWEI')
+    #         return awei_image
     
-    sent2_AWEI_collection = sent2_ic.map(makeAWEI)
+    # sent2_AWEI_collection = sent2_ic.map(makeAWEI)
 
-    AWEI_p95 = sent2_AWEI_collection.reduce(ee.Reducer.percentile([95])).rename("AWEIp95")
+    # AWEI_p95 = sent2_AWEI_collection.reduce(ee.Reducer.percentile([95])).rename("AWEIp95")
 
-    def addAWEIp95(image):
-        image = image.addBands(AWEI_p95)
-        return image
+    # def addAWEIp95(image):
+    #     image = image.addBands(AWEI_p95)
+    #     return image
     
-    sent2_ic = sent2_ic.map(addAWEIp95)
+    # sent2_ic = sent2_ic.map(addAWEIp95)
 
     image_list = []
 
     for date in date_list:
         ee_date = ee.Date.parse("yyyy-MM-dd", date)
 
-        daily_collection = sent2_ic.filterDate(ee_date, ee_date.advance(1, "day"))
+        daily_collection = (sent2_ic
+                            .filterDate(ee_date, ee_date.advance(1, "day"))
+                            .map(mask_clouds_scl)
+                            .select(["B2", "B3", "B4", "B5", "B6", "B7", "B8", "B8A", "B11", "B12"])
+                            )
+        
 
         if daily_collection.size().getInfo() == 0:
             raise ValueError(
@@ -116,7 +119,11 @@ def create_image_collection(
         image = daily_collection.first().set({"obs_date": date, "location": location})
 
         if clip:
+            current_site_bbox = sites.get("sites", {}).get(location, {}).get("bbox", {}).get("coordinates", [])
+            bbox_geom = ee.Geometry.Polygon(current_site_bbox)
             image = image.clip(bbox_geom)
+
+        # image_plus_AWEIp95 = image.addBands(AWEI_p95)
 
         image_list.append(image)
 
@@ -174,7 +181,7 @@ def sample_points_from_image(point_fc_for_image, image):
 
     samples = image.sampleRegions(
         collection=point_fc_for_image,
-        properties=["lc", "binary", "obs_date", "location", "lon", "lat"],
+        properties=["lc", "class_label", "class_int", "obs_date", "location", "longitude", "latitude", "label_id"],
         scale=10,
         projection=proj,
         geometries=False,
@@ -200,7 +207,7 @@ def sample_patches_from_image(point_fc_for_image, image, kernel_size):
 
     sampled_patches = array_image.sampleRegions(
         collection=point_fc_for_image,
-        properties=["lc", "binary", "obs_date", "location", "lon", "lat"],
+        properties=["lc", "class_label", "class_int", "obs_date", "location", "longitude", "latitude", "label_id"],
         scale=10,
         projection=proj,
         geometries=False,
@@ -208,12 +215,12 @@ def sample_patches_from_image(point_fc_for_image, image, kernel_size):
     return sampled_patches
 
 
-def sample_by_date(date, location_fc, merged_ic, location, points_or_patches, kernel_size):
+def sample_by_date(date, location_fc, location_ic, points_or_patches, kernel_size):
     """Sample all labelled points for one date within one study location."""
     point_fc_for_image = location_fc.filter(ee.Filter.eq("obs_date", date))
 
     image = (
-        merged_ic.filter(ee.Filter.eq("location", location))
+        location_ic
         .filter(ee.Filter.eq("obs_date", date))
         .first()
     )
@@ -228,7 +235,7 @@ def sample_by_date(date, location_fc, merged_ic, location, points_or_patches, ke
     return samples
 
 
-def sample_by_location(location, location_fc, merged_ic, points_or_patches, kernel_size):
+def sample_by_location(location, location_fc, location_ic, points_or_patches, kernel_size):
     """Sample all labelled dates for a single study location."""
 
     valid_points_or_patch_values = {"points", "patches"}
@@ -239,7 +246,7 @@ def sample_by_location(location, location_fc, merged_ic, points_or_patches, kern
     date_list = ee.List(location_fc.aggregate_array("obs_date")).distinct()
 
     def map_over_date(date):
-        return sample_by_date(date, location_fc, merged_ic, location, points_or_patches, kernel_size)
+        return sample_by_date(date, location_fc, location_ic, points_or_patches, kernel_size)
 
     samples_for_location = ee.FeatureCollection(date_list.map(map_over_date)).flatten()
 
@@ -320,18 +327,18 @@ def get_samples(merged_ic, cleaned_label_fp: str | Path) -> pd.DataFrame:
     cleaned_label_gdf = gpd.read_file(cleaned_label_fp)
 
     # Where should i get location from? Sites or cleaned_labels. 
-
+    
     location_list = cleaned_label_gdf["location"].unique()
-
-    list_of_location_samples = []
 
     for location in location_list:
         location_gdf = cleaned_label_gdf.loc[cleaned_label_gdf["location"]== location]
         location_fc = geemap.gdf_to_ee(location_gdf)
 
+        location_ic= merged_ic.filter(ee.Filter.eq("location", location))
+
         location_samples = sample_by_location(
             location, location_fc,
-            merged_ic,
+            location_ic,
             points_or_patches= "points", 
             kernel_size = None)
         
@@ -341,16 +348,11 @@ def get_samples(merged_ic, cleaned_label_fp: str | Path) -> pd.DataFrame:
             folder= "Dissertation",
             fileFormat = "CSV"
         )
-        task.start
+        task.start()
 
         print(f"Exporting sampled points for {location} to drive/Dissertation")
 
-    #all_samples_df = pd.concat(list_of_location_samples)
-
-    print("Exported sampled points for all locations to drive/Dissertation")
     
-    
-
 
 def export_patches(merged_ic, cleaned_label_fp: str | Path, kernel_size: int):
 
@@ -375,4 +377,5 @@ def export_patches(merged_ic, cleaned_label_fp: str | Path, kernel_size: int):
     )
 
     task.start()
+
     print("Exporting sampled patches as GeoJSON to drive/Dissertation")
