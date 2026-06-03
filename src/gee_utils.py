@@ -228,9 +228,14 @@ def sample_by_date(date, location_fc, merged_ic, location, points_or_patches, ke
     return samples
 
 
-def sample_by_location(location, merged_fc, merged_ic, points_or_patches, kernel_size):
+def sample_by_location(location, location_fc, merged_ic, points_or_patches, kernel_size):
     """Sample all labelled dates for a single study location."""
-    location_fc = merged_fc.filter(ee.Filter.eq("location", location))
+
+    valid_points_or_patch_values = {"points", "patches"}
+
+    if points_or_patches not in valid_points_or_patch_values:
+        raise ValueError("points_or_patches argument must be either 'points' or 'patches'")
+    
     date_list = ee.List(location_fc.aggregate_array("obs_date")).distinct()
 
     def map_over_date(date):
@@ -298,21 +303,53 @@ def subset_merged_fc_by_location(locations_ee_list, merged_ic, merged_fc, points
 def get_samples(merged_ic, cleaned_label_fp: str | Path) -> pd.DataFrame:
     """Prepare labelled points for sampling and extract all samples."""
 
+    # cleaned_label_gdf = gpd.read_file(cleaned_label_fp)
+
+    # merged_fc = geemap.gdf_to_ee(cleaned_label_gdf) 
+    # locations_ee_list = merged_fc.aggregate_array("location").distinct()
+
+    # all_samples = subset_merged_fc_by_location(
+    #     locations_ee_list,
+    #     merged_ic,
+    #     merged_fc,
+    #     points_or_patches="points",
+    # )
+
+    # all_samples_df = geemap.ee_to_df(all_samples)
+
     cleaned_label_gdf = gpd.read_file(cleaned_label_fp)
 
-    merged_fc = geemap.gdf_to_ee(cleaned_label_gdf) 
-    locations_ee_list = merged_fc.aggregate_array("location").distinct()
+    # Where should i get location from? Sites or cleaned_labels. 
 
-    all_samples = subset_merged_fc_by_location(
-        locations_ee_list,
-        merged_ic,
-        merged_fc,
-        points_or_patches="points",
-    )
+    location_list = cleaned_label_gdf["location"].unique()
 
-    all_samples_df = geemap.ee_to_df(all_samples)
+    list_of_location_samples = []
 
-    return all_samples_df
+    for location in location_list:
+        location_gdf = cleaned_label_gdf.loc[cleaned_label_gdf["location"]== location]
+        location_fc = geemap.gdf_to_ee(location_gdf)
+
+        location_samples = sample_by_location(
+            location, location_fc,
+            merged_ic,
+            points_or_patches= "points", 
+            kernel_size = None)
+        
+        task = ee.batch.Export.table.toDrive(
+            collection= location_samples,
+            description= f"sampled_points_{location}",
+            folder= "Dissertation",
+            fileFormat = "CSV"
+        )
+        task.start
+
+        print(f"Exporting sampled points for {location} to drive/Dissertation")
+
+    #all_samples_df = pd.concat(list_of_location_samples)
+
+    print("Exported sampled points for all locations to drive/Dissertation")
+    
+    
 
 
 def export_patches(merged_ic, cleaned_label_fp: str | Path, kernel_size: int):
@@ -332,7 +369,7 @@ def export_patches(merged_ic, cleaned_label_fp: str | Path, kernel_size: int):
 
     task = ee.batch.Export.table.toDrive(
         collection=all_samples,
-        description="sampled_patches_as_arrays",
+        description=f"sampled_patches_{kernel_size}_as_arrays",
         folder="Dissertation",
         fileFormat="GeoJSON",
     )
