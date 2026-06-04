@@ -48,11 +48,92 @@ import pandas as pd
 
 #     return cleaned_gdf
 
+def export_awei_p95_asset_for_location(
+    sites_file: str | Path,                                                                                                                                    
+    location: str,                                                                                                                                           
+    ee_project: str,                                                                                                                                           
+    start_date: str = "2019-01-01",                                                                                                                          
+    end_date: str = "2025-12-31",                                                                                                                              
+    ):
+    """Compute AWEIp95 for one location and export to an EE asset."""                                                                       
+                                                                                                                                                                 
+    with Path(sites_file).open("r", encoding="utf-8") as s:                                                                                                    
+          sites = json.load(s)                                                                                                                                   
+                                                                                                                                                                 
+    site = sites["sites"][location]                                                                                                                          
+    point_geom = ee.Geometry.Point(site["geometry"]["coordinates"])
+    bbox_geom = ee.Geometry.Polygon(site["bbox"]["coordinates"])                                                                                               
+   
+    sent2_ic = (                                                                                                                                               
+        ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED")                                                                                                    
+        .filterBounds(point_geom)                                                                                                                              
+        .filterDate(start_date, end_date)                                                                                                                      
+        .filter(ee.Filter.lt("CLOUDY_PIXEL_PERCENTAGE", 60))
+    )                                                                                                                                                          
+                                                                                                                                                               
+    def make_awei(image):                                                                                                                                      
+        expr = "b('B2')+2.5*b('B3')-1.5*(b('B8')+b('B11'))-0.25*b('B12')"                                                                                    
+        return image.expression(expr).rename("AWEI")                                                                                                           
+   
+    awei_p95 = (                                                                                                                                               
+        sent2_ic.map(make_awei)                                                                                                                              
+        .reduce(ee.Reducer.percentile([95]))                                                                                                                   
+        .rename("AWEIp95")                                                                                                                                   
+        .toFloat()
+    )                                                                                                                                                          
+   
+    asset_id = f"projects/{ee_project}/assets/awei_p95_{location}"                                                                                             
+                                                                                                                                                               
+    task = ee.batch.Export.image.toAsset(
+        image=awei_p95,
+        description=f"awei_p95_{location}",                                                                                                                    
+        assetId=asset_id,
+        region=bbox_geom,                                                                                                                                      
+        scale=10,                                                                                                                                            
+        maxPixels=1e10,                                                                                                                                        
+    )
+
+    try:
+        ee.data.deleteAsset(asset_id)
+        print(f"Deleted existing asset: {asset_id}")                                                                                                               
+    except ee.EEException:
+        pass   
+
+    task.start()                                               
+
+    print(f"Exporting AWEIp95 asset for {location} → {asset_id}")          
+
+    return task, asset_id                                                 
+
+def export_awei_p95_all_locations(
+        sites_file: str | Path,
+        ee_project: str,                                                      
+        start_date: str = "2019-01-01",                                                                                                                          
+        end_date: str = "2025-12-31",                                                                                                                              
+        ):
+    """ Exports an AWEIp95 image as an asset for each location in site file
+    Returns an ee task_list that can be checked for export status"""
+
+    with Path(sites_file).open("r", encoding="utf-8") as s:                                                                                                    
+        sites = json.load(s)                                                                                                                                   
+                                                                                                                                                                 
+    location_list = list(sites.get("sites",{}).keys())
+
+    task_list = []
+
+    for location in location_list:
+        t, _ = export_awei_p95_asset_for_location(sites_file, location, ee_project=ee_project, start_date= start_date, end_date= end_date)
+        task_list.append(t)
+
+    print("Ensure that the exports are complete before running create_image_collection_for_all_locations()") 
+    return task_list
+
 
 def create_image_collection(
     sites_file: str | Path,
     location_gdf: gpd.GeoDataFrame,
     location: str,
+    ee_project: str,
     clip: bool = False,
 ):
     """Build a Sentinel-2 image collection for one location."""
@@ -77,30 +158,20 @@ def create_image_collection(
         mask = scl.neq(3).And(scl.neq(9)).And(scl.neq(8))
         return image.updateMask(mask)
     
+    sorted_date_list = sorted(date_list)
+    start_date = ee.Date.parse("yyyy-MM-dd", sorted_date_list[0])                                                                                                                          
+    end_date = ee.Date.parse("yyyy-MM-dd", sorted_date_list[-1]).advance(1,"day")
     
     sent2_ic = (
             ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED")
+            .filterDate(start_date, end_date)
             .filterBounds(point_geom)
-            
         )
 
-    # def makeAWEI(image):
-    #         awei_expression = "b('B2')+2.5*b('B3')-1.5*(b('B8')+b('B11'))-0.25*b('B12')"
-    #         awei_image = image.expression(awei_expression).rename('AWEI')
-    #         return awei_image
-    
-    # sent2_AWEI_collection = sent2_ic.map(makeAWEI)
-
-    # AWEI_p95 = sent2_AWEI_collection.reduce(ee.Reducer.percentile([95])).rename("AWEIp95")
-
-    # def addAWEIp95(image):
-    #     image = image.addBands(AWEI_p95)
-    #     return image
-    
-    # sent2_ic = sent2_ic.map(addAWEIp95)
+    AWEI_asset_id = f"projects/{ee_project}/assets/awei_p95_{location}"
+    AWEI_p95 = ee.Image(AWEI_asset_id)
 
     image_list = []
-
     for date in date_list:
         ee_date = ee.Date.parse("yyyy-MM-dd", date)
 
@@ -123,9 +194,9 @@ def create_image_collection(
             bbox_geom = ee.Geometry.Polygon(current_site_bbox)
             image = image.clip(bbox_geom)
 
-        # image_plus_AWEIp95 = image.addBands(AWEI_p95)
+        image_plus_AWEIp95 = image.addBands(AWEI_p95)
 
-        image_list.append(image)
+        image_list.append(image_plus_AWEIp95)
 
     image_collection = ee.ImageCollection(image_list)
 
@@ -136,6 +207,7 @@ def create_image_collection(
 def create_images_for_all_locations(
     sites_file: str | Path,
     cleaned_label_fp: str | Path,
+    ee_project: str,
     clip: bool = False,
 ):
     """Build a combined image collection for all study locations."""
