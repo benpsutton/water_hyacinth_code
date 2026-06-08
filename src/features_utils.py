@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import seaborn as sns
 
@@ -28,11 +29,12 @@ def add_indices(df: pd.DataFrame, indices_file: str | Path = INDICES_PATH) -> pd
         for const_name, const_value in spec.get("constants", {}).items():
             namespace[const_name] = const_value
 
-        df[index_name] = pd.eval(
+        result = pd.eval(
             expression,
             local_dict=namespace,
             global_dict={"__builtins__": {}},
         )
+        df[index_name] = result.mask(~np.isfinite(result))
 
     return df
 

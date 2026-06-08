@@ -17,7 +17,7 @@
         "RED": "B4",
         "BLUE": "B2"
       },
-      "expression": "2.5 * ((NIR - RED) / (1 + NIR + 6 * RED - 7.5 * BLUE))"
+      "expression": "2.5 * ((NIR - RED) / (10000 + NIR + 6 * RED - 7.5 * BLUE))"
     },
     "SAVI": {
       "bands": {
@@ -46,7 +46,7 @@
       },
       "expression": "(NIR - RED) / (NIR + RED + Y)"
     },
-    "AWEI": {
+    "AWEIsh": {
       "bands": {
         "BLUE": "B2",
         "GREEN": "B3",
@@ -54,7 +54,7 @@
         "SWIR1": "B11",
         "SWIR2": "B12"
       },
-      "expression": "BLUE + 2.5 * GREEN - 1.5 * (NIR - SWIR1) - 0.25 * SWIR2"
+      "expression": "BLUE + 2.5 * GREEN - 1.5 * (NIR + SWIR1) - 0.25 * SWIR2"
     },
     "SABI": {
       "name": "Surface Algal Bloom Index",

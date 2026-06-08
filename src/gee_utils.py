@@ -64,13 +64,19 @@ def export_awei_p95_asset_for_location(
     point_geom = ee.Geometry.Point(site["geometry"]["coordinates"])
     bbox_geom = ee.Geometry.Polygon(site["bbox"]["coordinates"])                                                                                               
    
+    def mask_clouds_scl(image):
+        scl = image.select("SCL")
+        mask = scl.neq(3).And(scl.neq(9)).And(scl.neq(8))
+        return image.updateMask(mask)
+    
     sent2_ic = (                                                                                                                                               
         ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED")                                                                                                    
         .filterBounds(point_geom)                                                                                                                              
         .filterDate(start_date, end_date)                                                                                                                      
-        .filter(ee.Filter.lt("CLOUDY_PIXEL_PERCENTAGE", 60))
+        .map(mask_clouds_scl)
     )                                                                                                                                                          
-                                                                                                                                                               
+
+    # calculate AWEIsh                                                                                       
     def make_awei(image):                                                                                                                                      
         expr = "b('B2')+2.5*b('B3')-1.5*(b('B8')+b('B11'))-0.25*b('B12')"                                                                                    
         return image.expression(expr).rename("AWEI")                                                                                                           
@@ -79,7 +85,7 @@ def export_awei_p95_asset_for_location(
         sent2_ic.map(make_awei)                                                                                                                              
         .reduce(ee.Reducer.percentile([95]))                                                                                                                   
         .rename("AWEIp95")                                                                                                                                   
-        .toFloat()
+        .round().toInt32()
     )                                                                                                                                                          
    
     asset_id = f"projects/{ee_project}/assets/awei_p95_{location}"                                                                                             
@@ -169,7 +175,7 @@ def create_image_collection(
         )
 
     AWEI_asset_id = f"projects/{ee_project}/assets/awei_p95_{location}"
-    AWEI_p95 = ee.Image(AWEI_asset_id)
+    AWEI_p95 = ee.Image(AWEI_asset_id).round().toInt32() # value range is ~ -11000 to 12000 so rounding to int fine.
 
     image_list = []
     for date in date_list:
@@ -238,6 +244,7 @@ def create_images_for_all_locations(
             sites_file=sites_file,
             location_gdf = location_gdf,
             location=location,
+            ee_project= ee_project,
             clip=clip,
         )
         merged_ic = merged_ic.merge(ic)
@@ -268,7 +275,7 @@ def sample_patches_from_image(point_fc_for_image, image, kernel_size):
     if kernel_size < 1 or kernel_size % 2 == 0:
         raise ValueError("kernel_size must be a positive odd integer")
     
-    kernel_radius = (kernel_size -1)/2
+    kernel_radius = (kernel_size -1)//2
 
     bands = ["B2", "B3", "B4", "B5", "B8", "B11", "B12", "AWEIp95"]
 
@@ -428,26 +435,35 @@ def get_samples(merged_ic, cleaned_label_fp: str | Path) -> pd.DataFrame:
 
 def export_patches(merged_ic, cleaned_label_fp: str | Path, kernel_size: int):
 
+    if not isinstance(kernel_size, int) or isinstance(kernel_size, bool):
+        raise TypeError(f"kernel_size must be an int, got {type(kernel_size).__name__}")
+    if kernel_size < 1 or kernel_size % 2 == 0:
+        raise ValueError("kernel_size must be a positive odd integer")
+    
+
     cleaned_label_gdf = gpd.read_file(cleaned_label_fp)
-    merged_fc = geemap.gdf_to_ee(cleaned_label_gdf)
-    locations_ee_list = merged_fc.aggregate_array("location").distinct()
+    
+    locations_list = list(cleaned_label_gdf["location"].unique())
 
-    all_samples = subset_merged_fc_by_location(
-        locations_ee_list,
-        merged_ic,
-        merged_fc,
-        points_or_patches="patches",
-        kernel_size= kernel_size
+    for location in locations_list:
+        location_gdf = cleaned_label_gdf.loc[cleaned_label_gdf["location"] == location]
+        location_fc = geemap.gdf_to_ee(location_gdf)
+        location_ic = merged_ic.filter(ee.Filter.eq("location", location))
 
-    )
+        location_samples = sample_by_location(location= location,
+                            location_fc= location_fc,
+                            location_ic= location_ic,
+                            points_or_patches= 'patches',
+                            kernel_size= kernel_size
+                            )
 
-    task = ee.batch.Export.table.toDrive(
-        collection=all_samples,
-        description=f"sampled_patches_{kernel_size}_as_arrays",
-        folder="Dissertation",
-        fileFormat="GeoJSON",
-    )
+        task = ee.batch.Export.table.toDrive(
+            collection=location_samples,
+            description=f"sampled_{kernel_size}_pixel_patches_for_{location}",
+            folder="Dissertation",
+            fileFormat="GeoJSON",
+        )
 
-    task.start()
-
-    print("Exporting sampled patches as GeoJSON to drive/Dissertation")
+        task.start()
+        
+        print(f"Exporting sampled patches for {location} as GeoJSON to drive/Dissertation")
