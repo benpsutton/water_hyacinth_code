@@ -9,3 +9,7 @@ Paper*
 test_files/
 CLAUDE.md
 docs/pubr_theme.md
+outputs/15px_patches/
+outputs/31px_patches/
+outputs/sampled_points_by_location/sampled_points/
+.DS_Store
