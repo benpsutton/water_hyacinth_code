@@ -141,6 +141,7 @@ def create_image_collection(
     location: str,
     ee_project: str,
     clip: bool = False,
+    images_file: str | Path | None = None,
 ):
     """Build a Sentinel-2 image collection for one location."""
 
@@ -150,10 +151,21 @@ def create_image_collection(
     with Path(sites_file).open("r", encoding="utf-8") as s:
         sites = json.load(s)
 
-    current_site_point = sites.get("sites", {}).get(location, {}).get("geometry", {}).get("coordinates", [])
-    point_geom = ee.Geometry.Point(current_site_point)
+    # Use the exact granule each date was labelled on (recorded by the labelling
+    # app), not filterDate(...).first(). Inle straddles two MGRS tiles, so .first()
+    # could return the wrong granule and drop points that fell in its no-data margin.
+    if images_file is None:
+        images_file = Path(sites_file).parent / "images.json"
+    with Path(images_file).open("r", encoding="utf-8") as im:
+        images_config = json.load(im)
 
-   
+    target_image_ids = {
+        entry["obs_date"]: entry["s2_target_image_id"]
+        for loc_key, entries in images_config.items()
+        if loc_key.lower() == location.lower()
+        for entry in entries
+    }
+
     if "obs_date" not in location_gdf.columns:
         raise ValueError(f"The points file for {location} has no obs_date column")
 
@@ -163,37 +175,25 @@ def create_image_collection(
         scl = image.select("SCL")
         mask = scl.neq(3).And(scl.neq(9)).And(scl.neq(8))
         return image.updateMask(mask)
-    
-    sorted_date_list = sorted(date_list)
-    start_date = ee.Date.parse("yyyy-MM-dd", sorted_date_list[0])                                                                                                                          
-    end_date = ee.Date.parse("yyyy-MM-dd", sorted_date_list[-1]).advance(1,"day")
-    
-    sent2_ic = (
-            ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED")
-            .filterDate(start_date, end_date)
-            .filterBounds(point_geom)
-        )
 
     AWEI_asset_id = f"projects/{ee_project}/assets/awei_p95_{location}"
     AWEI_p95 = ee.Image(AWEI_asset_id).round().toInt32() # value range is ~ -11000 to 12000 so rounding to int fine.
 
     image_list = []
     for date in date_list:
-        ee_date = ee.Date.parse("yyyy-MM-dd", date)
+        target_image_id = target_image_ids.get(date)
 
-        daily_collection = (sent2_ic
-                            .filterDate(ee_date, ee_date.advance(1, "day"))
-                            .map(mask_clouds_scl)
-                            .select(["B2", "B3", "B4", "B5", "B6", "B7", "B8", "B8A", "B11", "B12"])
-                            )
-        
-
-        if daily_collection.size().getInfo() == 0:
+        if target_image_id is None:
             raise ValueError(
-                f"No Sentinel-2 image found for location '{location}' on {date}."
+                f"No labelled Sentinel-2 image id found for location '{location}' "
+                f"on {date} in {images_file}."
             )
 
-        image = daily_collection.first().set({"obs_date": date, "location": location})
+        image = (
+            mask_clouds_scl(ee.Image(target_image_id))
+            .select(["B2", "B3", "B4", "B5", "B6", "B7", "B8", "B8A", "B11", "B12"])
+            .set({"obs_date": date, "location": location})
+        )
 
         if clip:
             current_site_bbox = sites.get("sites", {}).get(location, {}).get("bbox", {}).get("coordinates", [])
@@ -215,6 +215,7 @@ def create_images_for_all_locations(
     cleaned_label_fp: str | Path,
     ee_project: str,
     clip: bool = False,
+    images_file: str | Path | None = None,
 ):
     """Build a combined image collection for all study locations."""
 
@@ -246,6 +247,7 @@ def create_images_for_all_locations(
             location=location,
             ee_project= ee_project,
             clip=clip,
+            images_file=images_file,
         )
         merged_ic = merged_ic.merge(ic)
 
@@ -277,7 +279,7 @@ def sample_patches_from_image(point_fc_for_image, image, kernel_size):
     
     kernel_radius = (kernel_size -1)//2
 
-    bands = ["B2", "B3", "B4", "B5", "B8", "B11", "B12", "AWEIp95"]
+    bands = ["B2", "B3", "B4", "B5", "B6", "B7", "B8", "B8a","B11", "B12", "AWEIp95"]
 
     image = image.select(bands)
     proj = image.select("B2").projection()
