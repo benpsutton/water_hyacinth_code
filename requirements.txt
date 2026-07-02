@@ -156,3 +156,6 @@ webencodings==0.5.1
 websocket-client==1.9.0
 widgetsnbextension==4.0.15
 xyzservices==2026.3.0
+kornia==0.8.3
+kornia_rs==0.1.14
+torch==2.12.1

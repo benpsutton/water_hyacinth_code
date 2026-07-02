@@ -279,7 +279,7 @@ def sample_patches_from_image(point_fc_for_image, image, kernel_size):
     
     kernel_radius = (kernel_size -1)//2
 
-    bands = ["B2", "B3", "B4", "B5", "B6", "B7", "B8", "B8a","B11", "B12", "AWEIp95"]
+    bands = ["B2", "B3", "B4", "B5", "B6", "B7", "B8", "B8A","B11", "B12", "AWEIp95"]
 
     image = image.select(bands)
     proj = image.select("B2").projection()
