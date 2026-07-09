@@ -1,0 +1,4 @@
+torchmetrics
+geemap
+kornia
+scikit-learn
