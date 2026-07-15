@@ -5,6 +5,12 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import LeaveOneGroupOut, GridSearchCV
 from sklearn.metrics import accuracy_score, f1_score
 import numpy as np
+import torch
+import kornia.augmentation as k
+import torchmetrics
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import Dataset, DataLoader
 
 
 def run_nested_cv(X, y, groups, metadata_df, pipe, param_grid, n_jobs = -2):
@@ -98,3 +104,278 @@ def run_nested_cv(X, y, groups, metadata_df, pipe, param_grid, n_jobs = -2):
     print(f"Accuracy:   {np.mean(outer_results['accuracy']):.3f} +/- {np.std(outer_results['accuracy']):.3f}")
 
     return results_df, predictions_df
+
+def load_patch_dict_as_tensor(Patch_dict, band_list = None):
+
+    """
+    Takes a supplied dictionary of pathes with their labels, converts patches and labels to a tensor, 
+    extracts the class integer labels, locations and label_id to arrays
+    """ 
+
+    if not band_list:
+        band_list = ["B2", "B3", "B4", "B5", "B6", "B7", "B8", "B8A", "B11", "B12"]
+
+    feature_list = Patch_dict["features"]
+
+    patches = np.stack([
+        np.stack([np.array(F["properties"][band]) for band in band_list]) # (N, C, H, W) which is what pytorch expects
+        for F in feature_list  
+    ])
+
+    labels = torch.tensor([F["properties"]["lc"] for F in feature_list]).float().unsqueeze(1) # BCElogits loss will need to compare labels to float logits or probabilties
+    # .unsqueeze(1) changes the shape from ([0,1,1,0]) to ([0],[1],[1],[0]) aka (B,) to (B, 1), need this for the criterion. 
+
+    locations = np.array([F["properties"]["location"] for F in feature_list]) # array for easier boolean masking but no need for tensor
+
+    class_int = np.array([F["properties"]["class_int"] for F in feature_list])
+    
+    label_id = np.array([F["properties"]["label_id"] for F in feature_list])
+
+    patches = torch.from_numpy(patches).float()
+
+    print(f"Returned patch tensor shape: {patches.shape}")
+    print(f"Returned label tensor shape: {labels.shape}")
+    print(f"Returned locations array: {locations.shape}")
+    print(f"Returned class_int array: {class_int.shape}")
+    print(f"Returned label_id array: {label_id.shape}")
+    print(f"Bands used: {band_list}")
+
+    return patches, labels, locations, class_int, label_id
+
+def buildCNN_2xVGG(input_channels= 10, dropout = 0.3):
+
+        myCNN = nn.Sequential(
+        nn.Conv2d(in_channels=input_channels, 
+                out_channels = 32, 
+                kernel_size=3,
+                stride= 1,
+                padding=1  ),
+        nn.BatchNorm2d(32),
+        nn.ReLU(),
+        nn.Conv2d(in_channels=32, 
+                out_channels = 32, 
+                kernel_size=3,
+                stride= 1,
+                padding=1  ),
+        nn.BatchNorm2d(32),
+        nn.ReLU(),
+        nn.MaxPool2d(kernel_size=2),
+                nn.Conv2d(in_channels=32, 
+                out_channels = 64, 
+                kernel_size=3,
+                stride= 1,
+                padding=1  ),
+        nn.BatchNorm2d(64),
+        nn.ReLU(),
+        nn.Conv2d(in_channels=64, 
+                out_channels = 64, 
+                kernel_size=3,
+                stride= 1,
+                padding=1  ),
+        nn.BatchNorm2d(64),
+        
+        nn.ReLU(),
+        nn.MaxPool2d(2),
+        nn.AdaptiveAvgPool2d(1),
+        nn.Flatten(),
+        nn.Dropout(dropout),
+        nn.Linear(64,1))
+
+        return myCNN
+
+def train_for_one_epoch(model, train_loader, device, aug, optimizer, metrics, criterion):
+    
+    model.train()
+    running_loss = 0.0
+    metrics.reset()
+    
+    for batch_X, batch_y in train_loader:
+        batch_X = batch_X.to(device)
+        batch_y = batch_y.to(device)
+
+        batch_X = aug(batch_X) # Augment only in the train split
+
+        optimizer.zero_grad()
+        logits = model(batch_X)
+        loss = criterion(logits, batch_y)
+        loss.backward()
+        optimizer.step()
+
+        metrics.update(logits, batch_y) # accumulates the metrics per batch. Torchmetrics detects logits and applies sigmoid internally
+        running_loss += loss.item()*batch_X.size(0)
+    avg_loss = running_loss / len(train_loader.dataset) 
+
+    results = {k: v.item() for k, v in metrics.compute().items()}   
+
+    return avg_loss, results
+
+    
+def val_for_one_epoch(model, val_loader, metrics, device, criterion):
+    
+    model.eval()
+    running_val_loss = 0.0
+    metrics.reset() # clears the metrics from previous epochs
+    
+
+    with torch.no_grad():
+        for batch_X, batch_y in val_loader:
+            
+            batch_X = batch_X.to(device)
+            batch_y = batch_y.to(device)
+
+            logits = model(batch_X)               # Outputting logits as useing BCEntropy with logit loss as criterion
+            val_loss = criterion(logits, batch_y)
+            
+            #probs = torch.sigmoid(logits) # gives probabilities between 0 and 1
+            #preds = (logits >= 0).int() #because sigmoid(0) = 0.5 and would use as probability threshold anyway
+            metrics.update(logits, batch_y) # accumulates the metrics per batch. Torchmetrics detects logits and applies sigmoid internally
+
+            running_val_loss += val_loss.item()*batch_X.size(0)
+           
+
+        avg_loss = running_val_loss / len(val_loader.dataset)
+        results = {k: v.item() for k, v in metrics.compute().items()}
+        
+    return avg_loss, results
+
+def predict_on_test_region(model, test_loader, metrics, device, criterion):
+    
+    # no per epoch as not training, testing the model once on the held out region
+    model.eval()
+    metrics.reset()
+    running_test_loss = 0.0
+    preds_tensor = torch.empty((0,1))
+    logits_tensor = torch.empty((0,1))
+
+    with torch.no_grad():
+        for batch_X, batch_y in test_loader:
+
+            batch_X = batch_X.to(device)
+            batch_y = batch_y.to(device)
+
+            logits = model(batch_X)
+            logits_tensor = torch.cat([logits_tensor, logits], dim = 0).cpu()
+
+            test_loss = criterion(logits, batch_y)
+
+            #probs = torch.sigmoid(logits) # gives probabilities between 0 and 1
+            preds = (logits >= 0).cpu().int() #because sigmoid(0) = 0.5 and would use as probability threshold anyway
+            preds_tensor = torch.cat([preds_tensor, preds], dim= 0) # concat the preds tensors for each batch
+
+            metrics.update(logits, batch_y)
+            running_test_loss += test_loss.item()*batch_X.size(0)
+    
+    average_loss = running_test_loss / len(test_loader.dataset)
+
+    results = {k: v.item() for k, v in metrics.compute().items()}
+
+    return average_loss, results, preds_tensor, logits_tensor
+
+class PatchDataset(Dataset):
+    """
+    Standardises patches based on mean and std
+    """
+
+    def __init__(self, patches, labels, mean, std):
+        
+        mean = mean.detach().clone().view(1,-1,1,1) # changes from (C,) to (1,C,1,1)
+        std = std.detach().clone().view(1,-1,1,1)
+    
+        self.patches = (patches - mean)/std 
+        self.labels = labels 
+
+    def __len__(self):
+        return len(self.patches)
+
+    def __getitem__(self, idx):
+        return self.patches[idx], self.labels[idx]
+    
+
+def load_dataset(patches, labels, mean, std, batch_size, shuffle = False):
+        
+    """ 
+    Creates instance of PatchDataset class, returns loader with batched of specifed size. 
+    Set shuffle= True for training patches"""
+
+    dataset = PatchDataset(patches = patches, labels = labels, mean = mean, std = std)
+
+    loader = DataLoader(
+        dataset= dataset,
+        shuffle= shuffle,
+        batch_size= batch_size,
+        num_workers= 0,
+        pin_memory= True
+        )
+        
+    return loader
+
+
+        
+def record_epoch(history_dict, run_ID, patch_size,  loop, epoch, test_region, train_metrics,train_loss, val_region=None , val_loss= None,  val_metrics= None):
+            
+    """ Append the values and metrics for each epoch to a history_dict.
+    History dicts for each run can then be conctenated inot a long format for plotting"""
+
+    history_dict["run_ID"].append(run_ID)
+    history_dict["patch_size"].append(patch_size)
+    history_dict["test_region"].append(test_region)
+    history_dict["val_region"].append(val_region)
+    history_dict["loop"].append(loop)
+    history_dict["epoch"].append(epoch+1)
+    history_dict["train_loss"].append(train_loss)
+    history_dict["val_loss"].append(val_loss)
+    history_dict["val_accuracy"].append(val_metrics["accuracy"])
+    history_dict["val_f1"].append(val_metrics["f1"])
+    history_dict["val_precision"].append(val_metrics["precision"])
+    history_dict["val_recall"].append(val_metrics["recall"])
+    history_dict["val_auroc"].append(val_metrics["auroc"])
+    history_dict["train_accuracy"].append(train_metrics["accuracy"])
+    history_dict["train_f1"].append(train_metrics["f1"])
+    history_dict["train_precision"].append(train_metrics["precision"])
+    history_dict["train_recall"].append(train_metrics["recall"])
+    history_dict["train_auroc"].append(train_metrics["auroc"])
+
+def record_inner_loop_best_state(inner_best_state_dict, run_ID, patch_size, best_epoch, test_region, val_region, train_loss, best_val_loss, best_val_metrics): 
+   
+    """Save the metrics for the best epoch for each inner fold after early stopping"""
+
+    inner_best_state_dict["run_ID"].append(run_ID)
+    inner_best_state_dict["patch_size"].append(patch_size)
+    inner_best_state_dict["epoch_stopped"].append(best_epoch)
+    inner_best_state_dict["test_region"].append(test_region)
+    inner_best_state_dict["val_region"].append(val_region)
+    inner_best_state_dict["train_loss"].append(train_loss)
+    inner_best_state_dict["val_loss"].append(best_val_loss)
+    inner_best_state_dict["val_accuracy"].append(best_val_metrics["accuracy"])
+    inner_best_state_dict["val_f1"].append(best_val_metrics["f1"])
+    inner_best_state_dict["val_precision"].append(best_val_metrics["precision"])
+    inner_best_state_dict["val_recall"].append(best_val_metrics["recall"])
+    inner_best_state_dict["val_auroc"].append(best_val_metrics["auroc"])
+
+
+    
+def record_outer_loop_mterics(outer_metrics_dict, run_ID, patch_size, test_region, median_epoch, test_loss, train_loss, test_metrics, train_metrics):
+    
+    """ Save the metrics for each fold in the outer loop afer testing"""
+
+    outer_metrics_dict["run_ID"].append(run_ID)
+    outer_metrics_dict["patch_size"].append(patch_size)
+    outer_metrics_dict["test_region"].append(test_region)
+    outer_metrics_dict["epochs_trained"].append(median_epoch)
+
+    # Metrics for the prediction on held out test_region
+    outer_metrics_dict["test_loss"].append(test_loss)
+    outer_metrics_dict["test_accuracy"].append(test_metrics["accuracy"])
+    outer_metrics_dict["test_f1"].append(test_metrics["f1"])
+    outer_metrics_dict["test_precision"].append(test_metrics["precision"])
+    outer_metrics_dict["test_recall"].append(test_metrics["recall"])
+    outer_metrics_dict["test_auroc"].append(test_metrics["auroc"])
+
+    # These are the train matrics from the final epoch
+    outer_metrics_dict["train_loss"].append(train_loss)
+    outer_metrics_dict["train_accuracy"].append(train_metrics["accuracy"])
+    outer_metrics_dict["train_f1"].append(train_metrics["f1"])
+    outer_metrics_dict["train_precision"].append(train_metrics["precision"])
+    outer_metrics_dict["train_recall"].append(train_metrics["recall"])
+    outer_metrics_dict["train_auroc"].append(train_metrics["auroc"])
+
