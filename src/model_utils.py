@@ -254,7 +254,7 @@ def predict_on_test_region(model, test_loader, metrics, device, criterion):
             batch_y = batch_y.to(device)
 
             logits = model(batch_X)
-            logits_tensor = torch.cat([logits_tensor, logits], dim = 0).cpu()
+            logits_tensor = torch.cat([logits_tensor, logits.cpu()], dim = 0)
 
             test_loss = criterion(logits, batch_y)
 
@@ -319,23 +319,25 @@ def record_epoch(history_dict, run_ID, patch_size,  loop, epoch, test_region, tr
     history_dict["run_ID"].append(run_ID)
     history_dict["patch_size"].append(patch_size)
     history_dict["test_region"].append(test_region)
-    history_dict["val_region"].append(val_region)
+
     history_dict["loop"].append(loop)
     history_dict["epoch"].append(epoch+1)
     history_dict["train_loss"].append(train_loss)
-    history_dict["val_loss"].append(val_loss)
-    history_dict["val_accuracy"].append(val_metrics["accuracy"])
-    history_dict["val_f1"].append(val_metrics["f1"])
-    history_dict["val_precision"].append(val_metrics["precision"])
-    history_dict["val_recall"].append(val_metrics["recall"])
-    history_dict["val_auroc"].append(val_metrics["auroc"])
     history_dict["train_accuracy"].append(train_metrics["accuracy"])
     history_dict["train_f1"].append(train_metrics["f1"])
     history_dict["train_precision"].append(train_metrics["precision"])
     history_dict["train_recall"].append(train_metrics["recall"])
     history_dict["train_auroc"].append(train_metrics["auroc"])
+    if val_metrics is not None: # outer folds won't have a val_region
+        history_dict["val_region"].append(val_region)
+        history_dict["val_loss"].append(val_loss)
+        history_dict["val_accuracy"].append(val_metrics["accuracy"])
+        history_dict["val_f1"].append(val_metrics["f1"])
+        history_dict["val_precision"].append(val_metrics["precision"])
+        history_dict["val_recall"].append(val_metrics["recall"])
+        history_dict["val_auroc"].append(val_metrics["auroc"])
 
-def record_inner_loop_best_state(inner_best_state_dict, run_ID, patch_size, best_epoch, test_region, val_region, train_loss, best_val_loss, best_val_metrics): 
+def record_inner_loop_best_state(inner_best_state_dict, run_ID, patch_size, best_epoch, test_region, val_region, train_loss, best_val_loss, best_val_metrics, best_train_metrics, lr, dropout): 
    
     """Save the metrics for the best epoch for each inner fold after early stopping"""
 
@@ -351,8 +353,13 @@ def record_inner_loop_best_state(inner_best_state_dict, run_ID, patch_size, best
     inner_best_state_dict["val_precision"].append(best_val_metrics["precision"])
     inner_best_state_dict["val_recall"].append(best_val_metrics["recall"])
     inner_best_state_dict["val_auroc"].append(best_val_metrics["auroc"])
-
-
+    inner_best_state_dict["train_accuracy"].append(best_train_metrics["accuracy"])
+    inner_best_state_dict["train_f1"].append(best_train_metrics["f1"])
+    inner_best_state_dict["train_precision"].append(best_train_metrics["precision"])
+    inner_best_state_dict["train_recall"].append(best_train_metrics["recall"])
+    inner_best_state_dict["train_auroc"].append(best_train_metrics["auroc"])
+    inner_best_state_dict["dropout"].append(dropout)
+    inner_best_state_dict["lr"].append(lr)
     
 def record_outer_loop_mterics(outer_metrics_dict, run_ID, patch_size, test_region, median_epoch, test_loss, train_loss, test_metrics, train_metrics):
     

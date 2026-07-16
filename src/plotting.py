@@ -218,30 +218,30 @@ def plot_loss_curve(history_dict, file_path):
     plt.show()
 
 
-def plot_loss_curve_from_df(df, file_path, test_region, val_region = None, fold = None, facet = False):
+# def plot_loss_curve_from_df(df, file_path, test_region, val_region = None, fold = None, facet = False):
 
-    """ Plots training and validation loss curves from the dataframe contructed from concatenated history_dicts"""
+#     """ Plots training and validation loss curves from the dataframe contructed from concatenated history_dicts"""
 
-    test_regions = df["test_regions"].unique()
-    if val_region:
-        val_regions = df["val_regions"].unique()
+#     test_regions = df["test_regions"].unique()
+#     if val_region:
+#         val_regions = df["val_regions"].unique()
 
-    if not test_region or test_region not in test_regions:
+#     if not test_region or test_region not in test_regions:
 
-    if fold:
-        if fold not in ["inner", "outer"]:
-            raise ValueError('fold argument must be either "inner" or "outer"')
-    if not fold or fold== "outer":
+#     if fold:
+#         if fold not in ["inner", "outer"]:
+#             raise ValueError('fold argument must be either "inner" or "outer"')
+#     if not fold or fold== "outer":
             
-        # plot single plot of the test region train loss
+#         # plot single plot of the test region train loss
             
-    elif fold == "inner" and not facet:
-        if not val_region or val_region not in val_regions:
-            raise ValueError(f"Please specify a val_region from {val_regions}")
+#     elif fold == "inner" and not facet:
+#         if not val_region or val_region not in val_regions:
+#             raise ValueError(f"Please specify a val_region from {val_regions}")
             
-        #plot a single fig with the test and val region
+#         #plot a single fig with the test and val region
 
-    else: 
-        # plot facet diagram of the val regions for that test region
+#     else: 
+#         # plot facet diagram of the val regions for that test region
 
 

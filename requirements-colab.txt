@@ -2,3 +2,4 @@ torchmetrics
 geemap
 kornia
 scikit-learn
+optuna
