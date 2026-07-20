@@ -12,4 +12,5 @@ docs/pubr_theme.md
 outputs/15px_patches/
 outputs/31px_patches/
 outputs/sampled_points_by_location/sampled_points/
+outputs/loss_curves
 .DS_Store

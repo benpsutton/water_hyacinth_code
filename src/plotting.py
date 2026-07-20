@@ -1,6 +1,7 @@
 """Plotting helpers live here."""
-
+from pathlib import Path
 import matplotlib as mpl
+import matplotlib.pyplot as plt
 from matplotlib.colors import to_rgba
 
 # ggplot2 line widths are in mm; this is its internal mm -> pt factor
@@ -188,3 +189,59 @@ def pubr_fill(ax, alpha=0.5, source="face", color_lines=True, linewidth=None, le
             handle.set_facecolor((*rgb, alpha))
             handle.set_linewidth(linewidth)
     return ax
+
+
+def plot_loss_curve(history_dict, file_path):
+
+    """ Plots a training and validation loss curve from a single histry dict from a training run"""
+
+    set_pubr_theme()
+
+    
+    fold = str(history_dict.get("loop")[0]).title()
+        
+    plt.figure(figsize=(8, 5))
+    plt.plot(history_dict["train_loss"], label="Train Loss")
+    if history_dict.get("val_loss"):
+        plt.plot(history_dict["val_loss"], label="Val Loss") 
+    plt.xlabel("Epoch")
+    plt.ylabel("Loss")
+    if history_dict.get("val_loss"):
+        plt.suptitle(f"Training vs Validation Loss")
+        plt.title(f"{fold} Fold | Test region: {history_dict["test_region"][0]} | Val region: {history_dict["val_region"][0]}")
+    else:
+        plt.suptitle(f"Training Loss")
+        plt.title(f"{fold} Fold | Test region: {history_dict["test_region"][0]}")
+    plt.legend()
+    plt.grid(True, alpha=0.3)
+    plt.savefig(Path(file_path), dpi=150)
+    plt.show()
+
+
+# def plot_loss_curve_from_df(df, file_path, test_region, val_region = None, fold = None, facet = False):
+
+#     """ Plots training and validation loss curves from the dataframe contructed from concatenated history_dicts"""
+
+#     test_regions = df["test_regions"].unique()
+#     if val_region:
+#         val_regions = df["val_regions"].unique()
+
+#     if not test_region or test_region not in test_regions:
+
+#     if fold:
+#         if fold not in ["inner", "outer"]:
+#             raise ValueError('fold argument must be either "inner" or "outer"')
+#     if not fold or fold== "outer":
+            
+#         # plot single plot of the test region train loss
+            
+#     elif fold == "inner" and not facet:
+#         if not val_region or val_region not in val_regions:
+#             raise ValueError(f"Please specify a val_region from {val_regions}")
+            
+#         #plot a single fig with the test and val region
+
+#     else: 
+#         # plot facet diagram of the val regions for that test region
+
+
