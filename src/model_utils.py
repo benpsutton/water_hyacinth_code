@@ -337,7 +337,7 @@ def record_epoch(history_dict, run_ID, patch_size,  loop, epoch, test_region, tr
         history_dict["val_recall"].append(val_metrics["recall"])
         history_dict["val_auroc"].append(val_metrics["auroc"])
 
-def record_inner_loop_best_state(inner_best_state_dict, run_ID, patch_size, best_epoch, test_region, val_region, train_loss, best_val_loss, best_val_metrics, best_train_metrics, lr, dropout): 
+def record_inner_loop_best_state(inner_best_state_dict, run_ID, patch_size, best_epoch, test_region, val_region, train_loss, best_val_loss, best_val_metrics, best_train_metrics, lr, dropout, weight_decay, batch_size): 
    
     """Save the metrics for the best epoch for each inner fold after early stopping"""
 
@@ -360,8 +360,10 @@ def record_inner_loop_best_state(inner_best_state_dict, run_ID, patch_size, best
     inner_best_state_dict["train_auroc"].append(best_train_metrics["auroc"])
     inner_best_state_dict["dropout"].append(dropout)
     inner_best_state_dict["lr"].append(lr)
+    inner_best_state_dict["weight_decay"].append(weight_decay)
+    inner_best_state_dict["batch_size"].append(batch_size)
     
-def record_outer_loop_mterics(outer_metrics_dict, run_ID, patch_size, test_region, median_epoch, test_loss, train_loss, test_metrics, train_metrics):
+def record_outer_loop_metrics(outer_metrics_dict, run_ID, patch_size, test_region, median_epoch, test_loss, train_loss, test_metrics, train_metrics,lr, dropout, weight_decay, batch_size):
     
     """ Save the metrics for each fold in the outer loop afer testing"""
 
@@ -369,6 +371,10 @@ def record_outer_loop_mterics(outer_metrics_dict, run_ID, patch_size, test_regio
     outer_metrics_dict["patch_size"].append(patch_size)
     outer_metrics_dict["test_region"].append(test_region)
     outer_metrics_dict["epochs_trained"].append(median_epoch)
+    outer_metrics_dict["dropout"].append(dropout)
+    outer_metrics_dict["lr"].append(lr)
+    outer_metrics_dict["weight_decay"].append(weight_decay)
+    outer_metrics_dict["batch_size"].append(batch_size)
 
     # Metrics for the prediction on held out test_region
     outer_metrics_dict["test_loss"].append(test_loss)
