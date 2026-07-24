@@ -311,7 +311,7 @@ def load_dataset(patches, labels, mean, std, batch_size, shuffle = False):
 
 
         
-def record_epoch(history_dict, run_ID, patch_size,  loop, epoch, test_region, train_metrics,train_loss, val_region=None , val_loss= None,  val_metrics= None):
+def record_epoch(history_dict, run_ID, patch_size,  loop, epoch, test_region, train_metrics,train_loss, AWEI, best_epoch = None, val_region=None , val_loss= None,  val_metrics= None):
             
     """ Append the values and metrics for each epoch to a history_dict.
     History dicts for each run can then be conctenated inot a long format for plotting"""
@@ -319,6 +319,7 @@ def record_epoch(history_dict, run_ID, patch_size,  loop, epoch, test_region, tr
     history_dict["run_ID"].append(run_ID)
     history_dict["patch_size"].append(patch_size)
     history_dict["test_region"].append(test_region)
+    history_dict["AWEIp95"].append(AWEI)
 
     history_dict["loop"].append(loop)
     history_dict["epoch"].append(epoch+1)
@@ -336,8 +337,9 @@ def record_epoch(history_dict, run_ID, patch_size,  loop, epoch, test_region, tr
         history_dict["val_precision"].append(val_metrics["precision"])
         history_dict["val_recall"].append(val_metrics["recall"])
         history_dict["val_auroc"].append(val_metrics["auroc"])
+        history_dict["best_epoch"].append(best_epoch)
 
-def record_inner_loop_best_state(inner_best_state_dict, run_ID, patch_size, best_epoch, test_region, val_region, train_loss, best_val_loss, best_val_metrics, best_train_metrics, lr, dropout, weight_decay, batch_size): 
+def record_inner_loop_best_state(inner_best_state_dict, run_ID, patch_size, AWEI, best_epoch, test_region, val_region, train_loss, best_val_loss, best_val_metrics, best_train_metrics, lr, dropout, weight_decay, batch_size): 
    
     """Save the metrics for the best epoch for each inner fold after early stopping"""
 
@@ -346,6 +348,7 @@ def record_inner_loop_best_state(inner_best_state_dict, run_ID, patch_size, best
     inner_best_state_dict["epoch_stopped"].append(best_epoch)
     inner_best_state_dict["test_region"].append(test_region)
     inner_best_state_dict["val_region"].append(val_region)
+    inner_best_state_dict["AWEIp95"].append(AWEI)
     inner_best_state_dict["train_loss"].append(train_loss)
     inner_best_state_dict["val_loss"].append(best_val_loss)
     inner_best_state_dict["val_accuracy"].append(best_val_metrics["accuracy"])
@@ -363,13 +366,14 @@ def record_inner_loop_best_state(inner_best_state_dict, run_ID, patch_size, best
     inner_best_state_dict["weight_decay"].append(weight_decay)
     inner_best_state_dict["batch_size"].append(batch_size)
     
-def record_outer_loop_metrics(outer_metrics_dict, run_ID, patch_size, test_region, median_epoch, test_loss, train_loss, test_metrics, train_metrics,lr, dropout, weight_decay, batch_size):
+def record_outer_loop_metrics(outer_metrics_dict, run_ID, patch_size, test_region, AWEI, median_epoch, test_loss, train_loss, test_metrics, train_metrics,lr, dropout, weight_decay, batch_size):
     
     """ Save the metrics for each fold in the outer loop afer testing"""
 
     outer_metrics_dict["run_ID"].append(run_ID)
     outer_metrics_dict["patch_size"].append(patch_size)
     outer_metrics_dict["test_region"].append(test_region)
+    outer_metrics_dict["AWEIp95"].append(AWEI)
     outer_metrics_dict["epochs_trained"].append(median_epoch)
     outer_metrics_dict["dropout"].append(dropout)
     outer_metrics_dict["lr"].append(lr)
