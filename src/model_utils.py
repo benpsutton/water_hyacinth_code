@@ -3,7 +3,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import LeaveOneGroupOut, GridSearchCV
-from sklearn.metrics import accuracy_score, f1_score
+from sklearn.metrics import accuracy_score, f1_score, roc_auc_score, precision_score, recall_score
 import numpy as np
 import torch
 import kornia.augmentation as k
@@ -19,9 +19,12 @@ def run_nested_cv(X, y, groups, metadata_df, pipe, param_grid, n_jobs = -2):
 
     outer_results = {
             "test_location":[],
-            "f1": [],
-            "f1_macro":[],
-            "accuracy": [],
+            "test_f1": [],
+            "test_f1_macro":[],
+            "test_accuracy": [],
+            "test_precision": [],
+            "test_recall": [],
+            "test_auroc": [],
             "best_n_estimators": [],
             "best_max_depth": [],
             "best_min_samples_leaf":[],
@@ -31,12 +34,24 @@ def run_nested_cv(X, y, groups, metadata_df, pipe, param_grid, n_jobs = -2):
             }
 
 
+    # multi-metric scoring: record several metrics for the inner folds, but still
+    # select the best model on binary f1 via refit.
+    scoring = {
+        "f1": "f1",               # binary f1, pos_label=1
+        "accuracy": "accuracy",
+        "precision": "precision", # binary, pos_label=1
+        "recall": "recall",       # binary, pos_label=1
+        "auroc": "roc_auc",
+    }
+
     search = GridSearchCV(estimator = pipe, # the pipeline goes here, instead of model
                             param_grid = param_grid,
-                            scoring = 'f1',
+                            scoring = scoring,
+                            refit = "f1", # best model still chosen on binary f1 only
                             cv = inner_cv,
                             n_jobs= n_jobs)
     all_predictions = []
+    inner_records = [] # per inner-fold metrics for the winning config, across outer folds
 
     for train_idx, test_idx in outer_cv.split(X, y, groups = groups):
         X_train, X_test = X[train_idx], X[test_idx]
@@ -44,11 +59,36 @@ def run_nested_cv(X, y, groups, metadata_df, pipe, param_grid, n_jobs = -2):
         groups_train = groups[train_idx]
         test_location = groups[test_idx][0]
         test_metadata = metadata_df.iloc[test_idx]
-        
-        
+
+
         search.fit(X_train, y_train, groups= groups_train) # note: dont assign search.fit, it modifies in place.
 
         best_model= search.best_estimator_
+
+        #------------------------------------------------------------
+        # capture the inner-fold metrics for the winning hyperparameter config.
+        # best_index_ is the row in cv_results_ selected by refit="f1".
+        best_i = search.best_index_
+        cvr = search.cv_results_
+
+        # reconstruct which val region belongs to each split, in the same order
+        # GridSearchCV iterated them (rather than assuming sorted-unique order).
+        inner_val_regions = [groups_train[val_idx][0]
+                             for _, val_idx in inner_cv.split(X_train, y_train, groups_train)]
+
+        for split_no, val_region in enumerate(inner_val_regions):
+            inner_records.append({
+                "outer_test_location": test_location,
+                "inner_val_region": val_region,
+                "f1": cvr[f"split{split_no}_test_f1"][best_i],
+                "accuracy": cvr[f"split{split_no}_test_accuracy"][best_i],
+                "precision": cvr[f"split{split_no}_test_precision"][best_i],
+                "recall": cvr[f"split{split_no}_test_recall"][best_i],
+                "auroc": cvr[f"split{split_no}_test_auroc"][best_i],
+                "best_n_estimators": search.best_params_["model__n_estimators"],
+                "best_max_depth": search.best_params_["model__max_depth"],
+                "best_min_samples_leaf": search.best_params_["model__min_samples_leaf"],
+            })
 
         # predict on validatation region
 
@@ -66,20 +106,27 @@ def run_nested_cv(X, y, groups, metadata_df, pipe, param_grid, n_jobs = -2):
         fold_f1 = f1_score(y_test, y_pred, pos_label= 1, average= "binary")
         fold_f1macro = f1_score(y_test, y_pred, average= "macro")
         fold_accuracy = accuracy_score(y_test, y_pred)
+        fold_recall = recall_score(y_test, y_pred)
+        fold_precision = precision_score(y_test, y_pred)
+        fold_auroc = roc_auc_score(y_test, y_pred)
         fold_best_n_estimators = search.best_params_["model__n_estimators"]
         fold_best_max_depth = search.best_params_["model__max_depth"]
         fold_best_min_samples_leaf = search.best_params_["model__min_samples_leaf"]
 
         outer_results["test_location"].append(test_location)
-        outer_results["f1"].append(fold_f1)
-        outer_results["f1_macro"].append(fold_f1macro)
-        outer_results["accuracy"].append(fold_accuracy)
+        outer_results["test_f1"].append(fold_f1)
+        outer_results["test_f1_macro"].append(fold_f1macro)
+        outer_results["test_accuracy"].append(fold_accuracy)
+        outer_results["test_recall"].append(fold_recall)
+        outer_results["test_precision"].append(fold_precision)
+        outer_results["test_auroc"].append(fold_auroc)
         outer_results["best_n_estimators"].append(fold_best_n_estimators)
         outer_results["best_max_depth"].append(fold_best_max_depth)
         outer_results["best_min_samples_leaf"].append(fold_best_min_samples_leaf)
         outer_results["train_f1"].append(train_f1)
         outer_results["train_f1_macro"].append(train_f1_macro)
         outer_results["train_accuracy"].append(train_accuracy)
+        
         
         #------------------------------------------------------------
         # create a dictionary of the arrays for y_hat, y_test, etc
@@ -95,15 +142,17 @@ def run_nested_cv(X, y, groups, metadata_df, pipe, param_grid, n_jobs = -2):
     predictions_df= pd.concat(all_predictions)
 
     results_df = pd.DataFrame(outer_results)
-    results_df["f1_gap"] = results_df["train_f1"] - results_df["f1"]
-    results_df["f1_macro_gap"] = results_df["train_f1_macro"] - results_df["f1_macro"]
-    results_df["accuracy_gap"] = results_df["train_accuracy"] - results_df["accuracy"]
+    results_df["f1_gap"] = results_df["train_f1"] - results_df["test_f1"]
+    results_df["f1_macro_gap"] = results_df["train_f1_macro"] - results_df["test_f1_macro"]
+    results_df["accuracy_gap"] = results_df["train_accuracy"] - results_df["test_accuracy"]
 
-    print(f"F1 Binary:  {np.mean(outer_results['f1']):.3f} +/- {np.std(outer_results['f1']):.3f}")
+    inner_df = pd.DataFrame(inner_records)
+
+    print(f"F1 Binary:  {np.mean(outer_results['test_f1']):.3f} +/- {np.std(outer_results['test_f1']):.3f}")
     print(f"F1 Macro:   {np.mean(outer_results['f1_macro']):.3f} +/- {np.std(outer_results['f1_macro']):.3f}")
-    print(f"Accuracy:   {np.mean(outer_results['accuracy']):.3f} +/- {np.std(outer_results['accuracy']):.3f}")
+    print(f"Accuracy:   {np.mean(outer_results['accuracy']):.3f} +/- {np.std(outer_results['test_accuracy']):.3f}")
 
-    return results_df, predictions_df
+    return results_df, predictions_df, inner_df
 
 def load_patch_dict_as_tensor(Patch_dict, band_list = None):
 
@@ -311,7 +360,7 @@ def load_dataset(patches, labels, mean, std, batch_size, shuffle = False):
 
 
         
-def record_epoch(history_dict, run_ID, patch_size,  loop, epoch, test_region, train_metrics,train_loss, AWEI, best_epoch = None, val_region=None , val_loss= None,  val_metrics= None):
+def record_epoch(history_dict, run_ID, patch_size,  loop, epoch, test_region, train_metrics,train_loss, AWEI, best_epoch = None, val_region=None , smoothed_val_loss = None, k= None, val_loss= None,  val_metrics= None):
             
     """ Append the values and metrics for each epoch to a history_dict.
     History dicts for each run can then be conctenated inot a long format for plotting"""
@@ -331,6 +380,8 @@ def record_epoch(history_dict, run_ID, patch_size,  loop, epoch, test_region, tr
     history_dict["train_auroc"].append(train_metrics["auroc"])
     if val_metrics is not None: # outer folds won't have a val_region
         history_dict["val_region"].append(val_region)
+        history_dict["smoothed_val_loss"].append(smoothed_val_loss)
+        history_dict["k"].append(k)
         history_dict["val_loss"].append(val_loss)
         history_dict["val_accuracy"].append(val_metrics["accuracy"])
         history_dict["val_f1"].append(val_metrics["f1"])
@@ -339,7 +390,7 @@ def record_epoch(history_dict, run_ID, patch_size,  loop, epoch, test_region, tr
         history_dict["val_auroc"].append(val_metrics["auroc"])
         history_dict["best_epoch"].append(best_epoch)
 
-def record_inner_loop_best_state(inner_best_state_dict, run_ID, patch_size, AWEI, best_epoch, test_region, val_region, train_loss, best_val_loss, best_val_metrics, best_train_metrics, lr, dropout, weight_decay, batch_size): 
+def record_inner_loop_best_state(inner_best_state_dict, run_ID, patch_size, AWEI, best_epoch, test_region, val_region, train_loss, best_smoothed_val_loss, smoothing_window_k, best_val_loss, best_val_metrics, best_train_metrics, lr, dropout, weight_decay, batch_size): 
    
     """Save the metrics for the best epoch for each inner fold after early stopping"""
 
@@ -350,6 +401,8 @@ def record_inner_loop_best_state(inner_best_state_dict, run_ID, patch_size, AWEI
     inner_best_state_dict["val_region"].append(val_region)
     inner_best_state_dict["AWEIp95"].append(AWEI)
     inner_best_state_dict["train_loss"].append(train_loss)
+    inner_best_state_dict["smoothed_val_loss"].append(best_smoothed_val_loss)
+    inner_best_state_dict["k"].append(smoothing_window_k)
     inner_best_state_dict["val_loss"].append(best_val_loss)
     inner_best_state_dict["val_accuracy"].append(best_val_metrics["accuracy"])
     inner_best_state_dict["val_f1"].append(best_val_metrics["f1"])
@@ -366,8 +419,8 @@ def record_inner_loop_best_state(inner_best_state_dict, run_ID, patch_size, AWEI
     inner_best_state_dict["weight_decay"].append(weight_decay)
     inner_best_state_dict["batch_size"].append(batch_size)
     
-def record_outer_loop_metrics(outer_metrics_dict, run_ID, patch_size, test_region, AWEI, median_epoch, test_loss, train_loss, test_metrics, train_metrics,lr, dropout, weight_decay, batch_size):
-    
+def record_outer_loop_metrics(outer_metrics_dict, run_ID, patch_size, test_region, AWEI, median_epoch, smoothing_window_k, test_loss, train_loss, test_metrics, train_metrics,lr, dropout, weight_decay, batch_size):
+
     """ Save the metrics for each fold in the outer loop afer testing"""
 
     outer_metrics_dict["run_ID"].append(run_ID)
@@ -375,6 +428,7 @@ def record_outer_loop_metrics(outer_metrics_dict, run_ID, patch_size, test_regio
     outer_metrics_dict["test_region"].append(test_region)
     outer_metrics_dict["AWEIp95"].append(AWEI)
     outer_metrics_dict["epochs_trained"].append(median_epoch)
+    outer_metrics_dict["k"].append(smoothing_window_k)
     outer_metrics_dict["dropout"].append(dropout)
     outer_metrics_dict["lr"].append(lr)
     outer_metrics_dict["weight_decay"].append(weight_decay)
