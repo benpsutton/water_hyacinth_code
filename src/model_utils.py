@@ -232,6 +232,54 @@ def buildCNN_2xVGG(input_channels= 10, dropout = 0.3):
 
         return myCNN
 
+def build_CNN_dense(patch_size, input_channels = 10, dropout = 0.3):
+
+    layers = [
+         nn.Conv2d(in_channels=input_channels, 
+                out_channels = 32, 
+                kernel_size=3,
+                stride= 1,
+                padding=1  ),
+        nn.BatchNorm2d(32),
+        nn.ReLU(),
+        nn.Conv2d(in_channels=32, 
+                out_channels = 32, 
+                kernel_size=3,
+                stride= 1,
+                padding=1  ),
+        nn.BatchNorm2d(32),
+        nn.ReLU(),
+        nn.MaxPool2d(kernel_size=2),
+                nn.Conv2d(in_channels=32, 
+                out_channels = 64, 
+                kernel_size=3,
+                stride= 1,
+                padding=1  ),
+        nn.BatchNorm2d(64),
+        nn.ReLU()
+    ]
+    if patch_size == 31:
+        layers += [
+            nn.MaxPool2d(kernel_size=2)
+            ]
+
+    layers += [
+        nn.Conv2d(in_channels=64, 
+                out_channels = 64, 
+                kernel_size=3,
+                stride= 1,
+                padding=1  ),
+        nn.BatchNorm2d(64),
+        nn.ReLU(),
+        nn.MaxPool2d(2),
+        nn.Flatten(),
+        nn.Dropout(p = dropout),
+        nn.Linear(in_features= 576, out_features=64),
+        nn.ReLU(),
+        nn.Linear(64,1)
+    ]    
+    return nn.Sequential(*layers)
+
 def train_for_one_epoch(model, train_loader, device, aug, optimizer, metrics, criterion):
     
     model.train()
