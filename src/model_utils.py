@@ -149,8 +149,8 @@ def run_nested_cv(X, y, groups, metadata_df, pipe, param_grid, n_jobs = -2):
     inner_df = pd.DataFrame(inner_records)
 
     print(f"F1 Binary:  {np.mean(outer_results['test_f1']):.3f} +/- {np.std(outer_results['test_f1']):.3f}")
-    print(f"F1 Macro:   {np.mean(outer_results['f1_macro']):.3f} +/- {np.std(outer_results['f1_macro']):.3f}")
-    print(f"Accuracy:   {np.mean(outer_results['accuracy']):.3f} +/- {np.std(outer_results['test_accuracy']):.3f}")
+    print(f"F1 Macro:   {np.mean(outer_results['test_f1_macro']):.3f} +/- {np.std(outer_results['test_f1_macro']):.3f}")
+    print(f"Accuracy:   {np.mean(outer_results['test_accuracy']):.3f} +/- {np.std(outer_results['test_accuracy']):.3f}")
 
     return results_df, predictions_df, inner_df
 
