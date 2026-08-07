@@ -43,6 +43,7 @@ def correlation_matrix(
     df: pd.DataFrame,
     font_size: int = 20,
     columns: list[str] | None = None,
+    title = None
 ) -> pd.DataFrame:
     if columns:
         df = df[columns]
@@ -63,13 +64,14 @@ def correlation_matrix(
 
     plt.tick_params(axis="x", labelsize=font_size - 8)
     plt.tick_params(axis="y", labelsize=font_size - 8)
-    plt.title(
-        "Correlation matrix of Sentinel-2 MSI bands and derived indices",
-        fontweight="bold",
-        fontsize=20,
-        y=1.02,
-        x=0.55,
-    )
+    if title:
+        plt.title(
+            title,
+            fontweight="bold",
+            fontsize=20,
+            y=1.02,
+            x=0.55,
+        )
     plt.show()
 
     save_path = OUTPUTS_DIR / "corr_matrix.png"

@@ -8,21 +8,9 @@
     "NDMI": ["B8", "B11"],
     "NDBI": ["B11", "B8"],
     "NDAVI": ["B8", "B2"],
-    "RR1": ["B5", "B4"],
-    "NDVIre1": ["B8", "B5"],
-    "NDVIre2": ["B8", "B6"],
-    "NDVIre3": ["B8", "B7"],
-    "NDre1": ["B6", "B5"],
-    "NDre2": ["B7", "B5"]
+    "RR1": ["B5", "B4"]
   },
   "FORMULA": {
-    "CIre": {
-      "bands": {
-        "RE3": "B7",
-        "RE1": "B5"
-      },
-      "expression": "(RE3/RE1)-1"
-    },
     "EVI": {
       "bands": {
         "NIR": "B8",

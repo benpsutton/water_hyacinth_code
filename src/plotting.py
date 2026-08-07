@@ -14,15 +14,27 @@ def set_pubr_theme(
     linewidth_mm=0.5,      # ggpubr axis.line / tick linewidth
     legend="top",          # "top" | "bottom" | "left" | "right" | "none"
     text_color="black",
+    title_size=None,       # override panel title size (else 1.2 * base_size)
+    axis_title_size=None,  # override axis label size (else 1.0 * base_size)
+    axis_text_size=None,   # override tick label size (else 0.8 * base_size)
+    legend_txt_size=None,  # override legend text size (else 0.8 * base_size)
+    legend_ttl_size=None,  # override legend title size (else 1.0 * base_size)
+    suptitle_size=None,    # override figure suptitle size (else 1.2 * base_size)
 ):
-    """Apply a matplotlib/seaborn style mimicking ggpubr::theme_pubr()."""
+    """Apply a matplotlib/seaborn style mimicking ggpubr::theme_pubr().
 
-    # Proportional font sizes (mirrors ggplot2's rel() multipliers)
-    axis_title = 1.0 * base_size
-    axis_text = 0.8 * base_size
-    title = 1.2 * base_size
-    legend_txt = 0.8 * base_size
-    legend_ttl = 1.0 * base_size
+    Any ``*_size`` override, when given, is used verbatim instead of the
+    proportional default; leave it None to keep the base_size-relative value.
+    """
+
+    # Proportional font sizes (mirrors ggplot2's rel() multipliers); each is
+    # overridable via the matching *_size argument.
+    axis_title = axis_title_size if axis_title_size is not None else 1.0 * base_size
+    axis_text = axis_text_size if axis_text_size is not None else 0.8 * base_size
+    title = title_size if title_size is not None else 1.2 * base_size
+    legend_txt = legend_txt_size if legend_txt_size is not None else 0.8 * base_size
+    legend_ttl = legend_ttl_size if legend_ttl_size is not None else 1.0 * base_size
+    suptitle = suptitle_size if suptitle_size is not None else 1.2 * base_size
 
     lw_pt = linewidth_mm * _GG_PT      # spines & ticks
     tick_len = base_size / 4           # ggpubr tick length (pt)
@@ -39,6 +51,8 @@ def set_pubr_theme(
         "ytick.labelsize": axis_text,
         "legend.fontsize": legend_txt,
         "legend.title_fontsize": legend_ttl,
+        "figure.titlesize": suptitle,   # so fig.suptitle() obeys the theme
+        "figure.titleweight": "bold",
 
         # --- background / panel ---
         "figure.facecolor": "white",
@@ -191,11 +205,15 @@ def pubr_fill(ax, alpha=0.5, source="face", color_lines=True, linewidth=None, le
     return ax
 
 
-def plot_loss_curve(history_dict, file_path):
+def plot_loss_curve(history_dict, file_path, **theme_kwargs):
 
-    """ Plots a training and validation loss curve from a single histry dict from a training run"""
+    """ Plots a training and validation loss curve from a single histry dict from a training run
 
-    set_pubr_theme()
+    Extra keyword args are forwarded to set_pubr_theme (e.g. base_size=16,
+    title_size=20) to override the font sizing for this figure.
+    """
+
+    set_pubr_theme(**theme_kwargs)
 
     
     fold = str(history_dict.get("loop")[0]).title()
