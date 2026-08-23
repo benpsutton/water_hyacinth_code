@@ -8,7 +8,7 @@
     "NDMI": ["B8", "B11"],
     "NDBI": ["B11", "B8"],
     "NDAVI": ["B8", "B2"],
-    "RR1": ["B5", "B4"]
+    "NDIRE1": ["B5", "B4"]
   },
   "FORMULA": {
     "EVI": {
