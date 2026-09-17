@@ -333,6 +333,7 @@ def build_CNN_no_pool(patch_size, input_channels = 10, dropout = 0.3):
     return nn.Sequential(*layers)
 
 def build_CNN_depthwise_separable(patch_size, input_channels = 10, dropout = 0.3):
+    # unfunished, idea is to have depthwise seperale onvultion wher spatial mixing layer followed ny a spectral mixing layer
     layers = [
          nn.Conv2d(in_channels=input_channels, 
                 out_channels = 32, 
