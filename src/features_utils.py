@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-from _paths import INDICES_PATH, OUTPUTS_DIR
+from _paths import INDICES_PATH, PROJECT_ROOT
 
 
 def add_indices(df: pd.DataFrame, indices_file: str | Path = INDICES_PATH) -> pd.DataFrame:
@@ -43,7 +43,8 @@ def correlation_matrix(
     df: pd.DataFrame,
     font_size: int = 20,
     columns: list[str] | None = None,
-    title = None
+    title = None,
+    filepath = None,
 ) -> pd.DataFrame:
     if columns:
         df = df[columns]
@@ -62,8 +63,8 @@ def correlation_matrix(
     cbar = hm.collections[0].colorbar
     cbar.set_label("Pearsons R-value", labelpad=15, fontsize=font_size - 2)
 
-    plt.tick_params(axis="x", labelsize=font_size - 8)
-    plt.tick_params(axis="y", labelsize=font_size - 8)
+    plt.tick_params(axis="x", labelsize=font_size - 4, labelrotation=45)
+    plt.tick_params(axis="y", labelsize=font_size - 4, labelrotation=45)
     if title:
         plt.title(
             title,
@@ -74,7 +75,11 @@ def correlation_matrix(
         )
     plt.show()
 
-    save_path = OUTPUTS_DIR / "corr_matrix.png"
+    if filepath:
+        save_path= Path(filepath)
+    else:
+        save_path = PROJECT_ROOT / "outputs/plots" / "corr_matrix.png"
+
     fig.savefig(save_path, dpi=300, bbox_inches="tight")
 
     return corr_matrix
