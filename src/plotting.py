@@ -219,12 +219,24 @@ def plot_loss_curve(history_dict, file_path, **theme_kwargs):
     fold = str(history_dict.get("loop")[0]).title()
         
     plt.figure(figsize=(8, 5))
+    is_outer = str(history_dict.get("loop")[0]) == "outer"
+
     plt.plot(history_dict["train_loss"], label="Train Loss")
-    if history_dict.get("val_loss"):
-        plt.plot(history_dict["val_loss"], label="Val Loss") 
+    if is_outer and history_dict.get("val_loss"):
+        # outer folds record the test region loss at each epoch (stored under val_loss)
+        plt.plot(history_dict["val_loss"], label="Test Loss")
+        median_epoch = history_dict["best_epoch"][0]
+        if median_epoch is not None:
+            # x-axis is 0-based but median_epoch is 1-based
+            plt.axvline(median_epoch - 1, color="grey", linestyle="--", label=f"Median inner-fold epoch ({median_epoch})")
+    elif history_dict.get("val_loss"):
+        plt.plot(history_dict["val_loss"], label="Val Loss")
     plt.xlabel("Epoch")
     plt.ylabel("Loss")
-    if history_dict.get("val_loss"):
+    if is_outer and history_dict.get("val_loss"):
+        plt.suptitle(f"Training vs Test Loss")
+        plt.title(f"{fold} Fold | Test region: {history_dict["test_region"][0]}")
+    elif history_dict.get("val_loss"):
         plt.suptitle(f"Training vs Validation Loss")
         plt.title(f"{fold} Fold | Test region: {history_dict["test_region"][0]} | Val region: {history_dict["val_region"][0]}")
     else:
